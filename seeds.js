@@ -13,6 +13,6 @@ var bars = [
 
 ];
 
-db.gin_bars.insertMany(bars);
+db.bars.insertMany(bars);
 
-db.gin_bars.find();
+db.bars.find();
