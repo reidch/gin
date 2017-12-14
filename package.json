@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/johncruickshank/gin/issues"
   },
-  "homepage": "https://github.com/johncruickshank/gin#readme"
+  "homepage": "https://github.com/johncruickshank/gin#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
