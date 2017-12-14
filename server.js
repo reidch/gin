@@ -5,6 +5,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("client/build"));
 // app.use(require(".controllers/index"));
+var ObjectId = require("mongodb").ObjectId;
 
 var MongoClient = require("mongodb").MongoClient;
 MongoClient.connect("mongodb://localhost:27017/gin_bars", function(err, client){
@@ -32,6 +33,9 @@ app.get("/bars", function(req, res){
 	});
 });
 
-// app.get("/bars/:id", function(req, res){
-//
-// });
+app.get("/bars/_id", function(req, res){
+  // req.body._id = new ObjectId(req.body._id);
+    db.collection("bars").find({ "_id": ObjectId("5a32aa64b40895f916cece55") }).toArray(function(err, results){
+    res.json(results);
+  });
+});
