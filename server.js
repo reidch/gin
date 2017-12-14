@@ -22,3 +22,16 @@ MongoClient.connect("mongodb://localhost:27017/gin_bars", function(err, client){
 app.get('/', function(req, res){
   res.sendFile(__dirname + "client/build/index.html");
 });
+
+app.get("/bars", function(req, res){
+  db.collection("bars").find().toArray(function(err, results){
+	  if(err){
+		return console.log(err);
+	  }
+	  res.json(results);
+	});
+});
+
+// app.get("/bars/:id", function(req, res){
+//
+// });
