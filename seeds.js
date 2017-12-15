@@ -82,13 +82,13 @@ var bars = [
   		},
   		{
   			name: "Gin Mare",
-  			mixer: "Fever-Tree Mediterranean Tonic Water"
+  			mixer: "Fever-Tree Mediterranean Tonic Water",
   			price: 8.00
   		}],
   		twitter_last_tweet: [],
   		social_media_links: {facebook: "https://www.facebook.com/gin71bar", instagram: "https://www.instagram.com/gin71bar/", twitter: "https://twitter.com/Gin71Bar"},
   		reviews: [],
-  		theme: "",
+  		theme: "old world elegance",
   		opening_times: {open: "17:00", closed: "00:00"},
   		phone_number: "0141 353 2959"
   	},
