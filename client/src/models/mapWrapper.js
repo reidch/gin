@@ -42,3 +42,13 @@ MapWrapper.prototype.centerFunction = function(coords){
   this.googleMap.setMapTypeId('hybrid');
   this.googleMap.setZoom(10);
 }
+
+MapWrapper.prototype.userLocation = function(){
+  navigator.geolocation.getCurrentPosition(function(position){
+    var coords = {lat: position.coords.latitude, lng: position.coords.longitude};
+    this.googleMap.setCenter(coords);
+    this.googleMap.setMapTypeId('hybrid');
+    this.googleMap.setZoom(19);
+    this.addMarker(coords);
+  }.bind(this));
+}
