@@ -36,3 +36,9 @@ MapWrapper.prototype.addMarker = function(bar){
   }.bind(this));
 
 }
+
+MapWrapper.prototype.centerFunction = function(coords){
+  this.googleMap.setCenter(coords);
+  this.googleMap.setMapTypeId('hybrid');
+  this.googleMap.setZoom(10);
+}
