@@ -32,6 +32,36 @@ var bars = [
   		opening_times: {open: "17:00", closed: "00:00"},
   		phone_number: "0141 553 2326"
   	},
+    {
+		name: "The Spiritualist",
+		coords: { lat: 55.8590068, lng: -4.2508912},
+		address: "62 Miller Street, Glasgow, G1 1DT",
+		location: "Glasgow",
+		description: "A relative newcomer to Glasgow (est.2016), with a stylish art-deco inspired interior, The Spiritualist has over 75 gins on its menu - with an impressive 400 spirits overall!",
+		website: "http://www.thespiritualistglasgow.com/",
+		image: "https://files.list.co.uk/images/2017/03/29/begin-glasgow-gin-bar-byres-road1-ne-lst237403_thumb.jpg",
+		top3_gins: [{
+			name: "Audemus Pink Pepper",
+			mixer: "Walter Gregor's Handmade Scottish Tonic",
+			price: 10.00
+		},
+  	{
+			name: "Warner Edwards Rhubarb",
+    	mixer: "Fever-Tree Tonic Water",
+    	price:  6.70
+  	},
+  	{
+			name: "Makar Glasgow",
+    	mixer: "Fever-Tree Mediterranean Tonic Water",
+    	price:  5.95
+  	}],
+	   twitter_last_tweet: [],
+	    social_media_links: {facebook: "https://en-gb.facebook.com/TheSpiritualistGlasgow/", instagram: "https://www.instagram.com/explore/locations/1030201701/", twitter: "https://twitter.com/spiritualistgla"},
+	     reviews: [],
+	      theme: "art-deco",
+	       opening_times: {open: "12:00", closed: "00:00"},
+	        phone_number: "0141 248 4165"
+    },
 
 ];
 
