@@ -5,7 +5,11 @@
 #page-title
 
 /* section for map and search functionality */
-#map-container
+#map-container {
+  border: 1px solid lightGrey;
+  height: 500px;
+  width: 40%;
+}
 
 /* possible links to other content */
 #site-navigation
