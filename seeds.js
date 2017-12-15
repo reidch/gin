@@ -123,6 +123,36 @@ var bars = [
   		phone_number: "0141 353 2959"
   	},
     {
+		name: "Alston Bar & Beef",
+		coords: { lat: 55.860348, lng: -4.257733 },
+		address: "79 Gordon Street, Glasgow, G1 3SQ",
+		location: "Glasgow",
+		description: "Smart, cellar-like restaurant and gin bar with mood lighting and vaulted ceiling. Specialising in steak, with over 100 gins including a dozen or so produced in Scotland. Located underneath the Gordon Street entrance to Glasgow Central Station.",
+		website: "https://www.alstonglasgow.co.uk/",
+		image: "http://ananyah.com/wp-content/uploads/2014/05/%C2%A9Renzo-Mazzolini-Alston-Bar-and-Beef-The-Bar-3.jpg",
+		top3_gins: [{
+			name: "Old Raj Red",
+			mixer: "Fever-Tree Tonic Water",
+			price: 5.25
+		},
+  	{
+			name: "Darnley View",
+    	mixer: "Fever-Tree Mediterranean Tonic Water",
+    	price: 5.25
+  	},
+  	{
+			name: "St George Botanivore",
+    	mixer: "Fever-Tree Tonic Water",
+    	price: 6.25
+  	}],
+	   twitter_last_tweet: [],
+	   social_media_links: {facebook: "https://www.facebook.com/alstonglasgow", instagram: "https://www.instagram.com/alstonglasgow/", twitter: "https://twitter.com/alstonglasgow"},
+	   reviews: [],
+     theme: "underground chic",
+	    opening_times: {open: "12:00", closed: "00:00"},
+	     phone_number: "0141 221 7627"
+     },
+  {
       name: "The Finnieston",
       coords: { lat: 55.8645981, lng: -4.2842838 },
       address: "1125 Argyle St, Glasgow, G3 8ND",
@@ -152,7 +182,6 @@ var bars = [
   		opening_times: {open: "12:00", closed: "01:00"},
   		phone_number: "0141 222 2884"
   	},
-
 ];
 
 db.bars.insertMany(bars);
