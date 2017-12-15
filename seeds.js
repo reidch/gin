@@ -152,7 +152,7 @@ var bars = [
 	    opening_times: {open: "12:00", closed: "00:00"},
 	     phone_number: "0141 221 7627"
      },
-  {
+     {
       name: "The Finnieston",
       coords: { lat: 55.8645981, lng: -4.2842838 },
       address: "1125 Argyle St, Glasgow, G3 8ND",
@@ -182,6 +182,36 @@ var bars = [
   		opening_times: {open: "12:00", closed: "01:00"},
   		phone_number: "0141 222 2884"
   	},
+    {
+      name: "beGIN",
+      coords: { lat: 55.8776518, lng: -4.2908012},
+      address: "383 Byres Road, Glasgow, G12 8AU",
+      location: "Glasgow",
+      description: "Award winning gin bar, serving 68 varieties of gin from around the world. Gin connoisseurs can enjoy a Perfect Serve with the bar's recommended selection of tonic and garnish for each gin or choose from a variety of 12 mixers and 28 garnishes.",
+      website: "https://www.beginglasgow.com/",
+      image: "https://files.list.co.uk/images/2017/03/29/begin-glasgow-gin-bar-byres-road1-ne-lst237403_thumb.jpg",
+      top3_gins: [{
+        name: "Fifty Eight Navy Strength Gin",
+        mixer: "Double Dutch Indian Tonic Water",
+        price: 8.00
+      },
+      {
+        name: "Hoxton",
+        mixer: "Fever-Tree Tonic Water",
+        price: 9.00
+      },
+      {
+        name: "Gin Sul",
+        mixer: "Fever-Tree Mediterranean Tonic Water",
+        price: 10.00
+      }],
+      twitter_last_tweet: [],
+      social_media_links: {facebook: "https://www.facebook.com/beGINGlasgow/", instagram: "https://www.instagram.com/beginglasgow/", twitter: "https://twitter.com/beginglasgow"},
+      reviews: [],
+      theme: "speakeasy-style",
+      opening_times: {open: "10:00", closed: "00:00"},
+      phone_number: "0141 341 6516"
+    },
 ];
 
 db.bars.insertMany(bars);
