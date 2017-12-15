@@ -52,3 +52,5 @@ MapWrapper.prototype.userLocation = function(){
     this.addMarker(coords);
   }.bind(this));
 }
+
+module.exports = MapWrapper;
