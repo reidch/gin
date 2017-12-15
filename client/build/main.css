@@ -2,28 +2,58 @@
   border: 1px solid black;
 }
 
-#page-title
+#page-title {
+  background-color: purple;
+  height: 110px;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+}
 
 /* section for map and search functionality */
 #map-container {
-  border: 1px solid lightGrey;
-  height: 500px;
-  width: 40%;
+  width: 50%;
 }
 
 /* possible links to other content */
-#site-navigation
+#site-navigation {
+  background-color: blue;
+  height: 50px;
+  width: 100%;
+}
 
 /* actual google map view */
-#map
+#map {
+  border: 1px solid lightGrey;
+  height: 800px;
+  width: 100%;
+}
 
 /* section for right hand of screen */
-#bar-container
+#bar-container {
+  border: 3px solid red;
+  background-color: red;
+  height: 850px;
+  width: 50%;
+}
 
 /* top image or welcome message */
-#list-header
+#list-header {
+  background-color: grey;
+  height: 35%;
+  width: 100%;
+}
 
 /* holder for list items */
-#bar-list
+#bar-list {
+  background-color: orange;
+  height: 65%;
+  width: 100%;
+}
 
-.bar
+.bar {
+
+}
