@@ -13,17 +13,17 @@ var bars = [
   		top3_gins: [{
   			name: "Rock Rose",
   			mixer: "Fever-Tree Tonic Water",
-  			price: "8.50"
+  			price: 8.50
   		},
   		{
   			name: "Isle of Harris",
   			mixer: "Gin71 Lemon & Rosemary Tonic",
-  			price: "9.50"
+  			price: 9.50
   		},
   		{
   			name: "Arbikie AK’s Gin",
-  			mixer: "Gin71 Ginger Ale"
-  			price: "8.50"
+  			mixer: "Gin71 Ginger Ale",
+  			price: 8.50
   		}],
   		twitter_last_tweet: [],
   		social_media_links: {facebook: "https://www.facebook.com/gin71bar", instagram: "https://www.instagram.com/gin71bar/", twitter: "https://twitter.com/Gin71Bar"},
