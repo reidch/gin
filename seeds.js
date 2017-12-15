@@ -62,6 +62,37 @@ var bars = [
 	       opening_times: {open: "12:00", closed: "00:00"},
 	        phone_number: "0141 248 4165"
     },
+
+    {
+    		name: "Slouch",
+    		coords: { lat: 55.86454, lng: -4.263899},
+    		address: "203-205 Bath Street, Glasgow, G2 4HZ",
+    		location: "Glasgow",
+    		description: "Laid-back and popular music venue in the centre of Glasgow, with over 30 types of gin and an extensive cocktail list to accompany the nightly performance.",
+    		website: "http://slouch-bar.co.uk/",
+    		image: "https://media-cdn.tripadvisor.com/media/photo-s/05/e8/0f/17/slouch-bar-kitchen-venue.jpg",
+    		top3_gins: [{
+    			name: "Edinburgh Raspberry",
+    			mixer: "Fever-Tree Tonic Water",
+    			price: 5.25
+    		},
+      	{
+    			name: "Bath Tub",
+        	mixer: "Fever-Tree Mediterranean Tonic Water",
+        	price: 5.45
+      	},
+      	{
+    			name: "Death's Door",
+        	mixer: "Fever-Tree Tonic Water",
+        	price: 6.35
+      	}],
+    	twitter_last_tweet: [],
+    	social_media_links: {facebook: "https://en-gb.facebook.com/slouch.glasgow/", instagram: "https://www.instagram.com/slouchglasgow/", twitter: "https://twitter.com/SlouchGlasgow"},
+    	reviews: [],
+    	theme: "Rock bar",
+    	opening_times: {open: "17:00", closed: "03:00"},
+    	phone_number: "0141 221 5518"
+    },
     {
   		name: "Gin71 Glasgow",
   		coords: { lat: 55.8632928, lng: -4.2574232 },
