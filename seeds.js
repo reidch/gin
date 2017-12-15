@@ -62,7 +62,6 @@ var bars = [
 	       opening_times: {open: "12:00", closed: "00:00"},
 	        phone_number: "0141 248 4165"
     },
-
     {
     		name: "Slouch",
     		coords: { lat: 55.86454, lng: -4.263899},
@@ -153,6 +152,36 @@ var bars = [
 	    opening_times: {open: "12:00", closed: "00:00"},
 	     phone_number: "0141 221 7627"
      },
+  {
+      name: "The Finnieston",
+      coords: { lat: 55.8645981, lng: -4.2842838 },
+      address: "1125 Argyle St, Glasgow, G3 8ND",
+  		location: "Glasgow",
+      description: "Glasgow’s premier Gin bar, located in the thriving heart of Finnieston. Over 60 brands of gin reside on the shelves of The Finnieston, each hand picked for their excellent taste and their ability to mix a fantastic gin cocktail.",
+      website: "http://www.thefinniestonbar.com/",
+      image: "http://files.stv.tv/imagebase/129/605x340/129888-a-bartender-mixes-up-a-caorunn-cocktail-for-customers.jpg",
+  		top3_gins: [{
+  			name: "Caorunn",
+  			mixer: "Fentimans Tonic Water",
+  			price: 5.20
+  		},
+  		{
+  			name: "Martin Millers Westbourne Strength",
+  			mixer: "Fever-Tree Tonic Water",
+  			price: 6.40
+  		},
+  		{
+  			name: "Junipero",
+  			mixer: "Fentimans Tonic Water",
+  			price: 7.50
+  		}],
+  		twitter_last_tweet: [],
+  		social_media_links: {facebook: "https://www.facebook.com/thefinniestonbar", instagram: "https://www.instagram.com/TheFinnieston/", twitter: "https://twitter.com/The_Finnieston"},
+  		reviews: [],
+  		theme: "atmospheric",
+  		opening_times: {open: "12:00", closed: "01:00"},
+  		phone_number: "0141 222 2884"
+  	},
 ];
 
 db.bars.insertMany(bars);
