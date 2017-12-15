@@ -1,0 +1,25 @@
+* {
+  border: 1px solid black;
+}
+
+#page-title
+
+/* section for map and search functionality */
+#map-container
+
+/* possible links to other content */
+#site-navigation
+
+/* actual google map view */
+#map
+
+/* section for right hand of screen */
+#bar-container
+
+/* top image or welcome message */
+#list-header
+
+/* holder for list items */
+#bar-list
+
+.bar
