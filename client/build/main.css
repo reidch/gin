@@ -18,6 +18,12 @@ main {
   width: 50%;
 }
 
+/* map search bar */
+#search-input {
+  height: 3%;
+  width: 50%;
+}
+
 /* possible links to other content */
 #site-navigation {
   background-color: blue;
