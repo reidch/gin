@@ -13,10 +13,11 @@ var requestComplete = function(){
   var jsonString = this.responseText;
   var apiData = JSON.parse(jsonString);
   console.log(apiData);
-  populateMap();
+  populateMap(apiData);
 }
 
-var populateMap = function(){
+var populateMap = function(apiData){
+  var bars = apiData;
   var container = document.getElementById('map');
   var center = { lat: 55.856843, lng: -4.244117 };
   var zoom = 15;
@@ -37,8 +38,12 @@ var populateMap = function(){
   var undo = document.getElementById("removeMarker");
   undo.addEventListener("click", function(){
     mainMap.removeUserMarker();
-  })
+  });
 
+  // populate map with bar markers
+  bars.forEach(function(bar){
+    mainMap.addMarker(bar);
+  });
 }
 
 var app = function() {
