@@ -16,10 +16,13 @@ MapWrapper.prototype.addMarker = function(bar){
   });
 
   this.markers.push(marker);
+  var star = '\u2605';
+  var multiplier = bar.rating;
   var contentString = '<div id="content">'+
   '<div id="bodyContent">'+
   // `<h3 id="bar-name">${bar.rating}</h3>` +
   `<h3 class="bar-name">${bar.name}</h3>` +
+  `<h4 class="bar-rating">${star.repeat(multiplier)}</h4>`+
   `<h5 class="open-time">Open: ${bar.opening_times.open}</h5>`+
   `<h5 class="closed-time">Closed: ${bar.opening_times.closed}</h5>`+
   '</div>'+
