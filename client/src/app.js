@@ -22,8 +22,17 @@ var populateMap = function(){
   var zoom = 15;
 
   mainMap = new MapWrapper(container, center, zoom);
-
+  // geolocation
   mainMap.userLocation();
+  // search box
+  var input = document.createElement('input');
+  input.id = "search-input";
+  input.class = "controls";
+  input.type = "text";
+  input.placeholder = "Search for a location";
+  console.log(input);
+  // create new google maps search box from input element
+  mainMap.createSearchBox(input);
 
 }
 
