@@ -92,8 +92,16 @@ var createThumbnail = function(image) {
 
 var app = function() {
   console.log("Running app");
-  var url = "/bars";
-  makeRequest(url, requestComplete);
+  var yes = document.getElementById("yes");
+    yes.addEventListener("click", function(){
+  console.log("connected");
+  var popup = document.getElementById("popup");
+  popup.style.zIndex = -1;
+  var foreground = document.getElementById("foreground");
+  foreground.classList = "vanish";
+  // var url = "/bars";
+  // makeRequest(url, requestComplete);
+});
 };
 
 window.addEventListener("load", app);
