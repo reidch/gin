@@ -18,8 +18,6 @@ MapWrapper.prototype.addMarker = function(bar){
   this.markers.push(marker);
   var star = '\u2605';
   var multiplier = bar.rating;
-  console.log(bar.rating);
-  console.log(bar.top3_gins[0].price)
   var contentString = '<div id="content">'+
   '<div id="bodyContent">'+
   // `<h3 id="bar-name">${bar.rating}</h3>` +
