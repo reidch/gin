@@ -86,6 +86,7 @@ MapWrapper.prototype.createSearchBox = function(input){
   this.googleMap.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   // event listener for place selection
   searchBox.addListener('places_changed', function() {
+    this.removeUserMarker();
     var places = searchBox.getPlaces();
     if (places.length == 0) {
       return;
