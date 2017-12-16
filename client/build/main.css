@@ -1,5 +1,9 @@
-* {
+/* * {
   border: 1px solid black;
+} */
+
+html {
+    height: 100%;
 }
 
 #page-title {
@@ -16,6 +20,7 @@ main {
 /* section for map and search functionality */
 #map-container {
   width: 50%;
+  z-index: -1;
 }
 
 /* map search bar */
@@ -29,6 +34,7 @@ main {
   background-color: blue;
   height: 50px;
   width: 100%;
+  z-index: -1;
 }
 
 /* actual google map view */
@@ -36,6 +42,7 @@ main {
   border: 1px solid lightGrey;
   height: 800px;
   width: 100%;
+  z-index: -1;
 }
 
 /* section for right hand of screen */
