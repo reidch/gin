@@ -5,7 +5,7 @@ var makeRequest = function(url, callback){
   request.open("GET", url)
   request.addEventListener('load', callback);
   request.send();
-}
+};
 
 var requestComplete = function(){
   if (this.status !== 200) return console.log("Request failed");
@@ -15,7 +15,7 @@ var requestComplete = function(){
   console.log(apiData);
   populateMap(apiData);
   populateList(apiData);
-}
+};
 
 var populateMap = function(apiData){
   var bars = apiData;
@@ -45,7 +45,7 @@ var populateMap = function(apiData){
   bars.forEach(function(bar){
     mainMap.addMarker(bar);
   });
-}
+};
 
 var populateList = function(data) {
   var ul = document.getElementById("#list-header");
@@ -62,7 +62,7 @@ var createBarData = function(bar) {
   barLi.appendChild(createBarDescription(bar.description));
   barLi.appendChild(createThumbnail(bar.image));
   barUl.append(barLi);
-}
+};
 
 var createBarName = function(name) {
   var nameElement = document.createElement("bar-name");
@@ -90,6 +90,13 @@ var createThumbnail = function(image) {
   return thumbnailElement;
 };
 
+var timingDisplay = function(){
+  var background = document.getElementById("background");
+  background.style.zIndex = -1;
+  var map = document.getElementById("map-container");
+  map.style.zIndex = 1;
+};
+
 var app = function() {
   console.log("Running app");
   var url = "/bars";
@@ -101,13 +108,13 @@ var app = function() {
   popup.style.zIndex = -1;
   var foreground = document.getElementById("foreground");
   foreground.classList = "vanish";
-  var background = document.getElementById("background");
-  background.style.zIndex = -1;
-  var map = document.getElementById("map-container");
-  map.style.zIndex = 1;
-
+  var timeout = setTimeout(function(){
+    timingDisplay()}, 4000);
+  console.log(this);
 });
-
 };
+
+
+
 
 window.addEventListener("load", app);
