@@ -58,8 +58,25 @@ main {
   background-color: orange;
   height: 65%;
   width: 100%;
+  overflow: scroll;
 }
 
-.bar {
+li-bar {
+  height: 33%;
+  width: 100%;
+}
 
+bar-name {
+  font-size: 1.2em;
+}
+
+bar-address {
+  font-size: .75em;
+  max-width: 25%;
+}
+
+bar-thumbnail img {
+  width: 25%;
+  height: 75px;%;
+  right: 0;
 }

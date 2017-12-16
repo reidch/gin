@@ -14,6 +14,7 @@ var requestComplete = function(){
   var apiData = JSON.parse(jsonString);
   console.log(apiData);
   populateMap(apiData);
+  populateList(apiData);
 }
 
 var populateMap = function(apiData){
@@ -45,6 +46,49 @@ var populateMap = function(apiData){
     mainMap.addMarker(bar);
   });
 }
+
+var populateList = function(data) {
+  var ul = document.getElementById("#list-header");
+  for (var bar of data) {
+    createBarData(bar);
+  }
+};
+// create the bar list data and append to the header
+var createBarData = function(bar) {
+  var barUl = document.getElementById("bar-list")
+  var barLi = document.createElement("li-bar");
+  barLi.appendChild(createBarName(bar.name));
+  barLi.appendChild(createBarAddress(bar.address));
+  barLi.appendChild(createBarDescription(bar.description));
+  barLi.appendChild(createThumbnail(bar.image));
+  barUl.append(barLi);
+}
+
+var createBarName = function(name) {
+  var nameElement = document.createElement("bar-name");
+  nameElement.append(name);
+  return nameElement;
+};
+
+var createBarAddress = function(address) {
+  var addressElement = document.createElement("bar-address");
+  addressElement.append(address);
+  return addressElement;
+};
+
+var createBarDescription = function(description) {
+  var descriptionElement = document.createElement("bar-description");
+  descriptionElement.append(description);
+  return descriptionElement;
+};
+
+var createThumbnail = function(image) {
+  var thumbnailElement = document.createElement("bar-thumbnail");
+  var pic = document.createElement("img");
+  thumbnailElement.appendChild(pic);
+  pic.src = image;
+  return thumbnailElement;
+};
 
 var app = function() {
   console.log("Running app");
