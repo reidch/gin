@@ -34,6 +34,11 @@ var populateMap = function(){
   // create new google maps search box from input element
   mainMap.createSearchBox(input);
 
+  var undo = document.getElementById("removeMarker");
+  undo.addEventListener("click", function(){
+    mainMap.removeUserMarker();
+  })
+
 }
 
 var app = function() {

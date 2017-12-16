@@ -4,6 +4,7 @@ var MapWrapper = function(container, coords, zoom){
     zoom: zoom
   });
   this.markers = [];
+  this.newMarkers = [];
 }
 
 MapWrapper.prototype.addMarker = function(bar){
@@ -85,6 +86,7 @@ MapWrapper.prototype.createSearchBox = function(input){
   this.googleMap.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   // event listener for place selection
   searchBox.addListener('places_changed', function() {
+    this.removeUserMarker();
     var places = searchBox.getPlaces();
     if (places.length == 0) {
       return;
@@ -104,7 +106,8 @@ MapWrapper.prototype.createSearchBox = function(input){
         anchor: new google.maps.Point(17, 34),
         scaledSize: new google.maps.Size(25, 25)
       };
-      this.createMarker(newPlace, icon);
+      this.createMarker(newPlace, icon, this.newMarkers);
+
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
         bounds.union(place.geometry.viewport);
@@ -114,10 +117,9 @@ MapWrapper.prototype.createSearchBox = function(input){
     }.bind(this));
     this.googleMap.fitBounds(bounds);
   }.bind(this));
-
 }
 
-MapWrapper.prototype.createMarker = function(place, icon){
+MapWrapper.prototype.createMarker = function(place, icon, array){
   var newMarker = new google.maps.Marker({
     map: this.googleMap,
     icon: icon,
@@ -125,7 +127,16 @@ MapWrapper.prototype.createMarker = function(place, icon){
     position: place.geometry.location
   });
   console.log(newMarker);
-  this.markers.push(newMarker);
+  array.push(newMarker);
 }
+
+MapWrapper.prototype.removeUserMarker = function(){
+  if(this.newMarkers.length >= 1){
+    var last = this.newMarkers.pop();
+    last.setMap(null);
+  }else{
+    console.log("nothing to remove");
+  }
+};
 
 module.exports = MapWrapper;
