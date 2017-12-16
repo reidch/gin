@@ -4,6 +4,7 @@ var MapWrapper = function(container, coords, zoom){
     zoom: zoom
   });
   this.markers = [];
+  this.newMarkers = [];
 }
 
 MapWrapper.prototype.addMarker = function(bar){
@@ -104,7 +105,8 @@ MapWrapper.prototype.createSearchBox = function(input){
         anchor: new google.maps.Point(17, 34),
         scaledSize: new google.maps.Size(25, 25)
       };
-      this.createMarker(newPlace, icon);
+      this.createUserMarker(newPlace, icon);
+
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
         bounds.union(place.geometry.viewport);
@@ -127,5 +129,27 @@ MapWrapper.prototype.createMarker = function(place, icon){
   console.log(newMarker);
   this.markers.push(newMarker);
 }
+
+MapWrapper.prototype.createUserMarker = function(place, icon){
+  var userMarker = new google.maps.Marker({
+    map: this.googleMap,
+    icon: icon,
+    title: place.name,
+    position: place.geometry.location
+  });
+  console.log(userMarker);
+  this.newMarkers.push(userMarker);
+}
+
+MapWrapper.prototype.removeUserMarker = function(){
+  if(this.newMarkers.length >= 1){
+    var last = this.newMarkers.pop();
+    last.setMap(null);
+  }else{
+    console.log("nothing to remove");
+  }
+};
+
+
 
 module.exports = MapWrapper;
