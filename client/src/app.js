@@ -99,9 +99,10 @@ var app = function() {
   popup.style.zIndex = -1;
   var foreground = document.getElementById("foreground");
   foreground.classList = "vanish";
-  // var url = "/bars";
-  // makeRequest(url, requestComplete);
+  var url = "/bars";
+  makeRequest(url, requestComplete);
 });
+
 };
 
 window.addEventListener("load", app);
