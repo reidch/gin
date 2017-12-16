@@ -19,9 +19,11 @@ var requestComplete = function(){
 var populateMap = function(){
   var container = document.getElementById('map');
   var center = { lat: 55.856843, lng: -4.244117 };
-  var zoom = 10;
+  var zoom = 15;
 
   mainMap = new MapWrapper(container, center, zoom);
+
+  mainMap.userLocation();
 
 }
 
