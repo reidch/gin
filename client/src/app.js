@@ -101,6 +101,10 @@ var app = function() {
   popup.style.zIndex = -1;
   var foreground = document.getElementById("foreground");
   foreground.classList = "vanish";
+  var background = document.getElementById("background");
+  background.style.zIndex = -1;
+  var map = document.getElementById("map-container");
+  map.style.zIndex = 1;
 
 });
 
