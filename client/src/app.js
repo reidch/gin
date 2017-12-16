@@ -45,12 +45,12 @@ var populateList = function(data) {
 };
 // create the bar list data and append to the header
 var createBarData = function(bar) {
-  var barUl = document.getElementById("list-header")
+  var barUl = document.getElementById("bar-list")
   var barLi = document.createElement("li-bar");
-  barLi.append(createBarName(bar.name));
-  barLi.append(createBarAddress(bar.address));
-  barLi.append(createBarDescription(bar.description));
-  barLi.append(createThumbnail(bar.image));
+  barLi.appendChild(createBarName(bar.name));
+  barLi.appendChild(createBarAddress(bar.address));
+  barLi.appendChild(createBarDescription(bar.description));
+  barLi.appendChild(createThumbnail(bar.image));
   barUl.append(barLi);
 }
 
