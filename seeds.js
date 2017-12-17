@@ -41,7 +41,7 @@ var bars = [
     rating: 3,
 		description: "A relative newcomer to Glasgow (est.2016), with a stylish art-deco inspired interior, The Spiritualist has over 75 gins on its menu - with an impressive 400 spirits overall!",
 		website: "http://www.thespiritualistglasgow.com/",
-		image: "https://files.list.co.uk/images/2017/03/29/begin-glasgow-gin-bar-byres-road1-ne-lst237403_thumb.jpg",
+		image: "https://foodanddrink.scotsman.com/wp-content/uploads/2016/03/Raised-beds-1.jpg",
 		top3_gins: [{
 			name: "Audemus Pink Pepper",
 			mixer: "Walter Gregor's Handmade Scottish Tonic",
@@ -134,7 +134,7 @@ var bars = [
     rating: 5,
 		description: "Smart, cellar-like restaurant and gin bar with mood lighting and vaulted ceiling. Specialising in steak, with over 100 gins including a dozen or so produced in Scotland. Located underneath the Gordon Street entrance to Glasgow Central Station.",
 		website: "https://www.alstonglasgow.co.uk/",
-		image: "http://ananyah.com/wp-content/uploads/2014/05/%C2%A9Renzo-Mazzolini-Alston-Bar-and-Beef-The-Bar-3.jpg",
+		image: "https://media-cdn.tripadvisor.com/media/photo-s/05/dc/19/a9/alston-bar-beef.jpg",
 		top3_gins: [{
 			name: "Old Raj Red",
 			mixer: "Fever-Tree Tonic Water",
@@ -286,7 +286,7 @@ var bars = [
     rating: 5,
     description: "Scottish Gin Award's Gin-bar of the year, 2017. One of the largest gin collections in the world, with over 300 to choose from!",
     website: "http://fiftysixnorth.co.uk/",
-    image: "",
+    image: "https://bestbarsuk.files.wordpress.com/2014/06/56-north-whole-room.jpg",
     top3_gins: [{
       name: "Orkney Gin Co. Mikkelmas",
       mixer: "Bon Accord tonic",
@@ -305,10 +305,40 @@ var bars = [
     twitter_last_tweet: [],
     social_media_links: {facebook: "https://www.facebook.com/56edinburgh/", instagram: "https://www.instagram.com/56northedinburgh/", twitter: "https://twitter.com/fiftysixnorth?lang=en"},
     reviews: [],
-    theme: "Intimate booths",
+    theme: "Modern",
     opening_times: {open: "11:00", closed: "01:00"},
     phone_number: "0131 662 8860"
   },
+  {name: "Juniper",
+   coords: { lat:  55.953318, lng: -3.190827,
+   address: "20 Princes Street, Edinburgh, EH2 2AN",
+   location: "Edinburgh",
+   rating: 2,
+   description: "Chic hotel bar with panoramic views over the old town skyline. Over 50 gins on offer, specialising in Scottish",
+   website: "https://www.juniperedinburgh.co.uk/",
+   image: "https://media.timeout.com/images/102519372/image.jpg",
+   top3_gins: [{
+     name: "Eden Mills Love Gin",
+     mixer: "Fever-Tree tonic",
+     price: 8.50
+   },
+   {
+     name: "Edinburgh Gin Cannonball",
+     mixer: "Fentimans Rose Lemonade",
+     price: 8.50
+   },
+   {
+     name: "Arbikie AK's Gin",
+     mixer: "Fever-Tree Ginger Ale",
+     price: 8.50
+   }],
+   twitter_last_tweet: [],
+   social_media_links: {facebook: "", instagram: "https://www.instagram.com/juniperedin/", twitter: "https://twitter.com/juniperedin?lang=en"},
+   reviews: [],
+   theme: "Modern chic, with views",
+   opening_times: {open: "12:00", closed: "11:30"},
+   phone_number: "0131 652 7370"
+ },
 ];
 
 
