@@ -279,6 +279,36 @@ var bars = [
      opening_times: {open: "10:00", closed: "00:00"},
      phone_number: "0131 228 5596"
    },
+   {name: "56 North",
+    coords: { lat:  55.944085, lng: -3.18512,
+    address: "56 North, 2 West Crosscauseway, Edinburgh, EH8 9JP",
+    location: "Edinburgh",
+    rating: 5,
+    description: "Scottish Gin Award's Gin-bar of the year, 2017. One of the largest gin collections in the world, with over 300 to choose from!",
+    website: "http://fiftysixnorth.co.uk/",
+    image: "",
+    top3_gins: [{
+      name: "Orkney Gin Co. Mikkelmas",
+      mixer: "Bon Accord tonic",
+      price: 6.50
+    },
+    {
+      name: "Strathearn Classic Citrus",
+      mixer: "Fever-Tree Aromatic tonic",
+      price: 5.75
+    },
+    {
+      name: "Loch Ness",
+      mixer: "Fever-Tree tonic",
+      price: 6.95
+    }],
+    twitter_last_tweet: [],
+    social_media_links: {facebook: "https://www.facebook.com/56edinburgh/", instagram: "https://www.instagram.com/56northedinburgh/", twitter: "https://twitter.com/fiftysixnorth?lang=en"},
+    reviews: [],
+    theme: "Intimate booths",
+    opening_times: {open: "11:00", closed: "01:00"},
+    phone_number: "0131 662 8860"
+  },
 ];
 
 
