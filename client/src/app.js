@@ -55,15 +55,35 @@ var populateList = function(data) {
 };
 // create the bar list data and append to the header
 var createBarData = function(bar) {
+  var list = document.getElementById("bar-list");
+  var completeBar = document.createElement("div");
+  completeBar.id = "bar-complete";
+  // create the visible elements
+  var barVisible = document.createElement("div");
+  barVisible.id = ("bar-list-item");
+  barVisible.appendChild(createBarDetails(bar.name, bar.address, bar.rating));
+  barVisible.appendChild(createThumbnail(bar.image));
+  completeBar.append(barVisible);
+
+  //create and append the hidden elements
+  var hiddenBar = document.createElement("div");
+  hiddenBar.id = "hidden-elements"
+  hiddenBar.appendChild(createHiddenDetails(bar.description));
+  completeBar.append(hiddenBar);
+  list.append(completeBar);
+  // show/hide hidden panel
+  completeBar.addEventListener("click", function(){
+    this.classList.toggle("hidden-details-panel");
+  }.bind(this));
+  
   var barUl = document.getElementById("bar-list")
   var barLi = document.createElement("li-bar");
-
+  // connect list item to associated map marker
+  // recenter map and open infoWindow when list item is clicked
   barLi.addEventListener('click', function(){
     mainMap.centerFunction(bar.coords);
     mainMap.markers.forEach(function(marker){
-
       if (marker.id === bar._id){
-
           mainMap.click(marker);
       }
     });
@@ -75,26 +95,36 @@ var createBarData = function(bar) {
   barUl.append(barLi);
 };
 
-var createBarName = function(name) {
-  var nameElement = document.createElement("bar-name");
+var createBarDetails = function(name, address, rating) {
+  var detailsElement = document.createElement("div");
+  detailsElement.id = "bar-details";
+  detailsElement.className = "bar-list-detail";
+  var nameElement = document.createElement("div");
+  nameElement.className = "bar-name";
   nameElement.append(name);
-  return nameElement;
-};
-
-var createBarAddress = function(address) {
-  var addressElement = document.createElement("bar-address");
+  var addressElement = document.createElement("div");
+  addressElement.className = "bar-address";
   addressElement.append(address);
-  return addressElement;
+  var ratingElement = document.createElement("div");
+  ratingElement.className = "bar-rating";
+  ratingElement.append(rating);
+  detailsElement.append(nameElement);
+  detailsElement.append(addressElement);
+  detailsElement.append(ratingElement);
+  return detailsElement;
 };
 
-var createBarDescription = function(description) {
-  var descriptionElement = document.createElement("bar-description");
-  descriptionElement.append(description);
-  return descriptionElement;
+var createHiddenDetails = function(description) {
+  var hiddenElement = document.createElement("div");
+  hiddenElement.id = "hidden-details-panel";
+  hiddenElement.className = "hidden-details";
+  hiddenElement.append(description);
+  return hiddenElement;
 };
 
 var createThumbnail = function(image) {
-  var thumbnailElement = document.createElement("bar-thumbnail");
+  var thumbnailElement = document.createElement("div");
+  thumbnailElement.id = "bar-thumbnail";
   var pic = document.createElement("img");
   thumbnailElement.appendChild(pic);
   pic.src = image;
