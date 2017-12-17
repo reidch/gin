@@ -249,6 +249,36 @@ var bars = [
       opening_times: {open: "17:00", closed: "01:00"},
       phone_number: "0131 656 2811"
     },
+    {name: "The Jolly Botanist",
+     coords: { lat:  55.946202, lng: -3.215983,
+     address: "256-260 Morrison Street, Edinburgh, EH3 8DT",
+     location: "Edinburgh",
+     rating: 4,
+     description: "Award-winning gin bar and diner and the Haymarket area. A choice of over 72 types of gin",
+     website: "http://thejollybotanist.co.uk/",
+     image: "http://thejollybotanist.co.uk/wp-content/uploads/2014/05/dsc_5049_1.jpg",
+     top3_gins: [{
+       name: "Electric Spirit Co",
+       mixer: "Thomas Henry",
+       price: 6.00
+     },
+     {
+       name: "Minus 33",
+       mixer: "Fentimans",
+       price: 6.50
+     },
+     {
+       name: "Blackwood's Vintage",
+       mixer: "Fever-Tree",
+       price: 7.00
+     }],
+     twitter_last_tweet: [],
+     social_media_links: {facebook: "https://en-gb.facebook.com/The-Jolly-Botanist-737872066276096/", instagram: "https://www.instagram.com/thejollybotanist/", twitter: ""},
+     reviews: [],
+     theme: "Victorian-style",
+     opening_times: {open: "10:00", closed: "00:00"},
+     phone_number: "0131 228 5596"
+   },
 ];
 
 
