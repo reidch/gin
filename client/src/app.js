@@ -57,6 +57,17 @@ var populateList = function(data) {
 var createBarData = function(bar) {
   var barUl = document.getElementById("bar-list")
   var barLi = document.createElement("li-bar");
+
+  barLi.addEventListener('click', function(){
+    mainMap.centerFunction(bar.coords);
+    mainMap.markers.forEach(function(marker){
+
+      if (marker.id === bar._id){
+
+          mainMap.click(marker);
+      }
+    });
+  });
   barLi.appendChild(createBarName(bar.name));
   barLi.appendChild(createBarAddress(bar.address));
   barLi.appendChild(createBarDescription(bar.description));
@@ -113,8 +124,6 @@ var app = function() {
   console.log(this);
 });
 };
-
-
 
 
 window.addEventListener("load", app);
