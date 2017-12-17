@@ -9,6 +9,7 @@ var MapWrapper = function(container, coords, zoom){
 
 MapWrapper.prototype.addMarker = function(bar){
   var marker = new google.maps.Marker({
+    id: bar._id,
     position: bar.coords,
     icon: "/icons/gnss.png",
     infoWindowOpen: false,
@@ -43,6 +44,10 @@ MapWrapper.prototype.addMarker = function(bar){
   }.bind(this));
 
 }
+MapWrapper.prototype.click = function(marker){
+
+  google.maps.event.trigger(marker, 'click');
+};
 
 MapWrapper.prototype.centerFunction = function(coords){
   var marker = new google.maps.Marker({
@@ -53,7 +58,7 @@ MapWrapper.prototype.centerFunction = function(coords){
   });
   this.googleMap.setCenter(coords);
   this.googleMap.setMapTypeId('hybrid');
-  this.googleMap.setZoom(10);
+  this.googleMap.setZoom(15);
 }
 
 // might be worth making this a callback onLoad???
