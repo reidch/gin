@@ -75,12 +75,10 @@ var createBarData = function(bar) {
   completeBar.addEventListener("click", function(){
     this.classList.toggle("hidden-details-panel");
   }.bind(this));
-  
-  var barUl = document.getElementById("bar-list")
-  var barLi = document.createElement("li-bar");
+
   // connect list item to associated map marker
   // recenter map and open infoWindow when list item is clicked
-  barLi.addEventListener('click', function(){
+  completeBar.addEventListener('click', function(){
     mainMap.centerFunction(bar.coords);
     mainMap.markers.forEach(function(marker){
       if (marker.id === bar._id){
@@ -88,11 +86,7 @@ var createBarData = function(bar) {
       }
     });
   });
-  barLi.appendChild(createBarName(bar.name));
-  barLi.appendChild(createBarAddress(bar.address));
-  barLi.appendChild(createBarDescription(bar.description));
-  barLi.appendChild(createThumbnail(bar.image));
-  barUl.append(barLi);
+
 };
 
 var createBarDetails = function(name, address, rating) {
