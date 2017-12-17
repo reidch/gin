@@ -70,12 +70,29 @@ var createBarData = function(bar) {
   hiddenBar.id = "hidden-elements"
   hiddenBar.appendChild(createHiddenDetails(bar.description));
   completeBar.append(hiddenBar);
-
   list.append(completeBar);
-
+  // show/hide hidden panel
   completeBar.addEventListener("click", function(){
     this.classList.toggle("hidden-details-panel");
   }.bind(this));
+  
+  var barUl = document.getElementById("bar-list")
+  var barLi = document.createElement("li-bar");
+  // connect list item to associated map marker
+  // recenter map and open infoWindow when list item is clicked
+  barLi.addEventListener('click', function(){
+    mainMap.centerFunction(bar.coords);
+    mainMap.markers.forEach(function(marker){
+      if (marker.id === bar._id){
+          mainMap.click(marker);
+      }
+    });
+  });
+  barLi.appendChild(createBarName(bar.name));
+  barLi.appendChild(createBarAddress(bar.address));
+  barLi.appendChild(createBarDescription(bar.description));
+  barLi.appendChild(createThumbnail(bar.image));
+  barUl.append(barLi);
 };
 
 var createBarDetails = function(name, address, rating) {
@@ -137,8 +154,6 @@ var app = function() {
   console.log(this);
 });
 };
-
-
 
 
 window.addEventListener("load", app);
