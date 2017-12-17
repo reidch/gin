@@ -219,7 +219,38 @@ var bars = [
       opening_times: {open: "10:00", closed: "00:00"},
       phone_number: "0141 341 6516"
     },
+     {name: "Heads and Tales",
+      coords: { lat: 55.948815, lng: -3.208514},
+      address: "1a Rutland Place, Edinburgh, EH1 2AD",
+      location: "Edinburgh",
+      rating: 5,
+      description: "Scotland-focused gin bar and home to the Edinburgh Distillery. Creative gin-based cocktails - with your own choice of glass, gin and descriptor - shaken by expert mixologists. Timber ceilings and smart armchairs.",
+      website: "http://www.headsandtalesbar.com/",
+      image: "https://media-cdn.tripadvisor.com/media/photo-s/06/9d/b2/01/heads-tails-bar.jpg",
+      top3_gins: [{
+        name: "Edinburgh Seaside Gin",
+        mixer: "Fever-Tree Tonic Water",
+        price: 7.00
+      },
+      {
+        name: "Darnley's View",
+        mixer: "Fever-Tree Tonic Water",
+        price: 6.50
+      },
+      {
+        name: "West Winds Sabre",
+        mixer: "Fever-Tree Mediterranean Tonic Water",
+        price: 7.00
+      }],
+      twitter_last_tweet: [],
+      social_media_links: {facebook: "", instagram: "https://www.instagram.com/headsandtalesbar/", twitter: "https://twitter.com/headsntalesbar"},
+      reviews: [],
+      theme: "Eclectic speakeasy",
+      opening_times: {open: "17:00", closed: "01:00"},
+      phone_number: "0131 656 2811"
+    },
 ];
+
 
 db.bars.insertMany(bars);
 
