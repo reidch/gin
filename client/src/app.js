@@ -15,6 +15,7 @@ var requestComplete = function(){
   console.log(apiData);
   populateMap(apiData);
   populateList(apiData);
+  dropDownMenu();
 };
 
 var populateMap = function(apiData){
@@ -128,6 +129,17 @@ var createThumbnail = function(image) {
   return thumbnailElement;
 };
 
+var dropDownMenu = function(){
+    var drop = document.getElementById("accountbtn");
+    drop.addEventListener("click", function(){
+    document.getElementById("myDropdown").classList.toggle("show");
+  });
+    var dropdowncontent = document.getElementById("myDropdown");
+    dropdowncontent.addEventListener("click", function(){
+    document.getElementById("myDropdown").classList.toggle("show");
+  });
+}
+
 var timingDisplay = function(){
   var background = document.getElementById("background");
   background.style.zIndex = -1;
@@ -146,6 +158,9 @@ var app = function() {
     popup.style.zIndex = -1;
     var foreground = document.getElementById("foreground");
     foreground.classList = "vanish";
+//might need to move this depending on timings
+    var menu = document.querySelector(".dropdown");
+    menu.style.zIndex = 1;
     var timeout = setTimeout(function(){
       timingDisplay()}, 4000);
     console.log(this);
