@@ -217,7 +217,7 @@ var createTopGins = function(gins) {
   var ginUl = document.createElement("ul-top-gins");
   for (gin of gins) {
     var currentDrink = document.createElement("li");
-    currentDrink.append(gin.name + " , ");
+    currentDrink.append(gin.name + ", ");
     currentDrink.append(gin.mixer + "   ");
     currentDrink.append("£" + gin.price);
     ginUl.append(currentDrink);
