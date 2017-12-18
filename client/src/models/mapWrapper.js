@@ -20,7 +20,6 @@ MapWrapper.prototype.addMarker = function(bar){
     id: bar._id,
     position: bar.coords,
     icon: "/icons/gnss.png",
-    infoWindowOpen: false,
     map: this.googleMap
   });
 
@@ -42,6 +41,8 @@ MapWrapper.prototype.addMarker = function(bar){
   });
 
   marker.addListener('click', function(){
+    console.log("marker clicked!");
+    console.log(marker);
     for (var mark of this.markers){
       if (mark.infowindowOpen){
         mark.infowindow.close();
@@ -57,12 +58,6 @@ MapWrapper.prototype.click = function(marker){
 };
 
 MapWrapper.prototype.centerFunction = function(coords){
-  var marker = new google.maps.Marker({
-    position: coords,
-    icon: "/icons/gnss.png",
-    infoWindowOpen: false,
-    map: this.googleMap
-  });
   this.googleMap.setCenter(coords);
   this.googleMap.setZoom(15);
 }
