@@ -129,6 +129,7 @@ var createBarData = function(bar) {
   var hiddenBar = document.createElement("div");
   hiddenBar.className = "hidden-details-panel";
   hiddenBar.appendChild(createHiddenDetails(bar.description));
+  hiddenBar.appendChild(createTopGins(bar.top3_gins));
   completeBar.append(hiddenBar);
   list.append(completeBar);
 
@@ -207,6 +208,22 @@ var createFullImage = function(image) {
   fullImage.appendChild(pic);
   pic.src = image;
   return fullImage;
+};
+
+var createTopGins = function(gins) {
+  var ginList = document.createElement("div");
+  ginList.id = "top-gin-list";
+  ginList.innerText = "Top 3 Gins:";
+  var ginUl = document.createElement("ul-top-gins");
+  for (gin of gins) {
+    var currentDrink = document.createElement("li");
+    currentDrink.append(gin.name + " , ");
+    currentDrink.append(gin.mixer + "   ");
+    currentDrink.append("£" + gin.price);
+    ginUl.append(currentDrink);
+  };
+  ginList.append(ginUl);
+  return ginList;
 };
 
 var dropDownMenu = function(){
