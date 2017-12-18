@@ -316,7 +316,7 @@ var bars = [
    rating: 2,
    description: "Chic hotel bar with panoramic views over the old town skyline. Over 50 gins on offer, specialising in Scottish",
    website: "https://www.juniperedinburgh.co.uk/",
-   image: "/images/juniper.jpg",
+   image: "/images/juniper_edi.jpg",
    top3_gins: [{
      name: "Eden Mills Love Gin",
      mixer: "Fever-Tree Tonic Water",
@@ -432,6 +432,37 @@ var bars = [
      opening_times: {open: "09:00", closed: "01:00"},
      phone_number: "0141 248 1434"
    },
+   {
+      name: "Juniper Gin Bar",
+      coords: { lat: 55.8592428, lng: -4.2539718 },
+      address: "Cranachan Cafe, 2nd Floor, Princess Square, 48 Buchanan Street, Glasgow G1 3JN",
+      location: "Glasgow",
+      rating: 5,
+      description: "An evening hotspot at the top of Princes Square, serving the very best of Scottish craft gin.",
+      website: "https://www.juniper-gin-bar.com/",
+      image: "/images/juniper_gla.jpg",
+      top3_gins: [{
+        name: "Eden Mill Love Gin",
+        mixer: "Fever-Tree Tonic Water",
+        price: 6.50
+      },
+      {
+        name: "Eden Mill Original Gin",
+        mixer: "Fever-Tree Mediterranean Tonic Water",
+        price: 5.50
+      },
+      {
+        name: "Blackwoods Vintage Dry Gin",
+        mixer: "Fever-Tree Tonic Water",
+        price: 6.00
+      }],
+      twitter_last_tweet: [],
+      social_media_links: {facebook: "https://en-gb.facebook.com/JuniperGinBar/", instagram: "", twitter: ""},
+      reviews: [],
+      theme: "Scottish flavour",
+      opening_times: {open: "17:00", closed: "22:30"},
+      phone_number: "0141 248 6257"
+    },
   // {
   //    name: "",
   //    coords: { lat: , lng:  },
