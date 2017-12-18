@@ -16,7 +16,32 @@ var requestComplete = function(){
   populateMap(apiData);
   populateList(apiData);
   dropDownMenu();
+  sortList(apiData, "Edinburgh");
+  sortList(apiData, "Glasgow");
 };
+
+var sortList= function(data, place){
+  var selectedPlace = document.getElementById("" + `${place.toLowerCase()}` + "-bars");
+  var selectedPlaceText = selectedPlace.innerText;
+  selectedPlace.addEventListener("click", function(){
+    var sortedBars = [];
+    console.log(place);
+    data.forEach(function(bar){
+      if(bar.location === place){
+        sortedBars.push(bar);
+    }
+      var originalList = document.getElementById("bar-list");
+      removeChildNodes(originalList);
+      populateList(sortedBars);
+    });
+  });
+}
+
+var removeChildNodes = function(node){
+  while (node.hasChildNodes()) {
+    node.removeChild(node.lastChild);
+  }
+}
 
 var populateMap = function(apiData){
   var bars = apiData;
@@ -140,7 +165,11 @@ var dropDownMenu = function(){
   });
 }
 
+
+
 var timingDisplay = function(){
+  var menu = document.querySelector(".dropdown");
+  menu.style.zIndex = 1;
   var background = document.getElementById("background");
   background.style.zIndex = -1;
   var map = document.getElementById("map-container");
@@ -158,13 +187,11 @@ var app = function() {
     popup.style.zIndex = -1;
     var foreground = document.getElementById("foreground");
     foreground.classList = "vanish";
-//might need to move this depending on timings
-    var menu = document.querySelector(".dropdown");
-    menu.style.zIndex = 1;
     var timeout = setTimeout(function(){
       timingDisplay()}, 4000);
     console.log(this);
   });
+
 };
 
 
