@@ -57,24 +57,24 @@ var populateList = function(data) {
 var createBarData = function(bar) {
   var list = document.getElementById("bar-list");
   var completeBar = document.createElement("div");
-  completeBar.id = "bar-complete";
+  completeBar.className = "bar-complete";
   // create the visible elements
   var barVisible = document.createElement("div");
-  barVisible.id = ("bar-list-item");
+  barVisible.className = "bar-list-item";
   barVisible.appendChild(createBarDetails(bar.name, bar.address, bar.rating));
   barVisible.appendChild(createThumbnail(bar.image));
   completeBar.append(barVisible);
 
   //create and append the hidden elements
   var hiddenBar = document.createElement("div");
-  hiddenBar.id = "hidden-elements"
+  hiddenBar.className = "hidden-details-panel";
   hiddenBar.appendChild(createHiddenDetails(bar.description));
   completeBar.append(hiddenBar);
   list.append(completeBar);
   // show/hide hidden panel
-  // completeBar.addEventListener("click", function(){
-  //   this.classList.toggle("hidden-details-panel");
-  // });
+  completeBar.addEventListener("click", function(){
+    hiddenBar.classList.toggle("hidden-details-panel");
+  });
 
   // connect list item to associated map marker
   // recenter map and open infoWindow when list item is clicked
@@ -92,7 +92,7 @@ var createBarData = function(bar) {
 
 var createBarDetails = function(name, address, rating) {
   var detailsElement = document.createElement("div");
-  detailsElement.id = "bar-details";
+  detailsElement.className = "bar-details";
   detailsElement.className = "bar-list-detail";
   var nameElement = document.createElement("div");
   nameElement.className = "bar-name";
@@ -102,7 +102,9 @@ var createBarDetails = function(name, address, rating) {
   addressElement.append(address);
   var ratingElement = document.createElement("div");
   ratingElement.className = "bar-rating";
-  ratingElement.append(rating);
+  var star = '\u2605';
+  var stars = new Array(rating + 1).join(star);
+  ratingElement.append(stars);
   detailsElement.append(nameElement);
   detailsElement.append(addressElement);
   detailsElement.append(ratingElement);
@@ -111,7 +113,7 @@ var createBarDetails = function(name, address, rating) {
 
 var createHiddenDetails = function(description) {
   var hiddenElement = document.createElement("div");
-  hiddenElement.id = "hidden-details-panel";
+  hiddenElement.className = "hidden-details-panel";
   hiddenElement.className = "hidden-details";
   hiddenElement.append(description);
   return hiddenElement;

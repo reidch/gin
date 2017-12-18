@@ -7,9 +7,13 @@ html {
 }
 
 #page-title {
-  background-color: purple;
+  background-color: #FDFDFD;
   height: 110px;
   width: 100%;
+}
+#logo {
+  width: 180px;
+  /* height: 100px; */
 }
 
 main {
@@ -31,7 +35,8 @@ main {
 
 /* possible links to other content */
 #site-navigation {
-  background-color: blue;
+  background-color: #55828B;
+  border-bottom: 5px solid #E0E5E8;
   height: 50px;
   width: 100%;
   z-index: 0;
@@ -47,22 +52,21 @@ main {
 
 /* section for right hand of screen */
 #bar-container {
-  border: 3px solid red;
-  /* background-color: red; */
+  border: 3px solid #E0E5E8;
   height: 850px;
   width: 50%;
 }
 
 /* top image or welcome message */
 #list-header {
-  background-color: grey;
+  background-color: white;
   height: 35%;
   width: 100%;
 }
 
 /* holder for list items */
 #bar-list {
-  background-color: #D6F3F4;
+  border: 3px solid #E0E5E8;
   height: 65%;
   width: 100%;
   overflow: scroll;
@@ -70,14 +74,17 @@ main {
   flex-direction: column;
 }
 
-#bar-list-item {
+.bar-list-item {
+  background-color: #FDFDFD;
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
   justify-content: space-between;
+  border-top: solid 3px #74226c;
+  padding: 15px 10px;
 }
 
-#bar-details {
+.bar-details {
   display: flex;
   flex-direction: column;
   color: black;
@@ -87,7 +94,7 @@ main {
   text-align: left;
 }
 
-#hidden-details-panel {
+.hidden-details-panel {
   padding: 0 18px;
   background-color: white;
   color: black;
@@ -96,18 +103,20 @@ main {
   visibility: hidden;
 }
 
-/* .hidden-details {
-  padding: 0 18px;
-  background-color: white;
-  color: black;
-  height: 0px;
-  visibility: hidden;
-  overflow: hidden;
-} */
+.hidden-details {
+  padding: 20px 8px;
+  font-size: 18px;
+}
+
+.bar-name {
+  font-size: 20px;
+}
+
 
 #bar-thumbnail img {
-  width: 120px;
-  height: 120px;
-  padding-right: 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  margin-right: 10px;
   align-self: flex-end;
 }
