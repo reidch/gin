@@ -189,3 +189,7 @@ button:focus {
   margin-right: 10px;
   align-self: flex-end;
 }
+
+#search-input {
+  margin: 1.5%;
+}
