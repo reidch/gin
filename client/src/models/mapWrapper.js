@@ -64,7 +64,6 @@ MapWrapper.prototype.centerFunction = function(coords){
     map: this.googleMap
   });
   this.googleMap.setCenter(coords);
-  this.googleMap.setMapTypeId('hybrid');
   this.googleMap.setZoom(15);
 }
 
