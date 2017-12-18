@@ -62,11 +62,6 @@ var populateMap = function(apiData){
   // create new google maps search box from input element
   mainMap.createSearchBox(input);
 
-  var undo = document.getElementById("removeMarker");
-  undo.addEventListener("click", function(){
-    mainMap.removeUserMarker();
-  });
-
   // populate map with bar markers
   bars.forEach(function(bar){
     mainMap.addMarker(bar);
@@ -170,6 +165,7 @@ var createFullImage = function(image) {
     fullImage.removeChild(fullImage.firstChild);
   };
   var pic = document.createElement("img");
+  pic.className = "big-picture";
   fullImage.appendChild(pic);
   pic.src = image;
   return fullImage;
@@ -189,12 +185,14 @@ var dropDownMenu = function(){
 
 
 var timingDisplay = function(){
-  var menu = document.querySelector(".dropdown");
-  menu.style.zIndex = 1;
   var background = document.getElementById("background");
   background.style.zIndex = -1;
   var map = document.getElementById("map-container");
   map.style.zIndex = 1;
+  var menu = document.querySelector(".dropdown");
+  menu.style.zIndex = 1;
+  var btn = document.querySelector(".dropdownbtn");
+  btn.style.zIndex = 1;
 };
 
 var app = function() {
