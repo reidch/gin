@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha client/src/models/specs",
-    "start": "nodemon server.js",
+    "start": "mongo < seeds.js && nodemon server.js",
     "webpack": "cd client && webpack -w"
   },
   "repository": {
