@@ -50,7 +50,6 @@ MapWrapper.prototype.addMarker = function(bar){
 
 }
 MapWrapper.prototype.click = function(marker){
-
   google.maps.event.trigger(marker, 'click');
 };
 
@@ -91,8 +90,7 @@ MapWrapper.prototype.userLocation = function(){
     marker.infowindow.open(this.googleMap, marker);
     // if you want infoWindow open all the time delete next line
     marker.infowindowOpen = true;
-    this.markers.push(marker);
-
+    this.newMarkers.push(marker);
   }.bind(this));
 }
 
@@ -157,8 +155,11 @@ MapWrapper.prototype.removeUserMarker = function(){
 
 MapWrapper.prototype.showRoute = function(map, markers){
   function initMap(map, markers, directionsDisplay) {
-    // console.log(coords);
-    pointA = new google.maps.LatLng(markers[0].getPosition().lat(), markers[0].getPosition().lng()),
+    console.log(this.mainMap.newMarkers);
+    var userLocation = this.mainMap.newMarkers[0].getPosition();
+    console.log("user lat: " + userLocation.lat());
+    console.log("user lng: " + userLocation.lng());
+    pointA = new google.maps.LatLng(userLocation.lat(), userLocation.lng()),
     pointB = new google.maps.LatLng(markers[1].getPosition().lat(), markers[1].getPosition().lng()),
 
     // pointB = new google.maps.LatLng(coords),
