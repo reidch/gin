@@ -559,6 +559,100 @@ var distilleries = [
     opening_times: {open: "09:00", closed: "18:00"},
     phone_number: "01496 850 190"
   },
+  {
+    name: "Lussa Distillery",
+    coords: { lat: 56.026679, lng: -5.77286 },
+    address: "Lussa, Isle of Jura PA60 7XW",
+    location: "Argyll & Bute",
+    rating: 5,
+    description: "Located at Ardlussa, at the remote north end of the Isle of Jura, offering distillery tours by appointment. Run by three women, using 15 local botanicals (including bog myrtle, Scots pine and lemon thyme) and spring water from the Lussa glen.",
+    website: "https://www.lussagin.com/",
+    image: "/images/lussaGin.jpg",
+    top3_gins: [{
+      name: "",
+      mixer: "",
+      price: 0
+    },
+    {
+      name: "",
+      mixer: "",
+      price: 0
+    },
+    {
+      name: "",
+      mixer: "",
+      price: 0
+    }],
+    twitter_last_tweet: [],
+    social_media_links: {facebook: "https://en-gb.facebook.com/lussagin/", instagram: "https://www.instagram.com/lussagin/", twitter: "https://twitter.com/LussaGin"},
+    reviews: [],
+    theme: "",
+    opening_times: {open: "By appt", closed: ""},
+    phone_number: "01496 820323"
+  },
+  {
+    name: "Isle of Harris Distillers",
+    coords: { lat: 57.897603, lng: -6.803976 },
+    address: "Tarbert, Isle of Harris HS3 3DJ",
+    location: "Na h-Eileanan an Iar",
+    rating: 5,
+    description: "Known as the 'Social Distillery' in the beautiful Outer Hebrides, this place prides itself on local engagement and faithfulness to Gaelic culture. Originally set up by 'the Tarbert Ten' - local men and women with a passion for gin - Harris Distillers has since doubled in size, with a 'crofting ethos' of one and all helping out. Tours available.",
+    website: "https://www.harrisdistillery.com/",
+    image: "/images/harrisGin.jpg",
+    top3_gins: [{
+    name: "",
+    mixer: "",
+    price: 0
+  },
+  {
+    name: "",
+    mixer: "",
+    price: 0
+  },
+  {
+    name: "",
+    mixer: "",
+    price: 0
+  }],
+    twitter_last_tweet: [],
+    social_media_links: {facebook: "https://www.facebook.com/isleofharrisdistillers", instagram: "https://www.instagram.com/isleofharrisdistillers/", twitter: "https://twitter.com/harrisdistiller"},
+    reviews: [],
+    theme: "",
+    opening_times: {open: "10:00", closed: "17:00"},
+    phone_number: "01859 502212"
+},
+{
+  name: "Balmenach Distillery",
+  coords: { lat:  57.325408, lng: -3.532107 },
+  address: "Balmenach Distillery, Cromdale PH26 3PF",
+  location: "Highlands",
+  rating: 4,
+  description: "Home to Caorunn gin, this distillery in the rugged heart of the Cairngorm National Park, is one of the oldest in Scotland.",
+  website: "https://www.caorunngin.com/caorunn-gin/scottish-heritage/",
+  image: "/images/caorunn.jpg",
+  top3_gins: [{
+  name: "",
+  mixer: "",
+  price: 0
+},
+{
+  name: "",
+  mixer: "",
+  price: 0
+},
+{
+  name: "",
+  mixer: "",
+  price: 0
+}],
+  twitter_last_tweet: [],
+  social_media_links: {facebook: "", instagram: "https://www.instagram.com/CaorunnGin/", twitter: "https://twitter.com/CaorunnGin"},
+  reviews: [],
+  theme: "",
+  opening_times: {open: "10:30", closed: "14:00"},
+  phone_number: "01479 874933"
+},
+
 ];
 
 db.distilleries.insertMany(distilleries);
