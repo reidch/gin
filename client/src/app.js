@@ -18,6 +18,7 @@ var requestComplete = function(){
   dropDownMenu();
   sortList(apiData, "Edinburgh");
   sortList(apiData, "Glasgow");
+  sortByRating(apiData);
 
 };
 
@@ -43,6 +44,24 @@ var sortDistilleries = function(){
   selectedDistillery.addEventListener("click", function(){
       var url = "/distilleries";
       makeRequest(url, distilleriesRequestComplete);
+  });
+}
+
+var sortByRating = function(data){
+  var sortSelection = document.getElementById("favs");
+  sortSelection.addEventListener("click", function(){
+    console.log(data);
+    var len = data.length;
+    for(var i = len - 1; i >= 0; i--){
+      for(var j=1; j<=i; j++){
+        if(data[j-1].rating > data[j].rating){
+          var temp = data[j - 1];
+          data[j-1] = data[j];
+          data[j] = temp;
+        }
+      }
+    }
+      populateList(data.reverse());
   });
 }
 
