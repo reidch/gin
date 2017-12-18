@@ -62,7 +62,6 @@ main {
 
 /* holder for list items */
 #bar-list {
-  background-color: #D6F3F4;
   height: 65%;
   width: 100%;
   overflow: scroll;
@@ -70,14 +69,15 @@ main {
   flex-direction: column;
 }
 
-#bar-list-item {
+.bar-list-item {
+  background-color: #D6F3F4;
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
   justify-content: space-between;
 }
 
-#bar-details {
+.bar-details {
   display: flex;
   flex-direction: column;
   color: black;
@@ -87,7 +87,7 @@ main {
   text-align: left;
 }
 
-#hidden-details-panel {
+.hidden-details-panel {
   padding: 0 18px;
   background-color: white;
   color: black;
@@ -96,14 +96,6 @@ main {
   visibility: hidden;
 }
 
-/* .hidden-details {
-  padding: 0 18px;
-  background-color: white;
-  color: black;
-  height: 0px;
-  visibility: hidden;
-  overflow: hidden;
-} */
 
 #bar-thumbnail img {
   width: 120px;
