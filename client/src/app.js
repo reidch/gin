@@ -64,8 +64,8 @@ var removeChildNodes = function(node){
 var populateMap = function(apiData){
   var bars = apiData;
   var container = document.getElementById('map');
-  var center = { lat: 55.856843, lng: -4.244117 };
-  var zoom = 15;
+  var center = { lat: 56.740674, lng: -4.2187500 };
+  var zoom = 7;
   mainMap = new MapWrapper(container, center, zoom);
 
   // geolocation
