@@ -169,6 +169,7 @@ MapWrapper.prototype.showRoute = function(map, markers, coords){
     // }
 
     calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+    this.mainMap.distanceMatrix(userLocation, coords);
   };
 
   function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
@@ -188,5 +189,46 @@ MapWrapper.prototype.showRoute = function(map, markers, coords){
   };
   initMap(map, markers, this.directionDisplay);
 }
+
+MapWrapper.prototype.distanceMatrix = function(origin, destination){
+  console.log(origin);
+  console.log(destination);
+  var originLocation = new google.maps.LatLng(origin.lat(), origin.lng());
+  var destinationLocation = new google.maps.LatLng(destination.lat, destination.lng);
+
+  var service = new google.maps.DistanceMatrixService();
+  service.getDistanceMatrix(
+    {
+      origins: [originLocation],
+      destinations: [destinationLocation],
+      travelMode: 'WALKING',
+      // transitOptions: TransitOptions,
+      // drivingOptions: DrivingOptions,
+      unitSystem: google.maps.UnitSystem.IMPERIAL,
+      avoidHighways: true,
+      avoidTolls: true,
+    }, callback);
+
+  function callback(response, status) {
+    if (status == 'OK') {
+      var origins = response.originAddresses;
+      var destinations = response.destinationAddresses;
+
+      for (var i = 0; i < origins.length; i++) {
+        var results = response.rows[i].elements;
+        for (var j = 0; j < results.length; j++) {
+          var element = results[j];
+          var distance = element.distance.text;
+          var duration = element.duration.text;
+          var from = origins[i];
+          var to = destinations[j];
+          console.log("distance: " + distance);
+          console.log("duration: " + duration);
+        }
+      }
+    }
+  }
+}
+
 
 module.exports = MapWrapper;
