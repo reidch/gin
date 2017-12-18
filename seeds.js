@@ -565,7 +565,7 @@ var distilleries = [
     address: "Inverkeilor, Arbroath, Angus DD11 4UZ",
     location: "Angus",
     rating: 2,
-    description: "The home of Kirsty's Gin, Arbikie Highland Estate has been farmed by the same family for four generations. They grow, distil & bottle in a true farm to bottle operation. No visitor centre as yet.",
+    description: "The home of Kirsty's Gin, Arbikie Highland Estate has been farmed by the same family for four generations. They grow, distil & bottle in a true farm-to-bottle operation. No visitor centre as yet.",
     website: "https://www.arbikie.com",
     image: "/images/arbikie.png",
     top3_gins: [{
