@@ -2,7 +2,7 @@ var MapWrapper = require('./models/mapWrapper');
 
 var makeRequest = function(url, callback){
   var request = new XMLHttpRequest();
-  request.open("GET", url)
+  request.open("GET", url);
   request.addEventListener('load', callback);
   request.send();
 };
@@ -18,9 +18,10 @@ var requestComplete = function(){
   dropDownMenu();
   sortList(apiData, "Edinburgh");
   sortList(apiData, "Glasgow");
+
 };
 
-var sortList= function(data, place){
+var sortList = function(data, place){
   var selectedPlace = document.getElementById("" + `${place.toLowerCase()}` + "-bars");
   var selectedPlaceText = selectedPlace.innerText;
   selectedPlace.addEventListener("click", function(){
@@ -30,11 +31,28 @@ var sortList= function(data, place){
       if(bar.location === place){
         sortedBars.push(bar);
     }
-      var originalList = document.getElementById("bar-list");
-      removeChildNodes(originalList);
+      // var originalList = document.getElementById("bar-list");
+      // removeChildNodes(originalList);
       populateList(sortedBars);
     });
   });
+}
+
+var sortDistilleries = function(){
+  var selectedDistillery = document.getElementById("distilleries");
+  selectedDistillery.addEventListener("click", function(){
+      var url = "/distilleries";
+      makeRequest(url, distilleriesRequestComplete);
+  });
+}
+
+var distilleriesRequestComplete = function(){
+  if (this.status !== 200) return console.log("distillery request failed");
+  console.log("Distillery Request successful")
+  var jsonString = this.responseText;
+  var apiData = JSON.parse(jsonString);
+  console.log(apiData);
+  populateList(apiData);
 }
 
 var removeChildNodes = function(node){
@@ -69,6 +87,8 @@ var populateMap = function(apiData){
 };
 
 var populateList = function(data) {
+  var originalList = document.getElementById("bar-list");
+  removeChildNodes(originalList);
   var ul = document.getElementById("#list-header");
   for (var bar of data) {
     createBarData(bar);
@@ -97,6 +117,9 @@ var createBarData = function(bar) {
   completeBar.addEventListener("click", function(){
     // show/hide hidden panel
     hiddenBar.classList.toggle("hidden-details-panel");
+    // var rect = completeBar.getBoundingClientRect();
+    // console.log(rect.top, rect.left, rect.right);
+    // window.scrollTo(0, rect.right);
     createFullImage(bar.image);
   });
 
@@ -176,6 +199,7 @@ var dropDownMenu = function(){
     dropdowncontent.addEventListener("click", function(){
     document.getElementById("myDropdown").classList.toggle("show");
   });
+  sortDistilleries();
 };
 
 

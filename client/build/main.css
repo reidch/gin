@@ -54,7 +54,8 @@ main {
 
 /* section for right hand of screen */
 #bar-container {
-  border: 3px solid #E0E5E8;
+  border-top: 3px solid #E0E5E8;
+  border-bottom: none;
   height: 850px;
   width: 50%;
 }
@@ -151,6 +152,10 @@ button:focus {
   justify-content: space-between;
   border-top: solid 3px #74226c;
   padding: 15px 10px;
+}
+.bar-list-item:hover {
+  background-color: #b7d6c7;
+  cursor: pointer;
 }
 
 .bar-details {
