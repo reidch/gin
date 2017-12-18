@@ -53,7 +53,6 @@ var distilleriesRequestComplete = function(){
   var apiData = JSON.parse(jsonString);
   console.log(apiData);
   populateList(apiData);
-  populateMap(apiData);
 }
 
 var removeChildNodes = function(node){
