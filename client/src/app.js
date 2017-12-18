@@ -72,19 +72,22 @@ var createBarData = function(bar) {
   hiddenBar.appendChild(createHiddenDetails(bar.description));
   completeBar.append(hiddenBar);
   list.append(completeBar);
-  // show/hide hidden panel
-  completeBar.addEventListener("click", function(){
-    hiddenBar.classList.toggle("hidden-details-panel");
-  });
 
-  // connect list item to associated map marker
-  // recenter map and open infoWindow when list item is clicked
-  completeBar.addEventListener('click', function(){
+  // list item click event listener
+  completeBar.addEventListener("click", function(){
+    // show/hide hidden panel
+    hiddenBar.classList.toggle("hidden-details-panel");
+    // get directions from geolocation to clicked bar
+    mainMap.showRoute(mainMap.googleMap, mainMap.markers, bar.coords);
+    console.log("passed showRoute");
+    // center map on clicked bar's marker
     mainMap.centerFunction(bar.coords);
+    console.log("passed centerFunction");
+    // simulate click on the bar marker to open it's infoWindow
     mainMap.markers.forEach(function(marker){
       if (marker.id === bar._id){
+        console.log("simulating marker click");
         mainMap.click(marker);
-        mainMap.showRoute(mainMap.googleMap, mainMap.markers, marker);
       }
     });
   });
