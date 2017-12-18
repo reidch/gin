@@ -223,3 +223,18 @@ button:focus {
   font-weight: 900;
   margin-top: 0;
 }
+
+#top-gin-list {
+  display: flex;
+  flex-direction: column;
+}
+
+ul-top-gins {
+  list-style-type:none;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  font-size: 0.85em;
+}
