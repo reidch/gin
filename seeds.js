@@ -536,7 +536,7 @@ var distilleries = [
     rating: 5,
     description: "Progressive Hebridean distillers, producing The Botanist, the first and only Islay dry gin. A rare expression of the heart and soul of its remote Scottish island home. Tours available.",
     website: "https://www.thebotanist.com/distillery-tours",
-    image: "/images/juniper_gla.jpg",
+    image: "/images/bruichladdich.jpg",
     top3_gins: [{
       name: "",
       mixer: "",
@@ -553,7 +553,7 @@ var distilleries = [
       price: 0
     }],
     twitter_last_tweet: [],
-    social_media_links: {facebook: "", instagram: "", twitter: ""},
+    social_media_links: {facebook: "https://www.facebook.com/thebotanistgin", instagram: "https://www.instagram.com/thebotanistgin/", twitter: "https://twitter.com/thebotanistgin"},
     reviews: [],
     theme: "",
     opening_times: {open: "09:00", closed: "18:00"},
@@ -568,7 +568,7 @@ var distilleries = [
     description: "Located at Ardlussa, at the remote north end of the Isle of Jura, offering distillery tours by appointment. Run by three women, using 15 local botanicals (including bog myrtle, Scots pine and lemon thyme) and spring water from the Lussa glen.",
     website: "https://www.lussagin.com/",
     image: "/images/lussaGin.jpg",
-    top3_gins: [{
+     top3_gins: [{
       name: "",
       mixer: "",
       price: 0
@@ -589,6 +589,37 @@ var distilleries = [
     theme: "",
     opening_times: {open: "By appt", closed: ""},
     phone_number: "01496 820323"
+  },
+  {
+    name: "Eden Mill Distillery",
+    coords: { lat: 56.3637817, lng: -2.892139 },
+    address: "Main Street, Guardbridge, St Andrews KY16 0US",
+    location: "Fife",
+    rating: 5,
+    description: "Craft distillery where they produce their Original, Love, Hop, Oak and Golf gins by hand using copper pot stills. Tours available.",
+    website: "https://www.edenmill.com/gin-cat-1",
+    image: "/images/eden_mill.jpg",
+    top3_gins: [{
+      name: "",
+      mixer: "",
+      price: 0
+    },
+    {
+      name: "",
+      mixer: "",
+      price: 0
+    },
+    {
+      name: "",
+      mixer: "",
+      price: 0
+    }],
+    twitter_last_tweet: [],
+    social_media_links: {facebook: "https://www.facebook.com/edenmillstandrews/", instagram: "https://www.instagram.com/edenmill/", twitter: "https://twitter.com/edenmill"},
+    reviews: [],
+    theme: "",
+    opening_times: {open: "09:00", closed: "18:00"},
+    phone_number: "01334 834038"
   },
   {
     name: "Isle of Harris Distillers",
@@ -652,7 +683,37 @@ var distilleries = [
   opening_times: {open: "10:30", closed: "14:00"},
   phone_number: "01479 874933"
 },
-
+  {  
+    name: "Arbikie Distillery",
+    coords: { lat: 56.6646247, lng: -2.5270057 },
+    address: "Inverkeilor, Arbroath, Angus DD11 4UZ",
+    location: "Angus",
+    rating: 2,
+    description: "The home of Kirsty's Gin, Arbikie Highland Estate has been farmed by the same family for four generations. They grow, distil & bottle in a true farm-to-bottle operation. No visitor centre as yet.",
+    website: "https://www.arbikie.com",
+    image: "/images/arbikie.png",
+    top3_gins: [{
+      name: "",
+      mixer: "",
+      price: 0
+    },
+    {
+      name: "",
+      mixer: "",
+      price: 0
+    },
+    {
+      name: "",
+      mixer: "",
+      price: 0
+    }],
+    twitter_last_tweet: [],
+    social_media_links: {facebook: "https://www.facebook.com/arbikie", instagram: "", twitter: "https://twitter.com/arbikie"},
+    reviews: [],
+    theme: "",
+    opening_times: {open: "By appt", closed: ""},
+    phone_number: "01241 830770"
+  },
 ];
 
 db.distilleries.insertMany(distilleries);
