@@ -86,7 +86,6 @@ var createBarData = function(bar) {
       }
     });
     mainMap.showRoute(mainMap.googleMap, mainMap.markers);
-    debugger;
   });
 
 };
