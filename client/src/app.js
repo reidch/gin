@@ -74,6 +74,7 @@ var createBarData = function(bar) {
   // show/hide hidden panel
   completeBar.addEventListener("click", function(){
     hiddenBar.classList.toggle("hidden-details-panel");
+    createFullImage(bar.image);
   });
 
   // connect list item to associated map marker
@@ -127,6 +128,17 @@ var createThumbnail = function(image) {
   pic.src = image;
   return thumbnailElement;
 };
+
+var createFullImage = function(image) {
+  var fullImage = document.getElementById("list-header");
+  while (fullImage.firstChild) {
+    fullImage.removeChild(fullImage.firstChild);
+  };
+  var pic = document.createElement("img");
+  fullImage.appendChild(pic);
+  pic.src = image;
+  return fullImage;
+}
 
 var timingDisplay = function(){
   var background = document.getElementById("background");
