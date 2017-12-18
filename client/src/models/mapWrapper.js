@@ -7,7 +7,10 @@ var MapWrapper = function(container, coords, zoom){
   this.newMarkers = [];
   this.directionDisplay = new google.maps.DirectionsRenderer({
     map: this.googleMap,
-    suppressMarkers: true
+    markerOptions: {
+      zIndex: -15,
+      visible: false
+    }
   });
   this.directionsShowing = true;
 };
@@ -153,14 +156,16 @@ MapWrapper.prototype.removeUserMarker = function(){
   }
 };
 
-MapWrapper.prototype.showRoute = function(map, markers){
+MapWrapper.prototype.showRoute = function(map, markers, marker){
+  console.log(marker);
   function initMap(map, markers, directionsDisplay) {
     console.log(this.mainMap.newMarkers);
     var userLocation = this.mainMap.newMarkers[0].getPosition();
     console.log("user lat: " + userLocation.lat());
     console.log("user lng: " + userLocation.lng());
     pointA = new google.maps.LatLng(userLocation.lat(), userLocation.lng()),
-    pointB = new google.maps.LatLng(markers[1].getPosition().lat(), markers[1].getPosition().lng()),
+    console.log(marker);
+    pointB = new google.maps.LatLng(marker.getPosition().lat(), marker.getPosition().lng()),
 
     // pointB = new google.maps.LatLng(coords),
         // Instantiate a directions service.
