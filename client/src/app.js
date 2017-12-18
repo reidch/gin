@@ -148,6 +148,7 @@ var createFullImage = function(image) {
   fullImage.appendChild(pic);
   pic.src = image;
   return fullImage;
+};
 
 var dropDownMenu = function(){
     var drop = document.getElementById("accountbtn");
@@ -158,7 +159,7 @@ var dropDownMenu = function(){
     dropdowncontent.addEventListener("click", function(){
     document.getElementById("myDropdown").classList.toggle("show");
   });
-}
+};
 
 var timingDisplay = function(){
   var background = document.getElementById("background");
