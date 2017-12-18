@@ -5,7 +5,12 @@ var MapWrapper = function(container, coords, zoom){
   });
   this.markers = [];
   this.newMarkers = [];
-}
+  this.directionDisplay = new google.maps.DirectionsRenderer({
+    map: this.googleMap,
+    suppressMarkers: true
+  });
+  this.directionsShowing = true;
+};
 
 MapWrapper.prototype.addMarker = function(bar){
   var marker = new google.maps.Marker({
@@ -149,5 +154,52 @@ MapWrapper.prototype.removeUserMarker = function(){
     console.log("nothing to remove");
   }
 };
+
+MapWrapper.prototype.showRoute = function(map, markers){
+  function initMap(map, markers, directionsDisplay) {
+    // console.log(coords);
+    pointA = new google.maps.LatLng(markers[0].getPosition().lat(), markers[0].getPosition().lng()),
+    pointB = new google.maps.LatLng(markers[1].getPosition().lat(), markers[1].getPosition().lng()),
+
+    // pointB = new google.maps.LatLng(coords),
+        // Instantiate a directions service.
+    directionsService = new google.maps.DirectionsService;
+    //
+    //
+    // // get route from A to B
+    // var waypoints = [];
+    // for(marker of markers){
+    //   var coords = new google.maps.LatLng(marker.getPosition().lat(), marker.getPosition().lng());
+    //   var waypoint = {location: coords, stopover: false};
+    //   waypoints.push(waypoint);
+    // }
+
+    calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+  };
+
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+    directionsService.route({
+      origin: pointA,
+      destination: pointB,
+      avoidTolls: true,
+      avoidHighways: false,
+      travelMode: google.maps.TravelMode.WALKING
+    }, function (response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        console.log(directionsDisplay);
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+  };
+  if (this.directionsShowing){
+    initMap(map, markers, this.directionDisplay);
+    this.directionsShowing = false;
+  }else{
+    this.directionDisplay.set('directions', null);
+    this.directionsShowing = true;
+  };
+}
 
 module.exports = MapWrapper;
