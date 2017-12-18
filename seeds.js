@@ -683,7 +683,7 @@ var distilleries = [
   opening_times: {open: "10:30", closed: "14:00"},
   phone_number: "01479 874933"
 },
-  {  
+  {
     name: "Arbikie Distillery",
     coords: { lat: 56.6646247, lng: -2.5270057 },
     address: "Inverkeilor, Arbroath, Angus DD11 4UZ",
@@ -714,6 +714,38 @@ var distilleries = [
     opening_times: {open: "By appt", closed: ""},
     phone_number: "01241 830770"
   },
+  {
+   name: "Saxa Vord Distillery",
+   coords: { lat: 60.7980966, lng: -0.8246658 },
+   address: "Unst, Haroldswick, Shetland Islands ZE2 9EF",
+   location: "Highlands & Islands",
+   rating: 3,
+   description: "The most northern distillery in Scotland produces Shetland Reel gin, inspired by the islands. Tours available.",
+   website: "https://www.shetlandreel.com/distillery",
+   image: "/images/shetland_reel.png",
+   top3_gins: [{
+     name: "",
+     mixer: "",
+     price: 0
+   },
+   {
+     name: "",
+     mixer: "",
+     price: 0
+   },
+   {
+     name: "",
+     mixer: "",
+     price: 0
+   }],
+   twitter_last_tweet: [],
+   social_media_links: {facebook: "https://www.facebook.com/shetlandreel", instagram: "https://www.instagram.com/shetlandreel/", twitter: "https://twitter.com/shetlandreelgin"},
+   reviews: [],
+   theme: "",
+   opening_times: {open: "12:00", closed: "17:00"},
+   phone_number: "01957 711 217"
+ },
+
 ];
 
 db.distilleries.insertMany(distilleries);
