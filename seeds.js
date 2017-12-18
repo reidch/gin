@@ -10,7 +10,7 @@ var bars = [
       rating: 4,
   		description: "An oasis in the Merchant City, serving Gin Flights and exquisite cocktails, using gins sourced from all over the world.",
   		website: "https://www.gin71.com/aboutgmc/",
-  		image: "/images/gin71merchant.jpg",
+  		image: "/images/gin71_merchant.jpg",
   		top3_gins: [{
   			name: "Rock Rose",
   			mixer: "Fever-Tree Tonic Water",
@@ -103,7 +103,7 @@ var bars = [
       rating: 5,
   		description: "Glasgow's first dedicated gin bar. A beautiful space to enjoy carefully selected gins.",
   		website: "https://www.gin71.com/aboutgla/",
-  		image: "/images/gin71glasgow.jpg",
+  		image: "/images/gin71_gla.jpg",
   		top3_gins: [{
   			name: "Eden Mill Love",
   			mixer: "Fever-Tree Tonic Water",
@@ -314,7 +314,7 @@ var bars = [
    address: "20 Princes Street, Edinburgh EH2 2AN",
    location: "Edinburgh",
    rating: 2,
-   description: "Chic hotel bar with panoramic views over the old town skyline. Over 50 gins on offer, specialising in Scottish",
+   description: "Chic hotel bar with panoramic views over the old town skyline. Over 50 gins on offer, specialising in Scottish gins.",
    website: "https://www.juniperedinburgh.co.uk/",
    image: "/images/juniper_edi.jpg",
    top3_gins: [{
@@ -463,6 +463,37 @@ var bars = [
       opening_times: {open: "17:00", closed: "22:30"},
       phone_number: "0141 248 6257"
     },
+    {
+  		name: "Gin71 Edinburgh",
+  		coords: { lat: 55.9509842, lng: -3.2063403 },
+  		address: "9 South Charlotte Street, Edinburgh EH2 4AS",
+  		location: "Edinburgh",
+      rating: 4,
+  		description: "Located in the city's West End, serving Gin Flights and exquisite cocktails, using gins sourced from all over the world.",
+  		website: "https://www.gin71.com/locations/aboutedi/",
+  		image: "/images/gin71_edi.jpg",
+  		top3_gins: [{
+  			name: "Rock Rose",
+  			mixer: "Fever-Tree Tonic Water",
+  			price: 8.50
+  		},
+  		{
+  			name: "Isle of Harris",
+  			mixer: "Gin71 Lemon & Rosemary Tonic",
+  			price: 9.50
+  		},
+  		{
+  			name: "Arbikie AK’s Gin",
+  			mixer: "Gin71 Ginger Ale",
+  			price: 8.50
+  		}],
+  		twitter_last_tweet: [],
+  		social_media_links: {facebook: "https://www.facebook.com/gin71bar", instagram: "https://www.instagram.com/gin71bar/", twitter: "https://twitter.com/Gin71Bar"},
+  		reviews: [],
+  		theme: "Merchant City sophistication",
+  		opening_times: {open: "17:00", closed: "00:00"},
+  		phone_number: "0141 553 2326"
+  	},
   // {
   //    name: "",
   //    coords: { lat: , lng:  },
