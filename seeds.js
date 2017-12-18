@@ -5,10 +5,10 @@ var bars = [
   {
   		name: "Gin71 Merchant City",
   		coords: { lat: 55.8589196, lng: -4.2494644 },
-  		address: "40 Wilson Street, Glasgow, G1 1HD",
+  		address: "40 Wilson Street, Glasgow G1 1HD",
   		location: "Glasgow",
       rating: 4,
-  		description: "",
+  		description: "An oasis in the Merchant City, serving Gin Flights and exquisite cocktails, using gins sourced from all over the world.",
   		website: "https://www.gin71.com/aboutgmc/",
   		image: "/images/gin71merchant.jpg",
   		top3_gins: [{
@@ -36,7 +36,7 @@ var bars = [
     {
 		name: "The Spiritualist",
 		coords: { lat: 55.8590068, lng: -4.2508912},
-		address: "62 Miller Street, Glasgow, G1 1DT",
+		address: "62 Miller Street, Glasgow G1 1DT",
 		location: "Glasgow",
     rating: 3,
 		description: "A relative newcomer to Glasgow (est.2016), with a stylish art-deco inspired interior, The Spiritualist has over 75 gins on its menu - with an impressive 400 spirits overall!",
@@ -67,7 +67,7 @@ var bars = [
     {
     		name: "Slouch",
     		coords: { lat: 55.86454, lng: -4.263899},
-    		address: "203-205 Bath Street, Glasgow, G2 4HZ",
+    		address: "203-205 Bath Street, Glasgow G2 4HZ",
     		location: "Glasgow",
         rating: 3,
     		description: "Laid-back and popular music venue in the centre of Glasgow, with over 30 types of gin and an extensive cocktail list to accompany the nightly performance.",
@@ -98,7 +98,7 @@ var bars = [
     {
   		name: "Gin71 Glasgow",
   		coords: { lat: 55.8632928, lng: -4.2574232 },
-  		address: "71 Renfield Street, Glasgow, G2 1LP",
+  		address: "71 Renfield Street, Glasgow G2 1LP",
   		location: "Glasgow",
       rating: 5,
   		description: "Glasgow's first dedicated gin bar. A beautiful space to enjoy carefully selected gins.",
@@ -129,7 +129,7 @@ var bars = [
     {
 		name: "Alston Bar & Beef",
 		coords: { lat: 55.860348, lng: -4.257733 },
-		address: "79 Gordon Street, Glasgow, G1 3SQ",
+		address: "79 Gordon Street, Glasgow G1 3SQ",
 		location: "Glasgow",
     rating: 5,
 		description: "Smart, cellar-like restaurant and gin bar with mood lighting and vaulted ceiling. Specialising in steak, with over 100 gins including a dozen or so produced in Scotland. Located underneath the Gordon Street entrance to Glasgow Central Station.",
@@ -160,7 +160,7 @@ var bars = [
      {
       name: "The Finnieston",
       coords: { lat: 55.8645981, lng: -4.2842838 },
-      address: "1125 Argyle St, Glasgow, G3 8ND",
+      address: "1125 Argyle St, Glasgow G3 8ND",
   		location: "Glasgow",
       rating: 4,
       description: "Glasgow’s premier Gin bar, located in the thriving heart of Finnieston. Over 60 brands of gin reside on the shelves of The Finnieston, each hand picked for their excellent taste and their ability to mix a fantastic gin cocktail.",
@@ -191,7 +191,7 @@ var bars = [
     {
       name: "beGIN",
       coords: { lat: 55.8776518, lng: -4.2908012},
-      address: "383 Byres Road, Glasgow, G12 8AU",
+      address: "383 Byres Road, Glasgow G12 8AU",
       location: "Glasgow",
       rating: 5,
       description: "Award winning gin bar, serving 68 varieties of gin from around the world. Gin connoisseurs can enjoy a Perfect Serve with the bar's recommended selection of tonic and garnish for each gin or choose from a variety of 12 mixers and 28 garnishes.",
@@ -221,7 +221,7 @@ var bars = [
     },
      {name: "Heads and Tales",
       coords: { lat: 55.948815, lng: -3.208514},
-      address: "1a Rutland Place, Edinburgh, EH1 2AD",
+      address: "1a Rutland Place, Edinburgh EH1 2AD",
       location: "Edinburgh",
       rating: 5,
       description: "Scotland-focused gin bar and home to the Edinburgh Distillery. Creative gin-based cocktails - with your own choice of glass, gin and descriptor - shaken by expert mixologists. Timber ceilings and smart armchairs.",
@@ -251,7 +251,7 @@ var bars = [
     },
     {name: "The Jolly Botanist",
      coords: { lat:  55.946202, lng: -3.215983},
-     address: "256-260 Morrison Street, Edinburgh, EH3 8DT",
+     address: "256-260 Morrison Street, Edinburgh EH3 8DT",
      location: "Edinburgh",
      rating: 4,
      description: "Award-winning gin bar and diner in the Haymarket area. A choice of over 72 types of gin.",
@@ -269,7 +269,7 @@ var bars = [
      },
      {
        name: "Blackwood's Vintage",
-       mixer: "Fever-Tree",
+       mixer: "Fever-Tree Tonic Water",
        price: 7.00
      }],
      twitter_last_tweet: [],
@@ -281,7 +281,7 @@ var bars = [
    },
    {name: "56 North",
     coords: { lat:  55.944085, lng: -3.18512},
-    address: "2 West Crosscauseway, Edinburgh, EH8 9JP",
+    address: "2 West Crosscauseway, Edinburgh EH8 9JP",
     location: "Edinburgh",
     rating: 5,
     description: "Scottish Gin Award's Gin-bar of the year, 2017. One of the largest gin collections in the world, with over 300 to choose from!",
@@ -289,17 +289,17 @@ var bars = [
     image: "/images/56north.jpg",
     top3_gins: [{
       name: "Orkney Gin Co. Mikkelmas",
-      mixer: "Bon Accord tonic",
+      mixer: "Bon Accord Tonic",
       price: 6.50
     },
     {
       name: "Strathearn Classic Citrus",
-      mixer: "Fever-Tree Aromatic tonic",
+      mixer: "Fever-Tree Aromatic Tonic",
       price: 5.75
     },
     {
       name: "Loch Ness",
-      mixer: "Fever-Tree tonic",
+      mixer: "Fever-Tree Tonic Water",
       price: 6.95
     }],
     twitter_last_tweet: [],
@@ -311,7 +311,7 @@ var bars = [
   },
   {name: "Juniper",
    coords: { lat:  55.953318, lng: -3.190827 },
-   address: "20 Princes Street, Edinburgh, EH2 2AN",
+   address: "20 Princes Street, Edinburgh EH2 2AN",
    location: "Edinburgh",
    rating: 2,
    description: "Chic hotel bar with panoramic views over the old town skyline. Over 50 gins on offer, specialising in Scottish",
@@ -319,7 +319,7 @@ var bars = [
    image: "/images/juniper.jpg",
    top3_gins: [{
      name: "Eden Mills Love Gin",
-     mixer: "Fever-Tree tonic",
+     mixer: "Fever-Tree Tonic Water",
      price: 8.50
    },
    {
@@ -342,7 +342,7 @@ var bars = [
  {
     name: "Old Toll Bar",
     coords: { lat: 55.8536192, lng: -4.2789684 },
-    address: "1 Paisley Road West, Glasgow, G51 1LF",
+    address: "1 Paisley Road West, Glasgow G51 1LF",
     location: "Glasgow",
     rating: 4,
     description: "Classic Victorian style bar with original features such as etched windows, mirrors and a beautiful bar gantry stocked with a selection of fine gins. Hosts regular open mic nights.",
@@ -373,7 +373,7 @@ var bars = [
   {
      name: "Citation",
      coords: { lat: 55.858886, lng: -4.2477987 },
-     address: "40 Wilson Street, Glasgow, G1 1HD",
+     address: "40 Wilson Street, Glasgow G1 1HD",
      location: "Glasgow",
      rating: 3,
      description: "Sophisticated venue in the heart of Glasgow's Merchant City where you can enjoy a Perfect Serve made with carefully selected gins and garnishes.",
@@ -403,34 +403,34 @@ var bars = [
    },
   {
      name: "The Anchor Line",
-     coords: { lat: , lng:  },
-     address: ", , ",
+     coords: { lat: 55.8626983, lng: -4.270205 },
+     address: "12 St Vincent Place, Glasgow G1 2DH",
      location: "Glasgow",
      rating: 3,
-     description: "Putting a 21st century spin gin cocktails inspired by the pre and post Prohibition era, as a nod to the history of the Anchor Line building.",
+     description: "Putting a 21st century spin on gin cocktails inspired by the pre and post Prohibition era, as a nod to the history of the Anchor Line building.",
      website: "http://www.theanchorline.co.uk/",
-     image: "",
+     image: "/images/anchor_line.jpg",
      top3_gins: [{
        name: "Aviation",
        mixer: "Fever-Tree Mediterranean Tonic Water",
        price: 7.90
      },
      {
-       name: "",
-       mixer: "",
-       price: 9.50
+       name: "Misty Isle",
+       mixer: "Fever-Tree Mediterranean Tonic Water",
+       price: 9.00
      },
      {
-       name: "",
-       mixer: "",
-       price: 8.50
+       name: "Leopolds",
+       mixer: "Fever-Tree Indian Tonic ",
+       price: 9.00
      }],
      twitter_last_tweet: [],
-     social_media_links: {facebook: "", instagram: "", twitter: ""},
+     social_media_links: {facebook: "https://en-gb.facebook.com/theanchorline/", instagram: "https://www.instagram.com/theanchorline/", twitter: "https://twitter.com/theanchorlinebg?lang=en"},
      reviews: [],
-     theme: "",
-     opening_times: {open: "", closed: ""},
-     phone_number: ""
+     theme: "opulent glamour",
+     opening_times: {open: "09:00", closed: "01:00"},
+     phone_number: "0141 248 1434"
    },
   // {
   //    name: "",
