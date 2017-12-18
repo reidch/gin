@@ -222,6 +222,7 @@ var app = function() {
   makeRequest(url, requestComplete);
   var yes = document.getElementById("yes");
   yes.addEventListener("click", function(){
+    window.scrollTo(0, 0);
     console.log("connected");
     var popup = document.getElementById("popup");
     popup.style.zIndex = -1;
