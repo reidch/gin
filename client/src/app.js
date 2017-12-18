@@ -82,10 +82,10 @@ var createBarData = function(bar) {
     mainMap.centerFunction(bar.coords);
     mainMap.markers.forEach(function(marker){
       if (marker.id === bar._id){
-          mainMap.click(marker);
+        mainMap.click(marker);
+        mainMap.showRoute(mainMap.googleMap, mainMap.markers, marker);
       }
     });
-    mainMap.showRoute(mainMap.googleMap, mainMap.markers);
   });
 
 };
