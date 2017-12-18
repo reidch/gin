@@ -30,10 +30,10 @@ MapWrapper.prototype.addMarker = function(bar){
   var contentString = '<div id="content">'+
   '<div id="bodyContent">'+
   // `<h3 id="bar-name">${bar.rating}</h3>` +
-  `<h3 class="bar-name">${bar.name}</h3>` +
-  `<h4 class="bar-rating">${stars}</h4>`+
-  `<h5 class="open-time">Opens: ${bar.opening_times.open}</h5>`+
-  `<h5 class="closed-time">Closes: ${bar.opening_times.closed}</h5>`+
+  `<h3 class="infoW-bar-name">${bar.name}</h3>` +
+  `<h4 class="infoW-bar-rating">${stars}</h4>`+
+  `<h5 class="infoW-open-time">Opens: ${bar.opening_times.open}</h5>`+
+  `<h5 class="infoW-closed-time">Closes: ${bar.opening_times.closed}</h5>`+
   '</div>'+
   '</div>';
   marker.infowindow = new google.maps.InfoWindow({
