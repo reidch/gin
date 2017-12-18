@@ -22,8 +22,8 @@ var populateMap = function(apiData){
   var container = document.getElementById('map');
   var center = { lat: 55.856843, lng: -4.244117 };
   var zoom = 15;
-
   mainMap = new MapWrapper(container, center, zoom);
+
   // geolocation
   mainMap.userLocation();
   // search box
@@ -72,27 +72,22 @@ var createBarData = function(bar) {
   completeBar.append(hiddenBar);
   list.append(completeBar);
   // show/hide hidden panel
-  completeBar.addEventListener("click", function(){
-    this.classList.toggle("hidden-details-panel");
-  }.bind(this));
-  
-  var barUl = document.getElementById("bar-list")
-  var barLi = document.createElement("li-bar");
+  // completeBar.addEventListener("click", function(){
+  //   this.classList.toggle("hidden-details-panel");
+  // });
+
   // connect list item to associated map marker
   // recenter map and open infoWindow when list item is clicked
-  barLi.addEventListener('click', function(){
+  completeBar.addEventListener('click', function(){
     mainMap.centerFunction(bar.coords);
     mainMap.markers.forEach(function(marker){
       if (marker.id === bar._id){
           mainMap.click(marker);
       }
     });
+    mainMap.showRoute(mainMap.googleMap, mainMap.markers);
   });
-  barLi.appendChild(createBarName(bar.name));
-  barLi.appendChild(createBarAddress(bar.address));
-  barLi.appendChild(createBarDescription(bar.description));
-  barLi.appendChild(createThumbnail(bar.image));
-  barUl.append(barLi);
+
 };
 
 var createBarDetails = function(name, address, rating) {
@@ -143,16 +138,16 @@ var app = function() {
   var url = "/bars";
   makeRequest(url, requestComplete);
   var yes = document.getElementById("yes");
-    yes.addEventListener("click", function(){
-  console.log("connected");
-  var popup = document.getElementById("popup");
-  popup.style.zIndex = -1;
-  var foreground = document.getElementById("foreground");
-  foreground.classList = "vanish";
-  var timeout = setTimeout(function(){
-    timingDisplay()}, 4000);
-  console.log(this);
-});
+  yes.addEventListener("click", function(){
+    console.log("connected");
+    var popup = document.getElementById("popup");
+    popup.style.zIndex = -1;
+    var foreground = document.getElementById("foreground");
+    foreground.classList = "vanish";
+    var timeout = setTimeout(function(){
+      timingDisplay()}, 4000);
+    console.log(this);
+  });
 };
 
 
