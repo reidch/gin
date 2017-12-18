@@ -77,10 +77,18 @@ var createBarData = function(bar) {
   completeBar.addEventListener("click", function(){
     // show/hide hidden panel
     hiddenBar.classList.toggle("hidden-details-panel");
+    createFullImage(bar.image);
+  });
+
+  // connect list item to associated map marker
+  // recenter map and open infoWindow when list item is clicked
+  completeBar.addEventListener('click', function(){
+
     // get directions from geolocation to clicked bar
     mainMap.showRoute(mainMap.googleMap, mainMap.markers, bar.coords);
     console.log("passed showRoute");
     // center map on clicked bar's marker
+
     mainMap.centerFunction(bar.coords);
     console.log("passed centerFunction");
     // simulate click on the bar marker to open it's infoWindow
@@ -91,7 +99,6 @@ var createBarData = function(bar) {
       }
     });
   });
-
 };
 
 var createBarDetails = function(name, address, rating) {
@@ -131,6 +138,16 @@ var createThumbnail = function(image) {
   pic.src = image;
   return thumbnailElement;
 };
+
+var createFullImage = function(image) {
+  var fullImage = document.getElementById("list-header");
+  while (fullImage.firstChild) {
+    fullImage.removeChild(fullImage.firstChild);
+  };
+  var pic = document.createElement("img");
+  fullImage.appendChild(pic);
+  pic.src = image;
+  return fullImage;
 
 var dropDownMenu = function(){
     var drop = document.getElementById("accountbtn");
