@@ -78,15 +78,15 @@ var createBarData = function(bar) {
 
   // connect list item to associated map marker
   // recenter map and open infoWindow when list item is clicked
-  // completeBar.addEventListener('click', function(){
-  //   mainMap.centerFunction(bar.coords);
-  //   mainMap.markers.forEach(function(marker){
-  //     if (marker.id === bar._id){
-  //         mainMap.click(marker);
-  //     }
-  //   });
-  //   mainMap.showRoute(mainMap.googleMap, mainMap.markers);
-  // });
+  completeBar.addEventListener('click', function(){
+    mainMap.centerFunction(bar.coords);
+    mainMap.markers.forEach(function(marker){
+      if (marker.id === bar._id){
+          mainMap.click(marker);
+      }
+    });
+    mainMap.showRoute(mainMap.googleMap, mainMap.markers);
+  });
 
 };
 
@@ -102,7 +102,9 @@ var createBarDetails = function(name, address, rating) {
   addressElement.append(address);
   var ratingElement = document.createElement("div");
   ratingElement.className = "bar-rating";
-  ratingElement.append(rating);
+  var star = '\u2605';
+  var stars = new Array(rating + 1).join(star);
+  ratingElement.append(stars);
   detailsElement.append(nameElement);
   detailsElement.append(addressElement);
   detailsElement.append(ratingElement);
