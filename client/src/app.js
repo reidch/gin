@@ -97,23 +97,33 @@ var createBarData = function(bar) {
   hiddenBar.appendChild(createHiddenDetails(bar.description));
   completeBar.append(hiddenBar);
   list.append(completeBar);
-  // show/hide hidden panel
+
+  // list item click event listener
   completeBar.addEventListener("click", function(){
+    // show/hide hidden panel
     hiddenBar.classList.toggle("hidden-details-panel");
+    createFullImage(bar.image);
   });
 
   // connect list item to associated map marker
   // recenter map and open infoWindow when list item is clicked
   completeBar.addEventListener('click', function(){
+
+    // get directions from geolocation to clicked bar
+    mainMap.showRoute(mainMap.googleMap, mainMap.markers, bar.coords);
+    console.log("passed showRoute");
+    // center map on clicked bar's marker
+
     mainMap.centerFunction(bar.coords);
+    console.log("passed centerFunction");
+    // simulate click on the bar marker to open it's infoWindow
     mainMap.markers.forEach(function(marker){
       if (marker.id === bar._id){
+        console.log("simulating marker click");
         mainMap.click(marker);
-        mainMap.showRoute(mainMap.googleMap, mainMap.markers, marker);
       }
     });
   });
-
 };
 
 var createBarDetails = function(name, address, rating) {
@@ -154,6 +164,17 @@ var createThumbnail = function(image) {
   return thumbnailElement;
 };
 
+var createFullImage = function(image) {
+  var fullImage = document.getElementById("list-header");
+  while (fullImage.firstChild) {
+    fullImage.removeChild(fullImage.firstChild);
+  };
+  var pic = document.createElement("img");
+  fullImage.appendChild(pic);
+  pic.src = image;
+  return fullImage;
+};
+
 var dropDownMenu = function(){
     var drop = document.getElementById("accountbtn");
     drop.addEventListener("click", function(){
@@ -163,7 +184,7 @@ var dropDownMenu = function(){
     dropdowncontent.addEventListener("click", function(){
     document.getElementById("myDropdown").classList.toggle("show");
   });
-}
+};
 
 
 
