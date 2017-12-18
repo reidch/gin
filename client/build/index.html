@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="launch.css">
   <title>Gin</title>
   <script src="bundle.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Spectral+SC:400,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Spectral+SC:400,600" rel="stylesheet">
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places"async defer></script>
 </head>
 <body>
@@ -37,20 +37,19 @@
         </section>
         <section id="bar-container">
           <div id="list-header">
-            <button id="removeMarker">testing undo</button>
-
-
-            <div class="dropdown">
-              <button class="dropdownbtn" id="accountbtn"></button>
-                <div id="myDropdown" class="dropdown-content">
-                  <h4 id="glasgow-bars">Glasgow</h4>
-                  <h4 id="edinburgh-bars">Edinburgh</h4>
-                  <h4 id="distilleries">Distilleries</h4>
-                  <h4 id="favs">Rating High-Low</h4>
-                </div>
-            </div>
-
           </div>
+          <div class="dropdown">
+
+            <button class="dropdownbtn" id="accountbtn">Sort By</button>
+        
+            <div id="myDropdown" class="dropdown-content">
+              <h4 id="glasgow-bars">Glasgow</h4>
+              <h4 id="edinburgh-bars">Edinburgh</h4>
+              <h4 id="distilleries">Distilleries</h4>
+              <h4 id="favs">Rating High-Low</h4>
+            </div>
+          </div>
+
           <div id="bar-list"></div>
         </section>
       </main>
