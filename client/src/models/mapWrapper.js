@@ -155,16 +155,16 @@ MapWrapper.prototype.removeUserMarker = function(){
   }
 };
 
-MapWrapper.prototype.showRoute = function(map, markers, marker){
-  console.log(marker);
+MapWrapper.prototype.showRoute = function(map, markers, coords){
+  console.log("coords: " + coords);
   function initMap(map, markers, directionsDisplay) {
     console.log(this.mainMap.newMarkers);
     var userLocation = this.mainMap.newMarkers[0].getPosition();
     console.log("user lat: " + userLocation.lat());
     console.log("user lng: " + userLocation.lng());
     pointA = new google.maps.LatLng(userLocation.lat(), userLocation.lng()),
-    console.log(marker);
-    pointB = new google.maps.LatLng(marker.getPosition().lat(), marker.getPosition().lng()),
+    console.log("coords: " + coords.lat);
+    pointB = new google.maps.LatLng(coords.lat, coords.lng),
 
     // pointB = new google.maps.LatLng(coords),
         // Instantiate a directions service.
@@ -198,13 +198,8 @@ MapWrapper.prototype.showRoute = function(map, markers, marker){
       }
     });
   };
-  if (this.directionsShowing){
-    initMap(map, markers, this.directionDisplay);
-    this.directionsShowing = false;
-  }else{
-    this.directionDisplay.set('directions', null);
-    this.directionsShowing = true;
-  };
+  initMap(map, markers, this.directionDisplay);
+  this.directionDisplay.set('directions', null);
 }
 
 module.exports = MapWrapper;
