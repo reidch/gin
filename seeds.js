@@ -250,7 +250,7 @@ var bars = [
       phone_number: "0131 656 2811"
     },
     {name: "The Jolly Botanist",
-     coords: { lat:  55.946202, lng: -3.215983,
+     coords: { lat:  55.946202, lng: -3.215983},
      address: "256-260 Morrison Street, Edinburgh, EH3 8DT",
      location: "Edinburgh",
      rating: 4,
@@ -280,7 +280,7 @@ var bars = [
      phone_number: "0131 228 5596"
    },
    {name: "56 North",
-    coords: { lat:  55.944085, lng: -3.18512,
+    coords: { lat:  55.944085, lng: -3.18512},
     address: "56 North, 2 West Crosscauseway, Edinburgh, EH8 9JP",
     location: "Edinburgh",
     rating: 5,
@@ -310,7 +310,7 @@ var bars = [
     phone_number: "0131 662 8860"
   },
   {name: "Juniper",
-   coords: { lat:  55.953318, lng: -3.190827,
+   coords: { lat:  55.953318, lng: -3.190827 },
    address: "20 Princes Street, Edinburgh, EH2 2AN",
    location: "Edinburgh",
    rating: 2,
