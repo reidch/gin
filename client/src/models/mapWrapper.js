@@ -73,7 +73,7 @@ MapWrapper.prototype.userLocation = function(){
     var coords = {lat: position.coords.latitude, lng: position.coords.longitude};
     this.googleMap.setCenter(coords);
     this.googleMap.setMapTypeId('roadmap');
-    this.googleMap.setZoom(15);
+    this.googleMap.setZoom(14);
     var marker = new google.maps.Marker({
       position: coords,
       icon: "/icons/user-location.png",
@@ -156,14 +156,9 @@ MapWrapper.prototype.removeUserMarker = function(){
 };
 
 MapWrapper.prototype.showRoute = function(map, markers, coords){
-  console.log("coords: " + coords);
   function initMap(map, markers, directionsDisplay) {
-    console.log(this.mainMap.newMarkers);
     var userLocation = this.mainMap.newMarkers[0].getPosition();
-    console.log("user lat: " + userLocation.lat());
-    console.log("user lng: " + userLocation.lng());
     pointA = new google.maps.LatLng(userLocation.lat(), userLocation.lng()),
-    console.log("coords: " + coords.lat);
     pointB = new google.maps.LatLng(coords.lat, coords.lng),
 
     // pointB = new google.maps.LatLng(coords),
@@ -191,7 +186,6 @@ MapWrapper.prototype.showRoute = function(map, markers, coords){
       travelMode: google.maps.TravelMode.WALKING
     }, function (response, status) {
       if (status == google.maps.DirectionsStatus.OK) {
-        console.log(directionsDisplay);
         directionsDisplay.setDirections(response);
       } else {
         window.alert('Directions request failed due to ' + status);
@@ -199,7 +193,6 @@ MapWrapper.prototype.showRoute = function(map, markers, coords){
     });
   };
   initMap(map, markers, this.directionDisplay);
-  this.directionDisplay.set('directions', null);
 }
 
 module.exports = MapWrapper;
