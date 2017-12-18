@@ -313,7 +313,7 @@ var bars = [
  coords: { lat:  55.953318, lng: -3.190827 },
  address: "20 Princes Street, Edinburgh EH2 2AN",
  location: "Edinburgh",
- rating: 2,
+ rating: 3,
  description: "Chic hotel bar with panoramic views over the old town skyline. Over 50 gins on offer, specialising in Scottish gins.",
  website: "https://www.juniperedinburgh.co.uk/",
  image: "/images/juniper_edi.jpg",

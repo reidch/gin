@@ -39,3 +39,13 @@ app.get("/bars/_id", function(req, res){
     res.json(results);
   });
 });
+
+
+app.get("/distilleries", function(req, res){
+  db.collection("distilleries").find().toArray(function(err, results){
+    if(err){
+      return console.log(err);
+    }
+    res.json(results);
+  });
+});
