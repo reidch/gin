@@ -198,3 +198,28 @@ button:focus {
 #search-input {
   margin: 1.5%;
 }
+
+
+/* Google Map info window styling */
+
+.infoW-bar-name {
+  font-family: "Spectral SC", serif;
+  color: purple;
+  margin-bottom: 5px;
+}
+
+.infoW-bar-rating {
+  margin: 0;
+}
+
+.infoW-open-time {
+  font-family: "Spectral SC", serif;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+.infoW-closed-time {
+  font-family: "Spectral SC", serif;
+  font-weight: 900;
+  margin-top: 0;
+}
