@@ -106,15 +106,11 @@ var createBarData = function(bar) {
 
     // get directions from geolocation to clicked bar
     mainMap.showRoute(mainMap.googleMap, mainMap.markers, bar.coords);
-    console.log("passed showRoute");
     // center map on clicked bar's marker
-
     mainMap.centerFunction(bar.coords);
-    console.log("passed centerFunction");
     // simulate click on the bar marker to open it's infoWindow
     mainMap.markers.forEach(function(marker){
       if (marker.id === bar._id){
-        console.log("simulating marker click");
         mainMap.click(marker);
       }
     });
