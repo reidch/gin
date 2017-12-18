@@ -77,7 +77,7 @@ MapWrapper.prototype.userLocation = function(){
     this.googleMap.setZoom(15);
     var marker = new google.maps.Marker({
       position: coords,
-      icon: "/icons/gnss.png",
+      icon: "/icons/user-location.png",
       infoWindowOpen: false,
       map: this.googleMap
     });
