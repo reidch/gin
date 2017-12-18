@@ -15,6 +15,7 @@ var requestComplete = function(){
   console.log(apiData);
   populateMap(apiData);
   populateList(apiData);
+  dropDownMenu();
 };
 
 var populateMap = function(apiData){
@@ -71,8 +72,10 @@ var createBarData = function(bar) {
   hiddenBar.appendChild(createHiddenDetails(bar.description));
   completeBar.append(hiddenBar);
   list.append(completeBar);
-  // show/hide hidden panel
+
+  // list item click event listener
   completeBar.addEventListener("click", function(){
+    // show/hide hidden panel
     hiddenBar.classList.toggle("hidden-details-panel");
     createFullImage(bar.image);
   });
@@ -80,15 +83,22 @@ var createBarData = function(bar) {
   // connect list item to associated map marker
   // recenter map and open infoWindow when list item is clicked
   completeBar.addEventListener('click', function(){
+
+    // get directions from geolocation to clicked bar
+    mainMap.showRoute(mainMap.googleMap, mainMap.markers, bar.coords);
+    console.log("passed showRoute");
+    // center map on clicked bar's marker
+
     mainMap.centerFunction(bar.coords);
+    console.log("passed centerFunction");
+    // simulate click on the bar marker to open it's infoWindow
     mainMap.markers.forEach(function(marker){
       if (marker.id === bar._id){
+        console.log("simulating marker click");
         mainMap.click(marker);
-        mainMap.showRoute(mainMap.googleMap, mainMap.markers, marker);
       }
     });
   });
-
 };
 
 var createBarDetails = function(name, address, rating) {
@@ -138,6 +148,16 @@ var createFullImage = function(image) {
   fullImage.appendChild(pic);
   pic.src = image;
   return fullImage;
+
+var dropDownMenu = function(){
+    var drop = document.getElementById("accountbtn");
+    drop.addEventListener("click", function(){
+    document.getElementById("myDropdown").classList.toggle("show");
+  });
+    var dropdowncontent = document.getElementById("myDropdown");
+    dropdowncontent.addEventListener("click", function(){
+    document.getElementById("myDropdown").classList.toggle("show");
+  });
 }
 
 var timingDisplay = function(){
@@ -158,6 +178,9 @@ var app = function() {
     popup.style.zIndex = -1;
     var foreground = document.getElementById("foreground");
     foreground.classList = "vanish";
+//might need to move this depending on timings
+    var menu = document.querySelector(".dropdown");
+    menu.style.zIndex = 1;
     var timeout = setTimeout(function(){
       timingDisplay()}, 4000);
     console.log(this);

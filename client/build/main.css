@@ -1,6 +1,8 @@
-/* * {
-  border: 1px solid black;
-} */
+
+
+body, button {
+  font-family: "Spectral SC", serif;
+}
 
 html {
     height: 100%;
@@ -69,6 +71,68 @@ main {
   width: 100%;
 }
 
+/* styling dropdown */
+/* removes the ugly blue colour on focus */
+button:focus {
+  outline: 0;
+}
+
+.dropdownbtn {
+    /* background-color: #87bba2; */
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    /* makes the cursor look like a wee hand */
+    cursor: pointer;
+    z-index: -1;
+}
+
+.dropdownbtn:hover, .dropdownbtn:focus {
+    background-color: #D3E6DD;
+}
+
+.dropdown {
+    border: solid 1px black;
+    position: relative;
+    display: inline-block;
+    z-index: -1;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    min-height: 300px;
+    /* overflow: auto; */
+  /* awesome shadow effect */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+/* z-index indicates the stack order of elements. greater = in front of lower. only works if element is
+positioned = absolute/relative/fixed */
+    z-index: -1;
+    -webkit-transition: visibility 0.5s ease-in 0.5s, opacity 0.5s ease-in;
+}
+
+.show {
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
+  /* makes the menu persist until user clicks somewhere else */
+  transition-delay: 0s;
+}
+
+.dropdown-content h4 {
+    color: black;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown p:hover {
+  background-color: #f1f1f1
+}
+
 /* holder for list items */
 #bar-list {
   border: 3px solid #E0E5E8;
@@ -116,7 +180,6 @@ main {
 .bar-name {
   font-size: 20px;
 }
-
 
 #bar-thumbnail img {
   width: 100px;
