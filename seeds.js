@@ -559,6 +559,37 @@ var distilleries = [
     opening_times: {open: "09:00", closed: "18:00"},
     phone_number: "01496 850 190"
   },
+  {
+    name: "Bruichladdich Distillery",
+    coords: { lat: 55.765731, lng: -6.3631744 },
+    address: "Inverkeilor, Arbroath, Angus DD11 4UZ",
+    location: "Angus",
+    rating: 2,
+    description: "The home of Kirsty's Gin, Arbikie Highland Estate has been farmed by the same family for four generations. They grow, distil & bottle in a true farm to bottle operation. No visitor centre as yet.",
+    website: "https://www.arbikie.com",
+    image: "/images/arbikie.png",
+    top3_gins: [{
+      name: "",
+      mixer: "",
+      price: 0
+    },
+    {
+      name: "",
+      mixer: "",
+      price: 0
+    },
+    {
+      name: "",
+      mixer: "",
+      price: 0
+    }],
+    twitter_last_tweet: [],
+    social_media_links: {facebook: "https://www.facebook.com/arbikie", instagram: "", twitter: "https://twitter.com/arbikie"},
+    reviews: [],
+    theme: "",
+    opening_times: {open: "By appt", closed: ""},
+    phone_number: "01241 830770"
+  },
 ];
 
 db.distilleries.insertMany(distilleries);
