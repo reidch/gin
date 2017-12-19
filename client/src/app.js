@@ -128,11 +128,12 @@ var createVenueData = function(venue) {
   // connect list item to associated map marker
   // recenter map and open infoWindow when list item is clicked
 
-  completeBar.addEventListener('click', function(){
+  completeVenue.addEventListener('click', function(){
     if (mainMap.directionInfoWindow.length > 0){
       mainMap.directionInfoWindow.forEach(function(infoWindow){
         infoWindow.close();
       });
+    };
 
     // get directions from geolocation to clicked venue
     mainMap.showRoute(mainMap.googleMap, mainMap.markers, venue.coords);
@@ -145,6 +146,7 @@ var createVenueData = function(venue) {
         mainMap.click(marker);
       }
     });
+
   });
 };
 
