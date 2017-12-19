@@ -4,7 +4,7 @@ body, button {
 }
 
 html {
-    height: 100%;
+  height: 100%;
 }
 
 #page-title {
@@ -159,6 +159,7 @@ button:focus {
   padding: 15px 10px;
   transition: background-color 1.1s;
 }
+
 .venue-list-item:hover {
   background-color: #b7d6c7;
   cursor: pointer;
@@ -210,7 +211,7 @@ button:focus {
 
 .infoW-venue-name {
   font-family: "Spectral SC", serif;
-  color: purple;
+  color: #74226c;
   margin-bottom: 5px;
 }
 
@@ -228,6 +229,11 @@ button:focus {
   font-family: "Spectral SC", serif;
   font-weight: 900;
   margin-top: 0;
+}
+
+#user-loc {
+  font-family: "Spectral SC", serif;
+  color: #74226c;
 }
 
 #top-gin-list {
