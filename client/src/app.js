@@ -28,6 +28,7 @@ var sortList = function(data, place){
   selectedPlace.addEventListener("click", function(){
     var imageHolder = document.getElementById("listImage");
     imageHolder.src = `/images/${place}.jpg`;
+    imageHolder.alt = `Photograph of ${place}`;
     var sortedBars = [];
     data.forEach(function(bar){
       if(bar.location === place){
@@ -62,6 +63,8 @@ var sortDistilleries = function(){
   selectedDistillery.addEventListener("click", function(){
       var imageHolder = document.getElementById("listImage");
       var url = "/distilleries";
+      imageHolder.src = "/images/distilleriesimage-min.jpg";
+      imageHolder.alt = "Scottish landscape";
       imageHolder.src = "/images/distilleriesimage.jpg";
       makeRequest(url, distilleriesRequestComplete);
       mainMap.googleMap.setCenter({ lat: 56.740674, lng: -4.2187500 });
@@ -126,7 +129,7 @@ var createVenueData = function(venue) {
   var venueVisible = document.createElement("div");
   venueVisible.className = "venue-list-item";
   venueVisible.appendChild(createVenueDetails(venue.name, venue.address, venue.rating));
-  venueVisible.appendChild(createThumbnail(venue.image));
+  venueVisible.appendChild(createThumbnail(venue.image, venue.name));
   venueVisible.appendChild(createSocialLinks(venue.social_media_links));
   completeVenue.append(venueVisible);
 
@@ -144,6 +147,10 @@ var createVenueData = function(venue) {
   completeVenue.addEventListener("click", function(){
     // show/hide hidden panel
     hiddenVenue.classList.toggle("hidden-details-panel");
+    // var rect = completeBar.getBoundingClientRect();
+    // console.log(rect.top, rect.left, rect.right);
+    // window.scrollTo(0, rect.right);
+    createFullImage(venue.image, venue.name);
     //reveals more of screen
     window.scrollBy(0, 200);
     createFullImage(venue.image);
@@ -202,18 +209,20 @@ var createHiddenDetails = function(description) {
   return hiddenElement;
 };
 
-var createThumbnail = function(image) {
+var createThumbnail = function(image, name) {
   var thumbnailElement = document.createElement("div");
   thumbnailElement.id = "venue-thumbnail";
   var pic = document.createElement("img");
   thumbnailElement.appendChild(pic);
   pic.src = image;
+  pic.alt = `Photograph of ${name}`;
   return thumbnailElement;
 };
 
-var createFullImage = function(image) {
+var createFullImage = function(image, name) {
   var fullImage = document.getElementById("listImage");
   fullImage.src = image;
+  fullImage.alt = `Photograph of ${name}`;
 };
 
 var createTopGins = function(gins) {
@@ -252,6 +261,7 @@ var createSocialLinks = function(links) {
       linkHref.href = links[media];
       var icon = document.createElement("img");
       icon.src = `/icons/${media}-icon.png`;
+      icon.alt = `Link to ${media}`;
       linkHref.append(icon);
       socialLinks.append(linkHref);
     };
@@ -269,8 +279,6 @@ var dropDownMenu = function(){
     document.getElementById("myDropdown").classList.toggle("show");
   });
 };
-
-
 
 var timingDisplay = function(){
   var background = document.getElementById("background");
