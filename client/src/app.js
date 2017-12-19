@@ -112,6 +112,7 @@ var createVenueData = function(venue) {
   if (venue.top3_gins[0].price !== 0) {
     hiddenVenue.appendChild(createTopGins(venue.top3_gins));
   };
+  hiddenVenue.appendChild(createSocialLinks(venue.social_media_links));
   completeVenue.append(hiddenVenue);
   list.append(completeVenue);
 
@@ -133,20 +134,19 @@ var createVenueData = function(venue) {
       mainMap.directionInfoWindow.forEach(function(infoWindow){
         infoWindow.close();
       });
-    };
 
-    // get directions from geolocation to clicked venue
-    mainMap.showRoute(mainMap.googleMap, mainMap.markers, venue.coords);
+      // get directions from geolocation to clicked venue
+      mainMap.showRoute(mainMap.googleMap, mainMap.markers, venue.coords);
 
-    // center map on clicked bar's marker
-    mainMap.centerFunction(venue.coords);
-    // simulate click on the bar marker to open it's infoWindow
-    mainMap.markers.forEach(function(marker){
-      if (marker.id === venue._id){
-        mainMap.click(marker);
-      }
-    });
-
+      // center map on clicked bar's marker
+      mainMap.centerFunction(venue.coords);
+      // simulate click on the bar marker to open it's infoWindow
+      mainMap.markers.forEach(function(marker){
+        if (marker.id === venue._id){
+          mainMap.click(marker);
+        }
+      });
+    }
   });
 };
 
@@ -220,6 +220,24 @@ var createTopGins = function(gins) {
   };
   ginList.append(ginUl);
   return ginList;
+};
+
+var createSocialLinks = function(links) {
+  var socialLinks = document.createElement("div");
+  socialLinks.id = "social-media-links";
+  var facebookButton = document.createElement("img");
+  facebookButton.id = "facebook-button";
+  facebookButton.src = "/icons/facebook.png";
+  var twitterButton = document.createElement("img");
+  twitterButton.id = "twitter-button";
+  twitterButton.src = "/icons/twitter.png";
+  var instaButton = document.createElement("img");
+  instaButton.id = "insagram-button";
+  instaButton.src = "/icons/instagram.png";
+  socialLinks.append(facebookButton);
+  socialLinks.append(twitterButton);
+  socialLinks.append(instaButton);
+  return socialLinks;
 };
 
 var dropDownMenu = function(){
