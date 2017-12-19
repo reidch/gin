@@ -56,9 +56,9 @@ var sortByRating = function(data){
 
 var sortDistilleries = function(){
   var selectedDistillery = document.getElementById("distilleries");
+  var imageHolder = document.getElementById("listImage");
   selectedDistillery.addEventListener("click", function(){
       var url = "/distilleries";
-      var imageHolder = document.getElementById("listImage");
       imageHolder.src = "/images/distilleriesimage-min.jpg";
       makeRequest(url, distilleriesRequestComplete);
   });
