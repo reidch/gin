@@ -3,6 +3,7 @@ var MapWrapper = function(container, coords, zoom){
     center: coords,
     zoom: zoom
   });
+  this.directionInfoWindow = [];
   this.markers = [];
   this.newMarkers = [];
   this.directionDisplay = new google.maps.DirectionsRenderer({
@@ -40,8 +41,6 @@ MapWrapper.prototype.addMarker = function(bar){
   });
 
   marker.addListener('click', function(){
-    console.log("marker clicked!");
-    console.log(marker);
     for (var mark of this.markers){
       if (mark.infowindowOpen){
         mark.infowindow.close();
@@ -136,7 +135,6 @@ MapWrapper.prototype.createMarker = function(place, icon, array){
     title: place.name,
     position: place.geometry.location
   });
-  console.log(newMarker);
   array.push(newMarker);
 }
 
@@ -154,12 +152,9 @@ MapWrapper.prototype.showRoute = function(map, markers, coords){
     var userLocation = this.mainMap.newMarkers[0].getPosition();
     pointA = new google.maps.LatLng(userLocation.lat(), userLocation.lng()),
     pointB = new google.maps.LatLng(coords.lat, coords.lng),
-
-    // pointB = new google.maps.LatLng(coords),
-        // Instantiate a directions service.
+    // Instantiate a directions service.
     directionsService = new google.maps.DirectionsService;
-    //
-    //
+
     // // get route from A to B
     // var waypoints = [];
     // for(marker of markers){
@@ -169,7 +164,6 @@ MapWrapper.prototype.showRoute = function(map, markers, coords){
     // }
 
     calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
-    this.mainMap.distanceMatrix(userLocation, coords);
   };
 
   function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
@@ -182,6 +176,7 @@ MapWrapper.prototype.showRoute = function(map, markers, coords){
     }, function (response, status) {
       if (status == google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(response);
+        this.mainMap.distanceMatrix(pointA, pointB, response);
       } else {
         window.alert('Directions request failed due to ' + status);
       }
@@ -190,26 +185,23 @@ MapWrapper.prototype.showRoute = function(map, markers, coords){
   initMap(map, markers, this.directionDisplay);
 }
 
-MapWrapper.prototype.distanceMatrix = function(origin, destination){
-  console.log(origin);
-  console.log(destination);
-  var originLocation = new google.maps.LatLng(origin.lat(), origin.lng());
-  var destinationLocation = new google.maps.LatLng(destination.lat, destination.lng);
-
+MapWrapper.prototype.distanceMatrix = function(origin, destination, response){
+  var routeResponse = response;
   var service = new google.maps.DistanceMatrixService();
   service.getDistanceMatrix(
     {
-      origins: [originLocation],
-      destinations: [destinationLocation],
+      origins: [origin],
+      destinations: [destination],
       travelMode: 'WALKING',
-      // transitOptions: TransitOptions,
-      // drivingOptions: DrivingOptions,
       unitSystem: google.maps.UnitSystem.IMPERIAL,
       avoidHighways: true,
       avoidTolls: true,
-    }, callback);
+    }, function(response, status){
+      callback(response, status, routeResponse);
+    });
 
-  function callback(response, status) {
+  function callback(response, status, routeResponse) {
+    // adapted from google maps example
     if (status == 'OK') {
       var origins = response.originAddresses;
       var destinations = response.destinationAddresses;
@@ -222,11 +214,19 @@ MapWrapper.prototype.distanceMatrix = function(origin, destination){
           var duration = element.duration.text;
           var from = origins[i];
           var to = destinations[j];
-          console.log("distance: " + distance);
-          console.log("duration: " + duration);
         }
       }
     }
+    var numSteps = routeResponse.routes[0].legs[0].steps.length;
+    if ((numSteps % 2) !== 0){
+      numSteps -= 1;
+    }
+    var step =  numSteps / 2;
+    var directionInfoWindow = new google.maps.InfoWindow();
+    directionInfoWindow.setContent("Walking:<br>" + distance + "<br>" + duration + " ");
+    directionInfoWindow.setPosition(routeResponse.routes[0].legs[0].steps[step].end_location);
+    directionInfoWindow.open(this.mainMap.googleMap);
+    this.mainMap.directionInfoWindow.push(directionInfoWindow);
   }
 }
 

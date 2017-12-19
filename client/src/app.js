@@ -126,7 +126,14 @@ var createBarData = function(bar) {
   // connect list item to associated map marker
   // recenter map and open infoWindow when list item is clicked
   completeBar.addEventListener('click', function(){
-
+    if (mainMap.directionInfoWindow.length > 0){
+      mainMap.directionInfoWindow.forEach(function(infoWindow){
+        infoWindow.close();
+      });
+    }
+    // if (infowindow2 !== undefined){
+    //   infowindow2.close();
+    // }
     // get directions from geolocation to clicked bar
     mainMap.showRoute(mainMap.googleMap, mainMap.markers, bar.coords);
     // center map on clicked bar's marker
