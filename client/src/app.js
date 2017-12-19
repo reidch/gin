@@ -129,6 +129,7 @@ var createVenueData = function(venue) {
   var venueVisible = document.createElement("div");
   venueVisible.className = "venue-list-item";
   venueVisible.appendChild(createVenueDetails(venue.name, venue.address, venue.rating));
+  venueVisible.appendChild(createThumbnail(venue.image));
   venueVisible.appendChild(createThumbnail(venue.image, venue.name));
   venueVisible.appendChild(createSocialLinks(venue.social_media_links));
   completeVenue.append(venueVisible);
@@ -136,6 +137,7 @@ var createVenueData = function(venue) {
   //create and append the hidden elements
   var hiddenVenue = document.createElement("div");
   hiddenVenue.className = "hidden-details-panel";
+  hiddenVenue.appendChild(createSocialLinks(venue.social_media_links));
   hiddenVenue.appendChild(createHiddenDetails(venue.description));
   if (venue.top3_gins[0].price !== 0) {
     hiddenVenue.appendChild(createTopGins(venue.top3_gins));
@@ -259,8 +261,10 @@ var createSocialLinks = function(links) {
       var linkHref = document.createElement("a");
       linkHref.className = `${media}-button`;
       linkHref.href = links[media];
+      linkHref.target = "_blank";
       var icon = document.createElement("img");
       icon.src = `/icons/${media}-icon.png`;
+      icon.className = "social-icon";
       icon.alt = `Link to ${media}`;
       linkHref.append(icon);
       socialLinks.append(linkHref);
@@ -304,7 +308,7 @@ var app = function() {
     var foreground = document.getElementById("foreground");
     foreground.classList = "vanish";
     var timeout = setTimeout(function(){
-      timingDisplay()}, 4000);
+      timingDisplay()}, 2000);
     console.log(this);
   });
 
