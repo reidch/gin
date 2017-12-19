@@ -123,6 +123,7 @@ var createVenueData = function(venue) {
   venueVisible.className = "venue-list-item";
   venueVisible.appendChild(createVenueDetails(venue.name, venue.address, venue.rating));
   venueVisible.appendChild(createThumbnail(venue.image));
+  venueVisible.appendChild(createSocialLinks(venue.social_media_links));
   completeVenue.append(venueVisible);
 
   //create and append the hidden elements
@@ -132,7 +133,6 @@ var createVenueData = function(venue) {
   if (venue.top3_gins[0].price !== 0) {
     hiddenVenue.appendChild(createTopGins(venue.top3_gins));
   };
-  hiddenVenue.appendChild(createSocialLinks(venue.social_media_links));
   completeVenue.append(hiddenVenue);
   list.append(completeVenue);
 
@@ -242,31 +242,17 @@ var createTopGins = function(gins) {
 var createSocialLinks = function(links) {
   var socialLinks = document.createElement("div");
   socialLinks.className = "social-media-links";
-  var facebookLink = document.createElement("a");
-  facebookLink.className = "facebook-button";
-  facebookLink.href = links.facebook;
-  var facebookIcon = document.createElement("img");
-  facebookIcon.src = "/icons/facebook.png";
-  console.log(facebookIcon);
-  facebookLink.append(facebookIcon);
-  socialLinks.append(facebookLink);
-  return socialLinks;
-};
-
-var createSocialLinks = function(links) {
-  var socialLinks = document.createElement("div");
-  socialLinks.className = "social-media-links";
-  for (link in links) {
-    var media = link;
-    var link = document.createElement("a");
-    link.className = `${media}-button`;
-    link.href = link.value;
-    var icon = document.createElement("img");
-    icon.src = `/icons/${media}.png`;
-    console.log(icon);
-    link.append(icon);
-    socialLinks.append(link);
-  }
+  for (var media in links) {
+    if (links[media] !== "") {
+      var linkHref = document.createElement("a");
+      linkHref.className = `${media}-button`;
+      linkHref.href = links[media];
+      var icon = document.createElement("img");
+      icon.src = `/icons/${media}-icon.png`;
+      linkHref.append(icon);
+      socialLinks.append(linkHref);
+    };
+  };
   return socialLinks;
 };
 
