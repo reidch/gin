@@ -493,7 +493,7 @@ phone_number: "0131 652 7370"
   theme: "Merchant City sophistication",
   opening_times: {open: "17:00", closed: "00:00"},
   phone_number: "0141 553 2326"
-},
+}
 ];
 
 var distilleries = [
