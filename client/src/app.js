@@ -221,6 +221,8 @@ var createTopGins = function(gins) {
   for (gin of gins) {
     var currentGin = document.createElement("li");
     currentGin.className = "gin-name";
+    currentGin.style.fontWeight = 600;
+    currentGin.style.color= "#74226c";
     currentGin.innerHTML = gin.name;
     var currentMixer = document.createElement("li");
     currentMixer.className = "mixer-name";
