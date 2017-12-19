@@ -109,7 +109,7 @@ var createVenueData = function(venue) {
   var hiddenVenue = document.createElement("div");
   hiddenVenue.className = "hidden-details-panel";
   hiddenVenue.appendChild(createHiddenDetails(venue.description));
-  if (venue.top3_gins !== 0) {
+  if (venue.top3_gins[0].price !== 0) {
     hiddenVenue.appendChild(createTopGins(venue.top3_gins));
   };
   completeVenue.append(hiddenVenue);
@@ -205,7 +205,6 @@ var createTopGins = function(gins) {
   var ginUl = document.createElement("ul");
   ginUl.className = "gin-ul"
   for (gin of gins) {
-
     var currentGin = document.createElement("li");
     currentGin.className = "gin-name";
     currentGin.innerHTML = gin.name;
@@ -216,7 +215,6 @@ var createTopGins = function(gins) {
     currentPrice.className = "gin-price";
     currentPrice.innerHTML = " £ " + gin.price.toFixed(2);
     ginUl.append(currentGin, currentMixer, currentPrice);
-    
   };
   ginList.append(ginUl);
   return ginList;
