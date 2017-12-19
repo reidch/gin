@@ -435,7 +435,7 @@ phone_number: "0131 652 7370"
 {
   name: "Juniper Gin Bar",
   coords: { lat: 55.859139, lng: -4.254405 },
-  address: "Cranachan Cafe, 2nd Floor, Princes Square, 48 Buchanan Street, Glasgow G1 3JN",
+  address: "Cranachan Cafe, Princes Square, Glasgow G1 3JN",
   location: "Glasgow",
   rating: 3,
   description: "An evening hotspot at the top of Princes Square, serving the very best of Scottish craft gin.",
