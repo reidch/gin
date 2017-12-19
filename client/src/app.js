@@ -149,30 +149,25 @@ var createVenueData = function(venue) {
     createFullImage(venue.image, venue.name);
     //reveals more of screen
     window.scrollBy(0, 200);
-  });
-
-  // connect list item to associated map marker
-  // recenter map and open infoWindow when list item is clicked
-
-  completeVenue.addEventListener('click', function(){
+    // connect list item to associated map marker
+    // recenter map and open infoWindow when list item is clicked
     if (mainMap.directionInfoWindow.length > 0){
       mainMap.directionInfoWindow.forEach(function(infoWindow){
         infoWindow.close();
       });
-
-      // get directions from geolocation to clicked venue
-      mainMap.showRoute(mainMap.googleMap, mainMap.markers, venue.coords);
-
-      // center map on clicked bar's marker
-      mainMap.centerFunction(venue.coords);
-      // simulate click on the bar marker to open it's infoWindow
-      mainMap.markers.forEach(function(marker){
-        if (marker.id === venue._id){
-          mainMap.click(marker);
-        }
-      });
     }
+    // get directions from geolocation to clicked venue
+    mainMap.showRoute(mainMap.googleMap, mainMap.markers, venue.coords);
+    // center map on clicked bar's marker
+    mainMap.centerFunction(venue.coords);
+    // simulate click on the bar marker to open it's infoWindow
+    mainMap.markers.forEach(function(marker){
+      if (marker.id === venue._id){
+        mainMap.click(marker);
+      }
+    });
   });
+
 };
 
 var createVenueDetails = function(name, address, rating) {
