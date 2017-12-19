@@ -11,15 +11,13 @@ var requestComplete = function(){
   if (this.status !== 200) return console.log("Request failed");
   console.log("Request successful")
   var jsonString = this.responseText;
-  var apiData = JSON.parse(jsonString);
-  console.log(apiData);
-  populateMap(apiData);
-  populateList(apiData);
+  var apiBarData = JSON.parse(jsonString);
+  console.log(apiBarData);
+  populateMap(apiBarData);
+  populateList(apiBarData);
   dropDownMenu();
-  sortList(apiData, "Edinburgh");
-  sortList(apiData, "Glasgow");
-  sortByRating(apiData);
-
+  sortList(apiBarData, "Edinburgh");
+  sortList(apiBarData, "Glasgow");
 };
 
 var sortList = function(data, place){
@@ -47,31 +45,13 @@ var sortDistilleries = function(){
   });
 }
 
-var sortByRating = function(data){
-  var sortSelection = document.getElementById("favs");
-  sortSelection.addEventListener("click", function(){
-    console.log(data);
-    var len = data.length;
-    for(var i = len - 1; i >= 0; i--){
-      for(var j=1; j<=i; j++){
-        if(data[j-1].rating > data[j].rating){
-          var temp = data[j - 1];
-          data[j-1] = data[j];
-          data[j] = temp;
-        }
-      }
-    }
-      populateList(data.reverse());
-  });
-}
-
 var distilleriesRequestComplete = function(){
   if (this.status !== 200) return console.log("distillery request failed");
   console.log("Distillery Request successful")
   var jsonString = this.responseText;
-  var apiData = JSON.parse(jsonString);
-  console.log(apiData);
-  populateList(apiData);
+  var apiDistilleryData = JSON.parse(jsonString);
+  console.log(apiDistilleryData);
+  populateList(apiDistilleryData);
 }
 
 var removeChildNodes = function(node){
@@ -80,8 +60,8 @@ var removeChildNodes = function(node){
   }
 }
 
-var populateMap = function(apiData){
-  var bars = apiData;
+var populateMap = function(apiBarData){
+  var bars = apiBarData;
   var container = document.getElementById('map');
   var center = { lat: 56.740674, lng: -4.2187500 };
   var zoom = 7;
@@ -106,72 +86,74 @@ var populateMap = function(apiData){
 };
 
 var populateList = function(data) {
-  var originalList = document.getElementById("bar-list");
+  var originalList = document.getElementById("venue-list");
   removeChildNodes(originalList);
   var ul = document.getElementById("#list-header");
-  for (var bar of data) {
-    createBarData(bar);
+  for (var venue of data) {
+    createVenueData(venue);
   }
 };
-// create the bar list data and append to the header
-var createBarData = function(bar) {
-  var list = document.getElementById("bar-list");
-  var completeBar = document.createElement("div");
-  completeBar.className = "bar-complete";
+// create the venue list data and append to the header
+var createVenueData = function(venue) {
+  var list = document.getElementById("venue-list");
+  var completeVenue = document.createElement("div");
+  completeVenue.className = "venue-complete";
   // create the visible elements
-  var barVisible = document.createElement("div");
-  barVisible.className = "bar-list-item";
-  barVisible.appendChild(createBarDetails(bar.name, bar.address, bar.rating));
-  barVisible.appendChild(createThumbnail(bar.image));
-  completeBar.append(barVisible);
+  var venueVisible = document.createElement("div");
+  venueVisible.className = "venue-list-item";
+  venueVisible.appendChild(createVenueDetails(venue.name, venue.address, venue.rating));
+  venueVisible.appendChild(createThumbnail(venue.image));
+  completeVenue.append(venueVisible);
 
   //create and append the hidden elements
-  var hiddenBar = document.createElement("div");
-  hiddenBar.className = "hidden-details-panel";
-  hiddenBar.appendChild(createHiddenDetails(bar.description));
-  hiddenBar.appendChild(createTopGins(bar.top3_gins));
-  completeBar.append(hiddenBar);
-  list.append(completeBar);
+  var hiddenVenue = document.createElement("div");
+  hiddenVenue.className = "hidden-details-panel";
+  hiddenVenue.appendChild(createHiddenDetails(venue.description));
+  if (venue.top3_gins !== 0) {
+    hiddenVenue.appendChild(createTopGins(venue.top3_gins));
+  };
+  completeVenue.append(hiddenVenue);
+  list.append(completeVenue);
 
   // list item click event listener
-  completeBar.addEventListener("click", function(){
+  completeVenue.addEventListener("click", function(){
     // show/hide hidden panel
-    hiddenBar.classList.toggle("hidden-details-panel");
+    hiddenVenue.classList.toggle("hidden-details-panel");
     // var rect = completeBar.getBoundingClientRect();
     // console.log(rect.top, rect.left, rect.right);
     // window.scrollTo(0, rect.right);
-    createFullImage(bar.image);
+    createFullImage(venue.image);
   });
 
   // connect list item to associated map marker
   // recenter map and open infoWindow when list item is clicked
-  completeBar.addEventListener('click', function(){
+  completeVenue.addEventListener('click', function(){
 
-    // get directions from geolocation to clicked bar
-    mainMap.showRoute(mainMap.googleMap, mainMap.markers, bar.coords);
+    // get directions from geolocation to clicked venue
+    mainMap.showRoute(mainMap.googleMap, mainMap.markers, venue.coords);
     // center map on clicked bar's marker
-    mainMap.centerFunction(bar.coords);
+    mainMap.centerFunction(venue.coords);
     // simulate click on the bar marker to open it's infoWindow
     mainMap.markers.forEach(function(marker){
-      if (marker.id === bar._id){
+      if (marker.id === venue._id){
         mainMap.click(marker);
       }
     });
   });
 };
 
-var createBarDetails = function(name, address, rating) {
+var createVenueDetails = function(name, address, rating) {
   var detailsElement = document.createElement("div");
-  detailsElement.className = "bar-details";
-  detailsElement.className = "bar-list-detail";
+  detailsElement.className = "venue-details";
+  detailsElement.className = "venue-list-detail";
   var nameElement = document.createElement("div");
-  nameElement.className = "bar-name";
+  nameElement.className = "venue-name";
   nameElement.append(name);
   var addressElement = document.createElement("div");
-  addressElement.className = "bar-address";
+  addressElement.className = "venue-address";
   addressElement.append(address);
   var ratingElement = document.createElement("div");
-  ratingElement.className = "bar-rating";
+  ratingElement.className = "venue-rating";
   var star = '\u2605';
   var stars = new Array(rating + 1).join(star);
   ratingElement.append(stars);
@@ -191,7 +173,7 @@ var createHiddenDetails = function(description) {
 
 var createThumbnail = function(image) {
   var thumbnailElement = document.createElement("div");
-  thumbnailElement.id = "bar-thumbnail";
+  thumbnailElement.id = "venue-thumbnail";
   var pic = document.createElement("img");
   thumbnailElement.appendChild(pic);
   pic.src = image;
@@ -214,13 +196,21 @@ var createTopGins = function(gins) {
   var ginList = document.createElement("div");
   ginList.id = "top-gin-list";
   ginList.innerText = "Top 3 Gins:";
-  var ginUl = document.createElement("ul-top-gins");
+  var ginUl = document.createElement("ul");
+  ginUl.className = "gin-ul"
   for (gin of gins) {
-    var currentDrink = document.createElement("li");
-    currentDrink.append(gin.name + ", ");
-    currentDrink.append(gin.mixer + "   ");
-    currentDrink.append("£" + gin.price.toFixed(2));
-    ginUl.append(currentDrink);
+
+    var currentGin = document.createElement("li");
+    currentGin.className = "gin-name";
+    currentGin.innerHTML = gin.name;
+    var currentMixer = document.createElement("li");
+    currentMixer.className = "mixer-name";
+    currentMixer.innerHTML = gin.mixer;
+    var currentPrice = document.createElement("li");
+    currentPrice.className = "gin-price";
+    currentPrice.innerHTML = " £ " + gin.price.toFixed(2);
+    ginUl.append(currentGin, currentMixer, currentPrice);
+    
   };
   ginList.append(ginUl);
   return ginList;

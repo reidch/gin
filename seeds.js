@@ -744,7 +744,7 @@ var distilleries = [
    theme: "",
    opening_times: {open: "12:00", closed: "17:00"},
    phone_number: "01957 711 217"
- },
+ }
 
 ];
 
