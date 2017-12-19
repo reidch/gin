@@ -36,6 +36,7 @@ main {
 
 /* map search bar */
 #search-input {
+
   height: 3%;
   width: 50%;
 }
@@ -83,7 +84,7 @@ button:focus {
   outline: 0;
 }
 
-.dropdownbtn {
+#dropdownbtn {
   position: relative;
   background-color: #d0f2e1;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -95,7 +96,7 @@ button:focus {
   z-index: -1;
 }
 
-.dropdownbtn:hover, .dropdownbtn:focus {
+#dropdownbtn:hover, #dropdownbtn:focus {
   background-color: #a6dbcc;
   animation: fade-in 1s;
 }
