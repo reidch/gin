@@ -25,16 +25,18 @@ var sortList = function(data, place){
   var selectedPlace = document.getElementById("" + `${place.toLowerCase()}` + "-bars");
   var selectedPlaceText = selectedPlace.innerText;
   selectedPlace.addEventListener("click", function(){
-    var sortedBars = [];
     var imageHolder = document.getElementById("listImage");
     imageHolder.src = `/images/${place}.jpg`;
+    var sortedBars = [];
     data.forEach(function(bar){
       if(bar.location === place){
         sortedBars.push(bar);
-    }
-      populateList(sortedBars);
+      }
     });
-  });
+    mainMap.googleMap.setCenter(sortedBars[0].coords);
+    mainMap.googleMap.setZoom(13);
+    populateList(sortedBars);
+  }.bind(mainMap));
 }
 
 var sortByRating = function(data){
@@ -59,9 +61,11 @@ var sortDistilleries = function(){
   selectedDistillery.addEventListener("click", function(){
       var imageHolder = document.getElementById("listImage");
       var url = "/distilleries";
-      imageHolder.src = "/images/distilleriesimage-min.jpg";
+      imageHolder.src = "/images/distilleriesimage.jpg";
       makeRequest(url, distilleriesRequestComplete);
-  });
+      mainMap.googleMap.setCenter({ lat: 56.740674, lng: -4.2187500 });
+      mainMap.googleMap.setZoom(7);
+  }.bind(mainMap));
 }
 
 var distilleriesRequestComplete = function(){
@@ -138,9 +142,8 @@ var createVenueData = function(venue) {
   completeVenue.addEventListener("click", function(){
     // show/hide hidden panel
     hiddenVenue.classList.toggle("hidden-details-panel");
-    // var rect = completeBar.getBoundingClientRect();
-    // console.log(rect.top, rect.left, rect.right);
-    // window.scrollTo(0, rect.right);
+    //reveals more of screen
+    window.scrollBy(0, 200);
     createFullImage(venue.image);
   });
 
