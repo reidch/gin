@@ -16,10 +16,16 @@ var MapWrapper = function(container, coords, zoom){
 };
 
 MapWrapper.prototype.addMarker = function(venue){
+  var image = "/icons/bar-icon.png";
+  var distilleryIcon = "/icons/distillery-icon.png";
+  var image;
+  if (venue.top3_gins[0].price === 0) {
+    image = distilleryIcon;
+  };
   var marker = new google.maps.Marker({
     id: venue._id,
     position: venue.coords,
-    icon: "/icons/gnss.png",
+    icon: image,
     map: this.googleMap
   });
 

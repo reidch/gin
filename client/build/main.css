@@ -225,9 +225,10 @@ button:focus {
 #top-gin-list {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
-ul-top-gins {
+.gin-ul {
   list-style-type:none;
   display: flex;
   flex-direction: column;
@@ -235,4 +236,8 @@ ul-top-gins {
 
 li {
   font-size: 0.85em;
+}
+
+.gin-price {
+  padding-bottom: 10px;
 }

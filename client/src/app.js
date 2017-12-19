@@ -109,7 +109,9 @@ var createVenueData = function(venue) {
   var hiddenVenue = document.createElement("div");
   hiddenVenue.className = "hidden-details-panel";
   hiddenVenue.appendChild(createHiddenDetails(venue.description));
-  hiddenVenue.appendChild(createTopGins(venue.top3_gins));
+  if (venue.top3_gins !== 0) {
+    hiddenVenue.appendChild(createTopGins(venue.top3_gins));
+  };
   completeVenue.append(hiddenVenue);
   list.append(completeVenue);
 
@@ -194,13 +196,21 @@ var createTopGins = function(gins) {
   var ginList = document.createElement("div");
   ginList.id = "top-gin-list";
   ginList.innerText = "Top 3 Gins:";
-  var ginUl = document.createElement("ul-top-gins");
+  var ginUl = document.createElement("ul");
+  ginUl.className = "gin-ul"
   for (gin of gins) {
-    var currentDrink = document.createElement("li");
-    currentDrink.append(gin.name + ", ");
-    currentDrink.append(gin.mixer + "   ");
-    currentDrink.append("£" + gin.price);
-    ginUl.append(currentDrink);
+    var currentGin = document.createElement("li");
+    currentGin.className = "gin-name";
+    currentGin.innerHTML = gin.name;
+    var currentMixer = document.createElement("li");
+    currentMixer.className = "mixer-name";
+    currentMixer.innerHTML = gin.mixer;
+    var currentPrice = document.createElement("li");
+    currentPrice.className = "gin-price";
+    currentPrice.innerHTML = " £ " + gin.price.toFixed(2);
+    ginUl.append(currentGin, currentMixer, currentPrice);
+    // ginUl.append(currentMixer);
+    // ginUl.append(currentPrice);
   };
   ginList.append(ginUl);
   return ginList;
