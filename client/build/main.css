@@ -5,6 +5,7 @@
   border-bottom: 5px solid #74226c;
 
 }
+
 body, button {
   font-family: "Spectral SC", serif;
 }
@@ -15,7 +16,7 @@ html {
 
 #page-title {
   background-color: #FDFDFD;
-  height: 110px;
+  height: 10vh;
   width: 100%;
 }
 #logo {
@@ -26,13 +27,15 @@ html {
 main {
   display: flex;
   flex-flow: row nowrap;
+  margin: 8px 0;
 }
 
 /* section for map and search functionality */
 #map-container {
   width: 50%;
   z-index: -1;
-  border-bottom: 50px solid #CBC5CF;
+  height: 86vh;
+  border-right: 8px solid white;
 }
 
 /* map search bar */
@@ -46,14 +49,14 @@ main {
 #site-navigation {
   background-color: #b7d6c7;
   border-bottom: 5px solid #E0E5E8;
-  height: 50px;
+  height: 0px;
   width: 100%;
   z-index: 0;
 }
 
 /* actual google map view */
 #map {
-  height: 800px;
+  height: 100%;
   width: 100%;
   z-index: 0;
   border-bottom: solid 5px #b7d6c7;
@@ -61,16 +64,15 @@ main {
 
 /* section for right hand of screen */
 #venue-container {
-  border-top: 3px solid #E0E5E8;
   border-bottom: none;
-  height: 850px;
+  height: 81vh;
   width: 50%;
 }
 
 /* top image or welcome message */
 #list-header {
   background-color: white;
-  height: 35%;
+  height: 45%;
   width: 100%;
 }
 
@@ -148,7 +150,7 @@ button:focus {
 /* holder for list items */
 #venue-list {
   border: 3px solid #E0E5E8;
-  height: 65%;
+  height: 55%;
   width: 100%;
   overflow: scroll;
   display: flex;
@@ -162,7 +164,7 @@ button:focus {
   align-items: flex-start;
   justify-content: space-between;
   border-top: solid 3px #74226c;
-  padding: 15px 10px;
+  padding: 8px 10px 0px 10px;
   transition: background-color 1.1s;
 }
 
