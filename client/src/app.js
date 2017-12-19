@@ -224,19 +224,32 @@ var createTopGins = function(gins) {
 
 var createSocialLinks = function(links) {
   var socialLinks = document.createElement("div");
-  socialLinks.id = "social-media-links";
-  var facebookButton = document.createElement("img");
-  facebookButton.id = "facebook-button";
-  facebookButton.src = "/icons/facebook.png";
-  var twitterButton = document.createElement("img");
-  twitterButton.id = "twitter-button";
-  twitterButton.src = "/icons/twitter.png";
-  var instaButton = document.createElement("img");
-  instaButton.id = "insagram-button";
-  instaButton.src = "/icons/instagram.png";
-  socialLinks.append(facebookButton);
-  socialLinks.append(twitterButton);
-  socialLinks.append(instaButton);
+  socialLinks.className = "social-media-links";
+  var facebookLink = document.createElement("a");
+  facebookLink.className = "facebook-button";
+  facebookLink.href = links.facebook;
+  var facebookIcon = document.createElement("img");
+  facebookIcon.src = "/icons/facebook.png";
+  console.log(facebookIcon);
+  facebookLink.append(facebookIcon);
+  socialLinks.append(facebookLink);
+  return socialLinks;
+};
+
+var createSocialLinks = function(links) {
+  var socialLinks = document.createElement("div");
+  socialLinks.className = "social-media-links";
+  for (link in links) {
+    var media = link;
+    var link = document.createElement("a");
+    link.className = `${media}-button`;
+    link.href = link.value;
+    var icon = document.createElement("img");
+    icon.src = `/icons/${media}.png`;
+    console.log(icon);
+    link.append(icon);
+    socialLinks.append(link);
+  }
   return socialLinks;
 };
 
