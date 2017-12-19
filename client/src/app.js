@@ -24,9 +24,9 @@ var requestComplete = function(){
 var sortList = function(data, place){
   var selectedPlace = document.getElementById("" + `${place.toLowerCase()}` + "-bars");
   var selectedPlaceText = selectedPlace.innerText;
-  var imageHolder = document.getElementById("listImage");
   selectedPlace.addEventListener("click", function(){
     var sortedBars = [];
+    var imageHolder = document.getElementById("listImage");
     imageHolder.src = `/images/${place}.jpg`;
     data.forEach(function(bar){
       if(bar.location === place){
@@ -56,8 +56,8 @@ var sortByRating = function(data){
 
 var sortDistilleries = function(){
   var selectedDistillery = document.getElementById("distilleries");
-  var imageHolder = document.getElementById("listImage");
   selectedDistillery.addEventListener("click", function(){
+      var imageHolder = document.getElementById("listImage");
       var url = "/distilleries";
       imageHolder.src = "/images/distilleriesimage-min.jpg";
       makeRequest(url, distilleriesRequestComplete);
@@ -208,15 +208,8 @@ var createThumbnail = function(image) {
 };
 
 var createFullImage = function(image) {
-  var fullImage = document.getElementById("list-header");
-  while (fullImage.firstChild) {
-    fullImage.removeChild(fullImage.firstChild);
-  };
-  var pic = document.createElement("img");
-  pic.className = "big-picture";
-  fullImage.appendChild(pic);
-  pic.src = image;
-  return fullImage;
+  var fullImage = document.getElementById("listImage");
+  fullImage.src = image;
 };
 
 var createTopGins = function(gins) {
