@@ -146,16 +146,15 @@ var createVenueData = function(venue) {
   completeVenue.addEventListener("click", function(){
     // show/hide hidden panel
     // run through each item in the list, identify if the child node has a blank class assigned to it then toggle the hidden details panel for it (close panel)
+    // or if the panel in the for loop is equal to the clicked panel's hidden panel then toggle
     var list = document.getElementById("venue-list");
     for (var item of list.childNodes){
       for (var panel of item.childNodes){
-        if ((panel.className === "")){
+        if ((panel.className === "") || (panel === completeVenue.children[1])){
           panel.classList.toggle("hidden-details-panel");
         }
       }
     }
-    // open hidden panel for the clicked list item
-    hiddenVenue.classList.toggle("hidden-details-panel");
     createFullImage(venue.image, venue.name);
     //reveals more of screen
     var rect = this.getBoundingClientRect();
