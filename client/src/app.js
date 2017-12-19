@@ -24,9 +24,9 @@ var requestComplete = function(){
 var sortList = function(data, place){
   var selectedPlace = document.getElementById("" + `${place.toLowerCase()}` + "-bars");
   var selectedPlaceText = selectedPlace.innerText;
+  var imageHolder = document.getElementById("listImage");
   selectedPlace.addEventListener("click", function(){
     var sortedBars = [];
-    var imageHolder = document.getElementById("listImage");
     imageHolder.src = `/images/${place}.jpg`;
     data.forEach(function(bar){
       if(bar.location === place){
