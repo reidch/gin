@@ -13,7 +13,7 @@ var requestComplete = function(){
   var jsonString = this.responseText;
   var apiBarData = JSON.parse(jsonString);
   console.log(apiBarData);
-  populateMap(apiBarData);
+  addMarkers(apiBarData);
   populateList(apiBarData);
   dropDownMenu();
   sortDistilleries();
@@ -78,6 +78,7 @@ var distilleriesRequestComplete = function(){
   var apiDistilleryData = JSON.parse(jsonString);
   console.log(apiDistilleryData);
   populateList(apiDistilleryData);
+  addMarkers(apiDistilleryData);
 }
 
 var removeChildNodes = function(node){
@@ -86,8 +87,8 @@ var removeChildNodes = function(node){
   }
 }
 
-var populateMap = function(apiBarData){
-  var bars = apiBarData;
+var createMap = function(apiData){
+  var items = apiData;
   var container = document.getElementById('map');
   var center = { lat: 56.740674, lng: -4.2187500 };
   var zoom = 7;
@@ -104,12 +105,14 @@ var populateMap = function(apiBarData){
   console.log(input);
   // create new google maps search box from input element
   mainMap.createSearchBox(input);
-
-  // populate map with bar markers
-  bars.forEach(function(bar){
-    mainMap.addMarker(bar);
-  });
 };
+
+var addMarkers = function(apiData){
+  // populate map with bar markers
+  apiData.forEach(function(item){
+    this.mainMap.addMarker(item);
+  });
+}
 
 var populateList = function(data) {
   var originalList = document.getElementById("venue-list");
@@ -297,8 +300,11 @@ var timingDisplay = function(){
 
 var app = function() {
   console.log("Running app");
-  var url = "/bars";
-  makeRequest(url, requestComplete);
+  createMap();
+  var distilleriesUrl = "/distilleries"
+  makeRequest(distilleriesUrl, distilleriesRequestComplete);
+  var barUrl = "/bars";
+  makeRequest(barUrl, requestComplete);
   var yes = document.getElementById("yes");
   yes.addEventListener("click", function(){
     window.scrollTo(0, 0);
