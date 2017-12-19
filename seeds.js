@@ -4,7 +4,7 @@ db.dropDatabase();
 var bars = [
   {
     name: "Gin71 Merchant City",
-    coords: { lat: 55.8589196, lng: -4.2494644 },
+    coords: { lat: 55.858846, lng: -4.248370 },
     address: "40 Wilson Street, Glasgow G1 1HD",
     location: "Glasgow",
     rating: 4,
@@ -97,7 +97,7 @@ var bars = [
   },
   {
     name: "Gin71 Glasgow",
-    coords: { lat: 55.8632928, lng: -4.2574232 },
+    coords: { lat: 55.863222, lng: -4.256345 },
     address: "71 Renfield Street, Glasgow G2 1LP",
     location: "Glasgow",
     rating: 5,
@@ -159,7 +159,7 @@ var bars = [
   },
   {
     name: "The Finnieston",
-    coords: { lat: 55.8645981, lng: -4.2842838 },
+    coords: { lat: 55.864603, lng: -4.284299 },
     address: "1125 Argyle St, Glasgow G3 8ND",
     location: "Glasgow",
     rating: 4,
@@ -190,7 +190,7 @@ var bars = [
   },
   {
     name: "beGIN",
-    coords: { lat: 55.8776518, lng: -4.2908012},
+    coords: { lat: 55.877652, lng: -4.290801},
     address: "383 Byres Road, Glasgow G12 8AU",
     location: "Glasgow",
     rating: 5,
@@ -372,7 +372,7 @@ phone_number: "0131 652 7370"
 },
 {
   name: "Citation",
-  coords: { lat: 55.858886, lng: -4.2477987 },
+  coords: { lat: 55.858846, lng: -4.248370 },
   address: "40 Wilson Street, Glasgow G1 1HD",
   location: "Glasgow",
   rating: 3,
@@ -403,7 +403,7 @@ phone_number: "0131 652 7370"
 },
 {
   name: "The Anchor Line",
-  coords: { lat: 55.8626983, lng: -4.270205 },
+  coords: { lat: 55.861237, lng: -4.252301 },
   address: "12 St Vincent Place, Glasgow G1 2DH",
   location: "Glasgow",
   rating: 3,
@@ -434,10 +434,10 @@ phone_number: "0131 652 7370"
 },
 {
   name: "Juniper Gin Bar",
-  coords: { lat: 55.8592428, lng: -4.2539718 },
-  address: "Cranachan Cafe, 2nd Floor, Princess Square, 48 Buchanan Street, Glasgow G1 3JN",
+  coords: { lat: 55.859139, lng: -4.254405 },
+  address: "Cranachan Cafe, 2nd Floor, Princes Square, 48 Buchanan Street, Glasgow G1 3JN",
   location: "Glasgow",
-  rating: 5,
+  rating: 3,
   description: "An evening hotspot at the top of Princes Square, serving the very best of Scottish craft gin.",
   website: "https://www.juniper-gin-bar.com/",
   image: "/images/juniper_gla.jpg",
@@ -465,7 +465,7 @@ phone_number: "0131 652 7370"
 },
 {
   name: "Gin71 Edinburgh",
-  coords: { lat: 55.9509842, lng: -3.2063403 },
+  coords: { lat: 55.950984, lng: -3.205793 },
   address: "9 South Charlotte Street, Edinburgh EH2 4AS",
   location: "Edinburgh",
   rating: 4,
@@ -493,38 +493,7 @@ phone_number: "0131 652 7370"
   theme: "Merchant City sophistication",
   opening_times: {open: "17:00", closed: "00:00"},
   phone_number: "0141 553 2326"
-},
-// {
-//    name: "",
-//    coords: { lat: , lng:  },
-//    address: ", , ",
-//    location: "Glasgow",
-//    rating: ,
-//    description: "",
-//    website: "",
-//    image: "",
-//    top3_gins: [{
-//      name: "",
-//      mixer: "",
-//      price: 8.50
-//    },
-//    {
-//      name: "",
-//      mixer: "",
-//      price: 9.50
-//    },
-//    {
-//      name: "",
-//      mixer: "",
-//      price: 8.50
-//    }],
-//    twitter_last_tweet: [],
-//    social_media_links: {facebook: "", instagram: "", twitter: ""},
-//    reviews: [],
-//    theme: "",
-//    opening_times: {open: "", closed: ""},
-//    phone_number: ""
-//  },
+}
 ];
 
 var distilleries = [
