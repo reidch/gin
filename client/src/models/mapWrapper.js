@@ -3,6 +3,7 @@ var MapWrapper = function(container, coords, zoom){
     center: coords,
     zoom: zoom
   });
+  this.directionInfoWindow = [];
   this.markers = [];
   this.newMarkers = [];
   this.directionDisplay = new google.maps.DirectionsRenderer({
@@ -46,8 +47,6 @@ MapWrapper.prototype.addMarker = function(venue){
   });
 
   marker.addListener('click', function(){
-    console.log("marker clicked!");
-    console.log(marker);
     for (var mark of this.markers){
       if (mark.infowindowOpen){
         mark.infowindow.close();
@@ -142,7 +141,6 @@ MapWrapper.prototype.createMarker = function(place, icon, array){
     title: place.name,
     position: place.geometry.location
   });
-  console.log(newMarker);
   array.push(newMarker);
 }
 
@@ -160,12 +158,9 @@ MapWrapper.prototype.showRoute = function(map, markers, coords){
     var userLocation = this.mainMap.newMarkers[0].getPosition();
     pointA = new google.maps.LatLng(userLocation.lat(), userLocation.lng()),
     pointB = new google.maps.LatLng(coords.lat, coords.lng),
-
-    // pointB = new google.maps.LatLng(coords),
-        // Instantiate a directions service.
+    // Instantiate a directions service.
     directionsService = new google.maps.DirectionsService;
-    //
-    //
+
     // // get route from A to B
     // var waypoints = [];
     // for(marker of markers){
@@ -187,6 +182,7 @@ MapWrapper.prototype.showRoute = function(map, markers, coords){
     }, function (response, status) {
       if (status == google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(response);
+        this.mainMap.distanceMatrix(pointA, pointB, response);
       } else {
         window.alert('Directions request failed due to ' + status);
       }
@@ -194,5 +190,51 @@ MapWrapper.prototype.showRoute = function(map, markers, coords){
   };
   initMap(map, markers, this.directionDisplay);
 }
+
+MapWrapper.prototype.distanceMatrix = function(origin, destination, response){
+  var routeResponse = response;
+  var service = new google.maps.DistanceMatrixService();
+  service.getDistanceMatrix(
+    {
+      origins: [origin],
+      destinations: [destination],
+      travelMode: 'WALKING',
+      unitSystem: google.maps.UnitSystem.IMPERIAL,
+      avoidHighways: true,
+      avoidTolls: true,
+    }, function(response, status){
+      callback(response, status, routeResponse);
+    });
+
+  function callback(response, status, routeResponse) {
+    // adapted from google maps example
+    if (status == 'OK') {
+      var origins = response.originAddresses;
+      var destinations = response.destinationAddresses;
+
+      for (var i = 0; i < origins.length; i++) {
+        var results = response.rows[i].elements;
+        for (var j = 0; j < results.length; j++) {
+          var element = results[j];
+          var distance = element.distance.text;
+          var duration = element.duration.text;
+          var from = origins[i];
+          var to = destinations[j];
+        }
+      }
+    }
+    var numSteps = routeResponse.routes[0].legs[0].steps.length;
+    if ((numSteps % 2) !== 0){
+      numSteps -= 1;
+    }
+    var step =  numSteps / 2;
+    var directionInfoWindow = new google.maps.InfoWindow();
+    directionInfoWindow.setContent("Walking:<br>" + distance + "<br>" + duration + " ");
+    directionInfoWindow.setPosition(routeResponse.routes[0].legs[0].steps[step].end_location);
+    directionInfoWindow.open(this.mainMap.googleMap);
+    this.mainMap.directionInfoWindow.push(directionInfoWindow);
+  }
+}
+
 
 module.exports = MapWrapper;
