@@ -1,4 +1,10 @@
+#page-title {
+  background-image: url('images/juniperfrag.jpg');
+  background-position: center;
+  background-size: cover;
+  border-bottom: 5px solid #74226c;
 
+}
 body, button {
   font-family: "Spectral SC", serif;
 }
@@ -36,7 +42,7 @@ main {
 
 /* possible links to other content */
 #site-navigation {
-  background-color: #55828B;
+  background-color: #b7d6c7;
   border-bottom: 5px solid #E0E5E8;
   height: 50px;
   width: 100%;
@@ -80,7 +86,7 @@ button:focus {
 
 .dropdownbtn {
   position: relative;
-  background-color: #BCF1E2;
+  background-color: #d0f2e1;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: black;
   padding: 10px;
