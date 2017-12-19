@@ -288,8 +288,6 @@ var dropDownMenu = function(){
 };
 
 var timingDisplay = function(){
-  var background = document.getElementById("background");
-  background.style.zIndex = -1;
   var map = document.getElementById("map-container");
   map.style.zIndex = 1;
   var menu = document.querySelector(".dropdown");
