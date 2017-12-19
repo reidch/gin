@@ -17,7 +17,6 @@ div#answer a {
   z-index: 0;
 }
 
-/* we can change the image, just playing around for now */
 #foreground {
   background-image: url("juniperbackground.jpg");
   background-size: cover;
