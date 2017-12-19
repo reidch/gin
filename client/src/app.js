@@ -63,7 +63,6 @@ var sortDistilleries = function(){
   selectedDistillery.addEventListener("click", function(){
       var imageHolder = document.getElementById("listImage");
       var url = "/distilleries";
-      imageHolder.src = "/images/distilleriesimage-min.jpg";
       imageHolder.alt = "Scottish landscape";
       imageHolder.src = "/images/distilleriesimage.jpg";
       makeRequest(url, distilleriesRequestComplete);
@@ -129,9 +128,7 @@ var createVenueData = function(venue) {
   var venueVisible = document.createElement("div");
   venueVisible.className = "venue-list-item";
   venueVisible.appendChild(createVenueDetails(venue.name, venue.address, venue.rating));
-  venueVisible.appendChild(createThumbnail(venue.image));
   venueVisible.appendChild(createThumbnail(venue.image, venue.name));
-  venueVisible.appendChild(createSocialLinks(venue.social_media_links));
   completeVenue.append(venueVisible);
 
   //create and append the hidden elements
