@@ -1,3 +1,4 @@
+
 body, button {
   font-family: "Spectral SC", serif;
 }
@@ -79,16 +80,19 @@ button:focus {
 
 .dropdownbtn {
   position: relative;
-  background-color: #87bba2;
-  color: #ffffff;
+  background-color: #BCF1E2;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: black;
   padding: 10px;
+  width: 9em;
   font-size: 18px;
   cursor: pointer;
   z-index: -1;
 }
 
 .dropdownbtn:hover, .dropdownbtn:focus {
-  background-color: #D3E6DD;
+  background-color: #a6dbcc;
+  animation: fade-in 1s;
 }
 
 .dropdown {
@@ -122,14 +126,17 @@ button:focus {
   padding: 15px;
   text-decoration: none;
   display: block;
-  color: black;
+  color: #140118;
   padding: 15px;
   text-decoration: none;
   display: block;
+  transition: background-color 0.7s ease-in, color 0.7s;
 }
 
-.dropdown h4:hover {
-  background-color: #f1f1f1
+#myDropdown h4:hover {
+  background-color: #CBC5CF;
+  color: #3B373D;
+  cursor: pointer;
 }
 
 /* holder for list items */
@@ -150,6 +157,7 @@ button:focus {
   justify-content: space-between;
   border-top: solid 3px #74226c;
   padding: 15px 10px;
+  transition: background-color 1.1s;
 }
 .venue-list-item:hover {
   background-color: #b7d6c7;

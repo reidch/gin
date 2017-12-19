@@ -199,6 +199,7 @@ var createTopGins = function(gins) {
   var ginUl = document.createElement("ul");
   ginUl.className = "gin-ul"
   for (gin of gins) {
+
     var currentGin = document.createElement("li");
     currentGin.className = "gin-name";
     currentGin.innerHTML = gin.name;
@@ -209,8 +210,7 @@ var createTopGins = function(gins) {
     currentPrice.className = "gin-price";
     currentPrice.innerHTML = " £ " + gin.price.toFixed(2);
     ginUl.append(currentGin, currentMixer, currentPrice);
-    // ginUl.append(currentMixer);
-    // ginUl.append(currentPrice);
+    
   };
   ginList.append(ginUl);
   return ginList;
