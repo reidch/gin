@@ -61,13 +61,13 @@ var sortByRating = function(data){
 var sortDistilleries = function(){
   var selectedDistillery = document.getElementById("distilleries");
   selectedDistillery.addEventListener("click", function(){
-      var imageHolder = document.getElementById("listImage");
-      var url = "/distilleries";
-      imageHolder.alt = "Scottish landscape";
-      imageHolder.src = "/images/distilleriesimage.jpg";
-      makeRequest(url, distilleriesRequestComplete);
-      mainMap.googleMap.setCenter({ lat: 56.740674, lng: -4.2187500 });
-      mainMap.googleMap.setZoom(7);
+    var imageHolder = document.getElementById("listImage");
+    var url = "/distilleries";
+    imageHolder.alt = "Scottish landscape";
+    imageHolder.src = "/images/distilleriesimage.jpg";
+    makeRequest(url, distilleriesRequestComplete);
+    mainMap.googleMap.setCenter({ lat: 56.740674, lng: -4.2187500 });
+    mainMap.googleMap.setZoom(7);
   }.bind(mainMap));
 }
 
@@ -145,10 +145,23 @@ var createVenueData = function(venue) {
   // list item click event listener
   completeVenue.addEventListener("click", function(){
     // show/hide hidden panel
+    // run through each item in the list, identify if the child node has a blank class assigned to it then toggle the hidden details panel for it (close panel)
+    var list = document.getElementById("venue-list");
+    for (var item of list.childNodes){
+      for (var panel of item.childNodes){
+        if ((panel.className === "")){
+          panel.classList.toggle("hidden-details-panel");
+        }
+      }
+    }
+    // open hidden panel for the clicked list item
     hiddenVenue.classList.toggle("hidden-details-panel");
     createFullImage(venue.image, venue.name);
     //reveals more of screen
-    window.scrollBy(0, 200);
+    var rect = this.getBoundingClientRect();
+    var hidden = hiddenVenue.getBoundingClientRect();
+    var offset = rect.top - hidden.height;
+    list.scrollTo(0, offset);
     // connect list item to associated map marker
     // recenter map and open infoWindow when list item is clicked
     if (mainMap.directionInfoWindow.length > 0){
@@ -262,12 +275,12 @@ var createSocialLinks = function(links) {
 };
 
 var dropDownMenu = function(){
-    var drop = document.getElementById("dropdownbtn");
-    drop.addEventListener("click", function(){
+  var drop = document.getElementById("dropdownbtn");
+  drop.addEventListener("click", function(){
     document.getElementById("myDropdown").classList.toggle("show");
   });
-    var dropdowncontent = document.getElementById("myDropdown");
-    dropdowncontent.addEventListener("click", function(){
+  var dropdowncontent = document.getElementById("myDropdown");
+  dropdowncontent.addEventListener("click", function(){
     document.getElementById("myDropdown").classList.toggle("show");
   });
 };
@@ -297,10 +310,10 @@ var app = function() {
     foreground.classList = "vanish";
     var timeout = setTimeout(function(){
       timingDisplay()}, 2000);
-    console.log(this);
-  });
+      console.log(this);
+    });
 
-};
+  };
 
 
-window.addEventListener("load", app);
+  window.addEventListener("load", app);
