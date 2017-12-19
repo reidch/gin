@@ -146,13 +146,9 @@ var createVenueData = function(venue) {
   completeVenue.addEventListener("click", function(){
     // show/hide hidden panel
     hiddenVenue.classList.toggle("hidden-details-panel");
-    // var rect = completeBar.getBoundingClientRect();
-    // console.log(rect.top, rect.left, rect.right);
-    // window.scrollTo(0, rect.right);
     createFullImage(venue.image, venue.name);
     //reveals more of screen
     window.scrollBy(0, 200);
-    createFullImage(venue.image);
   });
 
   // connect list item to associated map marker
