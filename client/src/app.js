@@ -239,7 +239,7 @@ var createTopGins = function(gins) {
 };
 
 var dropDownMenu = function(){
-    var drop = document.getElementById("accountbtn");
+    var drop = document.getElementById("dropdownbtn");
     drop.addEventListener("click", function(){
     document.getElementById("myDropdown").classList.toggle("show");
   });
@@ -259,7 +259,7 @@ var timingDisplay = function(){
   map.style.zIndex = 1;
   var menu = document.querySelector(".dropdown");
   menu.style.zIndex = 1;
-  var btn = document.querySelector(".dropdownbtn");
+  var btn = document.getElementById("dropdownbtn");
   btn.style.zIndex = 1;
 };
 
