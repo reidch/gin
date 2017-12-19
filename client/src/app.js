@@ -131,6 +131,7 @@ var createVenueData = function(venue) {
   if (venue.top3_gins[0].price !== 0) {
     hiddenVenue.appendChild(createTopGins(venue.top3_gins));
   };
+  hiddenVenue.appendChild(createSocialLinks(venue.social_media_links));
   completeVenue.append(hiddenVenue);
   list.append(completeVenue);
 
@@ -152,20 +153,19 @@ var createVenueData = function(venue) {
       mainMap.directionInfoWindow.forEach(function(infoWindow){
         infoWindow.close();
       });
-    };
 
-    // get directions from geolocation to clicked venue
-    mainMap.showRoute(mainMap.googleMap, mainMap.markers, venue.coords);
+      // get directions from geolocation to clicked venue
+      mainMap.showRoute(mainMap.googleMap, mainMap.markers, venue.coords);
 
-    // center map on clicked bar's marker
-    mainMap.centerFunction(venue.coords);
-    // simulate click on the bar marker to open it's infoWindow
-    mainMap.markers.forEach(function(marker){
-      if (marker.id === venue._id){
-        mainMap.click(marker);
-      }
-    });
-
+      // center map on clicked bar's marker
+      mainMap.centerFunction(venue.coords);
+      // simulate click on the bar marker to open it's infoWindow
+      mainMap.markers.forEach(function(marker){
+        if (marker.id === venue._id){
+          mainMap.click(marker);
+        }
+      });
+    }
   });
 };
 
@@ -236,6 +236,37 @@ var createTopGins = function(gins) {
   };
   ginList.append(ginUl);
   return ginList;
+};
+
+var createSocialLinks = function(links) {
+  var socialLinks = document.createElement("div");
+  socialLinks.className = "social-media-links";
+  var facebookLink = document.createElement("a");
+  facebookLink.className = "facebook-button";
+  facebookLink.href = links.facebook;
+  var facebookIcon = document.createElement("img");
+  facebookIcon.src = "/icons/facebook.png";
+  console.log(facebookIcon);
+  facebookLink.append(facebookIcon);
+  socialLinks.append(facebookLink);
+  return socialLinks;
+};
+
+var createSocialLinks = function(links) {
+  var socialLinks = document.createElement("div");
+  socialLinks.className = "social-media-links";
+  for (link in links) {
+    var media = link;
+    var link = document.createElement("a");
+    link.className = `${media}-button`;
+    link.href = link.value;
+    var icon = document.createElement("img");
+    icon.src = `/icons/${media}.png`;
+    console.log(icon);
+    link.append(icon);
+    socialLinks.append(link);
+  }
+  return socialLinks;
 };
 
 var dropDownMenu = function(){
