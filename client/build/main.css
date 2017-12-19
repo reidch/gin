@@ -1,8 +1,10 @@
 #page-title {
-  background-image: url('images/juniperfrag.jpg');
-  background-position: right;
-  /* background-size: cover; */
+  background-image: url('images/ginhead6.jpg');
+  background-position: center;
+  background-size: cover;
   border-bottom: 5px solid #74226c;
+  height: 10vh;
+  width: 100%;
 }
 
 body, button {
@@ -10,16 +12,6 @@ body, button {
 }
 
 html {
-  height: 100%;
-}
-
-#page-title {
-  background-color: #FDFDFD;
-  height: 10vh;
-  width: 100%;
-}
-#logo {
-  width: 12%;
   height: 100%;
 }
 
@@ -39,18 +31,8 @@ main {
 
 /* map search bar */
 #search-input {
-
   height: 3%;
   width: 50%;
-}
-
-/* possible links to other content */
-#site-navigation {
-  background-color: #b7d6c7;
-  border-bottom: 5px solid #E0E5E8;
-  height: 0px;
-  width: 100%;
-  z-index: 0;
 }
 
 /* actual google map view */
@@ -70,7 +52,6 @@ main {
 
 /* top image or welcome message */
 #list-header {
-  background-color: white;
   height: 45%;
   width: 100%;
 }
@@ -84,6 +65,7 @@ main {
   background-color: #FDFDFD;
   border-radius: 5px;
 }
+
 #welcome-logo {
   font-size: 3em;
   color: #140118;
