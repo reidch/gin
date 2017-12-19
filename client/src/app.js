@@ -29,6 +29,7 @@ var sortList = function(data, place){
     var sortedBars = [];
     var imageHolder = document.getElementById("listImage");
     imageHolder.src = `/images/${place}.jpg`;
+    imageHolder.alt = `Photograph of ${place}`;
     data.forEach(function(bar){
       if(bar.location === place){
         sortedBars.push(bar);
@@ -61,6 +62,7 @@ var sortDistilleries = function(){
       var imageHolder = document.getElementById("listImage");
       var url = "/distilleries";
       imageHolder.src = "/images/distilleriesimage-min.jpg";
+      imageHolder.alt = "Scottish landscape";
       makeRequest(url, distilleriesRequestComplete);
   });
 }
@@ -122,7 +124,7 @@ var createVenueData = function(venue) {
   var venueVisible = document.createElement("div");
   venueVisible.className = "venue-list-item";
   venueVisible.appendChild(createVenueDetails(venue.name, venue.address, venue.rating));
-  venueVisible.appendChild(createThumbnail(venue.image));
+  venueVisible.appendChild(createThumbnail(venue.image, venue.name));
   venueVisible.appendChild(createSocialLinks(venue.social_media_links));
   completeVenue.append(venueVisible);
 
@@ -143,7 +145,7 @@ var createVenueData = function(venue) {
     // var rect = completeBar.getBoundingClientRect();
     // console.log(rect.top, rect.left, rect.right);
     // window.scrollTo(0, rect.right);
-    createFullImage(venue.image);
+    createFullImage(venue.image, venue.name);
   });
 
   // connect list item to associated map marker
@@ -199,18 +201,20 @@ var createHiddenDetails = function(description) {
   return hiddenElement;
 };
 
-var createThumbnail = function(image) {
+var createThumbnail = function(image, name) {
   var thumbnailElement = document.createElement("div");
   thumbnailElement.id = "venue-thumbnail";
   var pic = document.createElement("img");
   thumbnailElement.appendChild(pic);
   pic.src = image;
+  pic.alt = `Photograph of ${name}`;
   return thumbnailElement;
 };
 
-var createFullImage = function(image) {
+var createFullImage = function(image, name) {
   var fullImage = document.getElementById("listImage");
   fullImage.src = image;
+  fullImage.alt = `Photograph of ${name}`;
 };
 
 var createTopGins = function(gins) {
@@ -249,6 +253,7 @@ var createSocialLinks = function(links) {
       linkHref.href = links[media];
       var icon = document.createElement("img");
       icon.src = `/icons/${media}-icon.png`;
+      icon.alt = `Link to ${media}`;
       linkHref.append(icon);
       socialLinks.append(linkHref);
     };
@@ -266,8 +271,6 @@ var dropDownMenu = function(){
     document.getElementById("myDropdown").classList.toggle("show");
   });
 };
-
-
 
 var timingDisplay = function(){
   var background = document.getElementById("background");
