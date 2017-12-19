@@ -210,13 +210,15 @@ button:focus {
 
 .social-media-links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   margin-top: 10px;
+  margin-left: 8px;
   width: 120px;
 }
 
 .social-icon {
   filter: invert(25%);
+  margin-right: 10px;
 }
 
 .social-icon:hover {
