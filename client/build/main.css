@@ -32,6 +32,7 @@ main {
 #map-container {
   width: 50%;
   z-index: -1;
+  border-bottom: 50px solid #CBC5CF;
 }
 
 /* map search bar */
@@ -55,6 +56,7 @@ main {
   height: 800px;
   width: 100%;
   z-index: 0;
+  border-bottom: solid 5px #b7d6c7;
 }
 
 /* section for right hand of screen */

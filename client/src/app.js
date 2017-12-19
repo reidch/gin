@@ -16,6 +16,7 @@ var requestComplete = function(){
   populateMap(apiBarData);
   populateList(apiBarData);
   dropDownMenu();
+  sortDistilleries();
   sortList(apiBarData, "Edinburgh");
   sortList(apiBarData, "Glasgow");
   sortByRating(apiBarData);
@@ -278,7 +279,6 @@ var dropDownMenu = function(){
     dropdowncontent.addEventListener("click", function(){
     document.getElementById("myDropdown").classList.toggle("show");
   });
-  sortDistilleries();
 };
 
 
