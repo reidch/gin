@@ -15,24 +15,24 @@ var MapWrapper = function(container, coords, zoom){
   this.directionsShowing = true;
 };
 
-MapWrapper.prototype.addMarker = function(bar){
+MapWrapper.prototype.addMarker = function(venue){
   var marker = new google.maps.Marker({
-    id: bar._id,
-    position: bar.coords,
+    id: venue._id,
+    position: venue.coords,
     icon: "/icons/gnss.png",
     map: this.googleMap
   });
 
   this.markers.push(marker);
   var star = '\u2605';
-  var stars = new Array(bar.rating + 1).join(star);
-  var multiplier = bar.rating;
+  var stars = new Array(venue.rating + 1).join(star);
+  var multiplier = venue.rating;
   var contentString = '<div id="infoW-content">'+
   '<div id="infoW-bodyContent">'+
-  `<h3 class="infoW-bar-name">${bar.name}</h3>` +
-  `<h4 class="infoW-bar-rating">${stars}</h4>`+
-  `<h5 class="infoW-open-time">Opens: ${bar.opening_times.open}</h5>`+
-  `<h5 class="infoW-closed-time">Closes: ${bar.opening_times.closed}</h5>`+
+  `<h3 class="infoW-venue-name">${venue.name}</h3>` +
+  `<h4 class="infoW-venue-rating">${stars}</h4>`+
+  `<h5 class="infoW-open-time">Opens: ${venue.opening_times.open}</h5>`+
+  `<h5 class="infoW-closed-time">Closes: ${venue.opening_times.closed}</h5>`+
   '</div>'+
   '</div>';
   marker.infowindow = new google.maps.InfoWindow({
