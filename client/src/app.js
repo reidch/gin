@@ -18,6 +18,7 @@ var requestComplete = function(){
   dropDownMenu();
   sortList(apiBarData, "Edinburgh");
   sortList(apiBarData, "Glasgow");
+  sortByRating(apiBarData);
 };
 
 var sortList = function(data, place){
@@ -25,15 +26,31 @@ var sortList = function(data, place){
   var selectedPlaceText = selectedPlace.innerText;
   selectedPlace.addEventListener("click", function(){
     var sortedBars = [];
-    console.log(place);
+    var imageHolder = document.getElementById("listImage");
+    imageHolder.src = `/images/${place}.jpg`;
     data.forEach(function(bar){
       if(bar.location === place){
         sortedBars.push(bar);
     }
-      // var originalList = document.getElementById("bar-list");
-      // removeChildNodes(originalList);
       populateList(sortedBars);
     });
+  });
+}
+
+var sortByRating = function(data){
+  var sortSelection = document.getElementById("favs");
+  sortSelection.addEventListener("click", function(){
+    var len = data.length;
+    for(var i = len - 1; i >= 0; i--){
+      for(var j=1; j<=i; j++){
+        if(data[j-1].rating > data[j].rating){
+          var temp = data[j - 1];
+          data[j-1] = data[j];
+          data[j] = temp;
+        }
+      }
+    }
+    populateList(data.reverse());
   });
 }
 
@@ -41,6 +58,8 @@ var sortDistilleries = function(){
   var selectedDistillery = document.getElementById("distilleries");
   selectedDistillery.addEventListener("click", function(){
       var url = "/distilleries";
+      var imageHolder = document.getElementById("listImage");
+      imageHolder.src = "/images/distilleriesimage-min.jpg";
       makeRequest(url, distilleriesRequestComplete);
   });
 }
