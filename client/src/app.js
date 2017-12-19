@@ -219,7 +219,7 @@ var createTopGins = function(gins) {
     var currentDrink = document.createElement("li");
     currentDrink.append(gin.name + ", ");
     currentDrink.append(gin.mixer + "   ");
-    currentDrink.append("£" + gin.price);
+    currentDrink.append("£" + gin.price.toFixed(2));
     ginUl.append(currentDrink);
   };
   ginList.append(ginUl);

@@ -1,5 +1,6 @@
-
-
+.boldName {
+  font-weight: bold;
+}
 body, button {
   font-family: "Spectral SC", serif;
 }
