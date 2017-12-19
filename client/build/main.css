@@ -1,9 +1,8 @@
 #page-title {
   background-image: url('images/juniperfrag.jpg');
-  background-position: center;
-  background-size: cover;
+  background-position: right;
+  /* background-size: cover; */
   border-bottom: 5px solid #74226c;
-
 }
 
 body, button {
@@ -80,7 +79,19 @@ main {
   height: 100%;
   width: 100%;
 }
-
+#list-header p {
+  padding: 5px 20px;
+  background-color: #FDFDFD;
+  border-radius: 5px;
+}
+#welcome-logo {
+  font-size: 3em;
+  color: #140118;
+}
+#welcome-subheading {
+  color: #74226c;
+  font-size: 1.1em;
+}
 /* styling dropdown */
 
 /* removes the ugly blue colour on focus */
