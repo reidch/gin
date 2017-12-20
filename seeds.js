@@ -134,7 +134,7 @@ var bars = [
     rating: 5,
     description: "Smart, cellar-like restaurant and gin bar with mood lighting and vaulted ceiling. Specialising in steak, with over 100 gins including a dozen or so produced in Scotland. Located underneath the Gordon Street entrance to Glasgow Central Station.",
     website: "https://www.alstonglasgow.co.uk/",
-    image: "/images/alston-bar-beef.jpeg",
+    image: "/images/alston.jpeg",
     top3_gins: [{
       name: "Old Raj Red",
       mixer: "Fever-Tree Tonic Water",
