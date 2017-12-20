@@ -116,12 +116,18 @@ MapWrapper.prototype.createSearchBox = function(input){
       // Create a marker for each place.
       var icon = {
         url: "/icons/user-location.png",
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34)
       };
       this.createMarker(newPlace, icon, this.newMarkers);
-
+      var contentString = '<div id="content">' +
+      '<div id="bodyContent">' +
+      `<h3 id="user-loc">You are here</h3>` +
+      '</div>' +
+      '</div>';
+      var marker = this.newMarkers[0];
+      marker.infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      marker.infowindow.open(this.googleMap, marker);
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
         bounds.union(place.geometry.viewport);
