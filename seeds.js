@@ -10,7 +10,7 @@ var bars = [
     rating: 4,
     description: "An oasis in the Merchant City, serving Gin Flights and exquisite cocktails, using gins sourced from all over the world.",
     website: "https://www.gin71.com/aboutgmc/",
-    image: "/images/gin71_merchant.jpg",
+    image: "/images/gin71_merchant.jpeg",
     top3_gins: [{
       name: "Rock Rose",
       mixer: "Fever-Tree Tonic Water",
@@ -41,7 +41,7 @@ var bars = [
     rating: 3,
     description: "A relative newcomer to Glasgow (est.2016), with a stylish art-deco inspired interior, The Spiritualist has over 75 gins on its menu - with an impressive 400 spirits overall!",
     website: "http://www.thespiritualistglasgow.com/",
-    image: "/images/spiritualist.jpg",
+    image: "/images/spiritualist.jpeg",
     top3_gins: [{
       name: "Audemus Pink Pepper",
       mixer: "Walter Gregor's Handmade Scottish Tonic",
@@ -72,7 +72,7 @@ var bars = [
     rating: 3,
     description: "Laid-back and popular music venue in the centre of Glasgow, with over 30 types of gin and an extensive cocktail list to accompany the nightly performance.",
     website: "http://slouch-bar.co.uk/",
-    image: "/images/slouch.jpg",
+    image: "/images/slouch.jpeg",
     top3_gins: [{
       name: "Edinburgh Raspberry",
       mixer: "Fever-Tree Tonic Water",
@@ -103,7 +103,7 @@ var bars = [
     rating: 5,
     description: "Glasgow's first dedicated gin bar. A beautiful space to enjoy carefully selected gins.",
     website: "https://www.gin71.com/aboutgla/",
-    image: "/images/gin71_gla.jpg",
+    image: "/images/gin71-glasgow.jpeg",
     top3_gins: [{
       name: "Eden Mill Love",
       mixer: "Fever-Tree Tonic Water",
@@ -134,7 +134,7 @@ var bars = [
     rating: 5,
     description: "Smart, cellar-like restaurant and gin bar with mood lighting and vaulted ceiling. Specialising in steak, with over 100 gins including a dozen or so produced in Scotland. Located underneath the Gordon Street entrance to Glasgow Central Station.",
     website: "https://www.alstonglasgow.co.uk/",
-    image: "/images/alston.jpg",
+    image: "/images/alston-bar-beef.jpeg",
     top3_gins: [{
       name: "Old Raj Red",
       mixer: "Fever-Tree Tonic Water",
@@ -256,7 +256,7 @@ location: "Edinburgh",
 rating: 4,
 description: "Award-winning gin bar and diner in the Haymarket area. A choice of over 72 types of gin.",
 website: "http://thejollybotanist.co.uk/",
-image: "/images/jolly_botanist.jpg",
+image: "/images/jolly_botan.jpeg",
 top3_gins: [{
   name: "Electric Spirit Co",
   mixer: "Thomas Henry",
@@ -286,7 +286,7 @@ location: "Edinburgh",
 rating: 5,
 description: "Scottish Gin Award's Gin-bar of the year, 2017. One of the largest gin collections in the world, with over 300 to choose from!",
 website: "http://fiftysixnorth.co.uk/",
-image: "/images/56north.jpg",
+image: "/images/56north.jpeg",
 top3_gins: [{
   name: "Orkney Gin Co. Mikkelmas",
   mixer: "Bon Accord Tonic",
@@ -316,7 +316,7 @@ location: "Edinburgh",
 rating: 3,
 description: "Chic hotel bar with panoramic views over the old town skyline. Over 50 gins on offer, specialising in Scottish gins.",
 website: "https://www.juniperedinburgh.co.uk/",
-image: "/images/juniper_edi.jpg",
+image: "/images/juniper_edi.jpeg",
 top3_gins: [{
   name: "Eden Mills Love Gin",
   mixer: "Fever-Tree Tonic Water",
@@ -347,7 +347,7 @@ phone_number: "0131 652 7370"
   rating: 4,
   description: "Classic Victorian style bar with original features such as etched windows, mirrors and a beautiful bar gantry stocked with a selection of fine gins. Hosts regular open mic nights.",
   website: "",
-  image: "/images/old_toll.jpg",
+  image: "/images/old_toll.jpeg",
   top3_gins: [{
     name: "Blackwood's Vintage",
     mixer: "Fever-Tree Tonic Water",
@@ -378,7 +378,7 @@ phone_number: "0131 652 7370"
   rating: 3,
   description: "Sophisticated venue in the heart of Glasgow's Merchant City where you can enjoy a Perfect Serve made with carefully selected gins and garnishes.",
   website: "https://www.citation-glasgow.com/",
-  image: "/images/citation.jpg",
+  image: "/images/citation.jpeg",
   top3_gins: [{
     name: "The Botanist",
     mixer: "Fever-Tree Tonic Water",
@@ -471,7 +471,7 @@ phone_number: "0131 652 7370"
   rating: 4,
   description: "Located in the city's West End, serving Gin Flights and exquisite cocktails, using gins sourced from all over the world.",
   website: "https://www.gin71.com/locations/aboutedi/",
-  image: "/images/gin71_edi.jpg",
+  image: "/images/gin71_edi.jpeg",
   top3_gins: [{
     name: "Rock Rose",
     mixer: "Fever-Tree Tonic Water",
@@ -505,7 +505,7 @@ var distilleries = [
     rating: 5,
     description: "Progressive Hebridean distillers, producing The Botanist, the first and only Islay dry gin. A rare expression of the heart and soul of its remote Scottish island home. Tours available.",
     website: "https://www.thebotanist.com/distillery-tours",
-    image: "/images/bruichladdich.jpg",
+    image: "/images/bruichladdichDist.jpeg",
     top3_gins: [{
       name: "",
       mixer: "",
@@ -536,7 +536,7 @@ var distilleries = [
     rating: 5,
     description: "Located at Ardlussa, at the remote north end of the Isle of Jura, offering distillery tours by appointment. Run by three women, using 15 local botanicals (including bog myrtle, Scots pine and lemon thyme) and spring water from the Lussa glen.",
     website: "https://www.lussagin.com/",
-    image: "/images/lussaGin.jpg",
+    image: "/images/lussa.jpg",
      top3_gins: [{
       name: "",
       mixer: "",
@@ -567,7 +567,7 @@ var distilleries = [
     rating: 5,
     description: "Craft distillery where they produce their Original, Love, Hop, Oak and Golf gins by hand using copper pot stills. Tours available.",
     website: "https://www.edenmill.com/gin-cat-1",
-    image: "/images/eden_mill.jpg",
+    image: "/images/eden_mill.jpeg",
     top3_gins: [{
       name: "",
       mixer: "",
@@ -598,7 +598,7 @@ var distilleries = [
     rating: 5,
     description: "Known as the 'Social Distillery' in the beautiful Outer Hebrides, this place prides itself on local engagement and faithfulness to Gaelic culture. Originally set up by 'the Tarbert Ten' - local men and women with a passion for gin - Harris Distillers has since doubled in size, with a 'crofting ethos' of one and all helping out. Tours available.",
     website: "https://www.harrisdistillery.com/",
-    image: "/images/harrisGin.jpg",
+    image: "/images/harrisGin.jpeg",
     top3_gins: [{
     name: "",
     mixer: "",
@@ -629,7 +629,7 @@ var distilleries = [
   rating: 4,
   description: "Home to Caorunn gin, this distillery in the rugged heart of the Cairngorm National Park, is one of the oldest in Scotland.",
   website: "https://www.caorunngin.com/caorunn-gin/scottish-heritage/",
-  image: "/images/caorunn.jpg",
+  image: "/images/caorunn.jpeg",
   top3_gins: [{
   name: "",
   mixer: "",

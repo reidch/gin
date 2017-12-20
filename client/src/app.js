@@ -28,9 +28,7 @@ var sortList = function(data, place){
   var selectedPlaceText = selectedPlace.innerText;
   selectedPlace.addEventListener("click", function(){
     document.getElementById("listImage").style.display = "visible";
-    var imageHolder = document.getElementById("listImage");
-    imageHolder.src = `/images/${place}.jpg`;
-    imageHolder.alt = `Photograph of ${place}`;
+    createFullImage(`/images/${place}.jpg`, `Photograph of ${place}`);
     var sortedBars = [];
     data.forEach(function(bar){
       if(bar.location === place){
@@ -63,10 +61,8 @@ var sortByRating = function(data){
 var sortDistilleries = function(){
   var selectedDistillery = document.getElementById("distilleries");
   selectedDistillery.addEventListener("click", function(){
-    var imageHolder = document.getElementById("listImage");
     var url = "/distilleries";
-    imageHolder.alt = "Scottish landscape";
-    imageHolder.src = "/images/distilleriesimage.jpg";
+    createFullImage("/images/distilleriesimage.jpg", "Scottish landscape");
     makeRequest(url, distilleriesRequestComplete);
     mainMap.googleMap.setCenter({ lat: 56.740674, lng: -4.2187500 });
     mainMap.googleMap.setZoom(7);
@@ -231,9 +227,17 @@ var createThumbnail = function(image, name) {
 };
 
 var createFullImage = function(image, name) {
+  clearWelcomeScreen();
   var fullImage = document.getElementById("listImage");
   fullImage.src = image;
   fullImage.alt = `Photograph of ${name}`;
+};
+
+var clearWelcomeScreen = function() {
+  document.getElementById("welcome-logo").style.display = "none";
+  document.getElementById("welcome-subheading").style.display = "none";
+  document.getElementById("welcome-text").style.display = "none";
+  document.getElementById("listImage").style.display = "initial";
 };
 
 var createTopGins = function(gins) {
