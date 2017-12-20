@@ -10,9 +10,9 @@
   <script src="bundle.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Spectral+SC:400,600" rel="stylesheet">
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places"async defer></script>
+  <link rel="icon" href="/icons/browser-icon.png">
 </head>
 <body>
-  <div id="background">
     <div id="foreground">
       <div id="popup">
         <div id="message">
@@ -23,30 +23,26 @@
             <a href="https://www.responsibility.org/start-a-conversation/drinking-responsibly/"<div id="no"><h3>No</h3></div>
             </div></a>
           </div>
-        </div>
       </div>
       <head>
         <div id="page-title">
-          <!-- <img id="logo" src="images/logo2.jpg"> -->
         </div>
       </head>
       <main id="main">
         <section id="map-container">
-          <div id="site-navigation"></div>
           <div id="map"></div>
         </section>
         <section id="venue-container">
           <div id="list-header">
-            <!-- <p id="welcome-message"><span id="welcome-logo">Gin!</span></br>
-              <span id="welcome-subheading"> The easiest way to find the best gin in Scotland.</span></br></br>
+            <img id="listImage"></img>
+            <p><span id="welcome-logo">Gin!</span></br>
+              <span id="welcome-subheading"> The easiest way to find the best gin in Scotland.</span><span id="welcome-text"></br></br>
               Explore 16 gin bars in Glasgow and Edinburgh, and 7 distilleries throughout Scotland.</br></br>
-              Track down some of the 100 types of gin produced nationally, from the wilds of Jura to the remotest corner of Shetland.</br></br></br></br></br></p> -->
-              <img id="listImage"></img>
+              Track down some of the 100 types of gin produced nationally, from the wilds of Jura to the remotest corner of Shetland.</p></span>
           </div>
+          <img id="listImage"></img>
           <div class="dropdown">
-
             <button id="dropdownbtn">Sort By</button>
-
             <div id="myDropdown" class="dropdown-content">
               <h4 id="glasgow-bars">Glasgow</h4>
               <h4 id="edinburgh-bars">Edinburgh</h4>
@@ -54,9 +50,8 @@
               <h4 id="favs">Rating High-Low</h4>
             </div>
           </div>
-
-          <div id="venue-list"></div>
+            <div id="venue-list"></div>
         </section>
       </main>
-    </body>
-    </html>
+  </body>
+</html>
