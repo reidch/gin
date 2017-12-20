@@ -99,7 +99,6 @@ button:focus {
   animation: fade-in 1s;
 }
 
-
 .dropdown-content {
   visibility: hidden;
   opacity: 0;
