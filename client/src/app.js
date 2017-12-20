@@ -20,12 +20,14 @@ var requestComplete = function(){
   sortList(apiBarData, "Edinburgh");
   sortList(apiBarData, "Glasgow");
   sortByRating(apiBarData);
+  document.getElementById("listImage").style.display = "none";
 };
 
 var sortList = function(data, place){
   var selectedPlace = document.getElementById("" + `${place.toLowerCase()}` + "-bars");
   var selectedPlaceText = selectedPlace.innerText;
   selectedPlace.addEventListener("click", function(){
+    document.getElementById("listImage").style.display = "visible";
     var imageHolder = document.getElementById("listImage");
     imageHolder.src = `/images/${place}.jpg`;
     imageHolder.alt = `Photograph of ${place}`;
@@ -150,6 +152,10 @@ var createVenueData = function(venue) {
     // show/hide hidden panel
     // run through each item in the list, identify if the child node has a blank class assigned to it then toggle the hidden details panel for it (close panel)
     // or if the panel in the for loop is equal to the clicked panel's hidden panel then toggle
+    document.getElementById("welcome-logo").style.display = "none";
+    document.getElementById("welcome-subheading").style.display = "none";
+    document.getElementById("welcome-text").style.display = "none";
+    document.getElementById("listImage").style.display = "initial";
     var list = document.getElementById("venue-list");
     for (var item of list.childNodes){
       for (var panel of item.childNodes){
