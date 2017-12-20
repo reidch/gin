@@ -135,7 +135,7 @@ var createVenueData = function(venue) {
   //create and append the hidden elements
   var hiddenVenue = document.createElement("div");
   hiddenVenue.className = "hidden-details-panel";
-  hiddenVenue.appendChild(createSocialLinks(venue.social_media_links));
+  hiddenVenue.appendChild(createSocialLinks(venue.social_media_links, venue.website));
   hiddenVenue.appendChild(createHiddenDetails(venue.description));
   if (venue.top3_gins[0].price !== 0) {
     hiddenVenue.appendChild(createTopGins(venue.top3_gins));
@@ -264,7 +264,7 @@ var createTopGins = function(gins) {
   return ginList;
 };
 
-var createSocialLinks = function(links) {
+var createSocialLinks = function(links, website) {
   var socialLinks = document.createElement("div");
   socialLinks.className = "social-media-links";
   for (var media in links) {
@@ -280,6 +280,18 @@ var createSocialLinks = function(links) {
       linkHref.append(icon);
       socialLinks.append(linkHref);
     };
+  };
+  if (links[media] !== "") {
+    var linkHref = document.createElement("a");
+    linkHref.className = "website-button";
+    linkHref.href = website;
+    linkHref.target = "_blank";
+    var icon = document.createElement("img");
+    icon.src = "/icons/web-icon.png";
+    icon.className = "social-icon";
+    icon.alt = "official website link";
+    linkHref.append(icon);
+    socialLinks.append(linkHref);
   };
   return socialLinks;
 };
