@@ -166,23 +166,6 @@ var createVenueData = function(venue) {
       }
     }
     createFullImage(venue.image, venue.name);
-    //reveals more of screen
-
-    // var rect = this.getBoundingClientRect();
-    // var hidden = hiddenVenue.getBoundingClientRect();
-    // var offset = rect.top - hidden.height;
-    // var listTop = list.getBoundingClientRect().y;
-    // var venueTop = completeVenue.getBoundingClientRect().y;
-    // console.log("listTop: " + listTop);
-    // console.log("venueTop: " + venueTop);
-    // var offset = completeVenue.offsetTop;
-    // console.log(offset);
-    // list.scrollTo(0, offset);
-
-
-    // this.scrollTo(x-coord, y-coord)
-    // list.scrollTo(0, offset);
-
     // connect list item to associated map marker
     // recenter map and open infoWindow when list item is clicked
     if (mainMap.directionInfoWindow.length > 0){
