@@ -1,20 +1,8 @@
-/* * {border: black solid 1px;} */
-
-
+/*styling for launch page  */
 
 div#answer a {
   text-decoration: none;
   color: inherit;
-}
-
-/* this is where our content will be */
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
 }
 
 #foreground {
@@ -25,7 +13,6 @@ div#answer a {
   position: fixed;
   top: 0;
   left: 0;
-  /* background-color: white; */
   width:100%;
   height: 100%;
   z-index: 2;
@@ -45,8 +32,6 @@ div#answer a {
   height:20em;
   margin-left: -10em;
   margin-top: -10em;
-  /* background-color: #BAAFC4; */
-  /* z-index: 2; */
   box-shadow: 2px 14px 18px 3px rgba(0,0,0,0.4);
 }
 
@@ -58,7 +43,6 @@ div#answer a {
   height: 70%;
   border-top: 5px solid #74226c;
   border-bottom: 5px solid #74226c;
-  /* z-index: 3; */
 }
 
 #message p {

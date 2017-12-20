@@ -31,7 +31,8 @@ main {
 
 /* map search bar */
 #search-input {
-  height: 3%;
+  height: 10px;
+  margin: 10px;
   width: 50%;
 }
 
@@ -98,12 +99,6 @@ button:focus {
   animation: fade-in 1s;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-  z-index: -1;
-}
-
 .dropdown-content {
   visibility: hidden;
   opacity: 0;
@@ -134,7 +129,7 @@ button:focus {
   transition: background-color 0.7s ease-in, color 0.7s;
 }
 
-#myDropdown h4:hover {
+.dropdown-content h4:hover {
   background-color: #CBC5CF;
   color: #3B373D;
   cursor: pointer;
@@ -218,10 +213,6 @@ button:focus {
 
 .social-icon:hover {
   filter: invert(0%);
-}
-
-#search-input {
-  margin: 10px;
 }
 
 
