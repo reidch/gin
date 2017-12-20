@@ -147,17 +147,11 @@ var createVenueData = function(venue) {
 
   // list item click event listener
   completeVenue.addEventListener("click", function(){
+    // aligns list item top to container top on click
     var list = document.getElementById("venue-list");
     var listTop = list.getBoundingClientRect().y;
     var venueTop = completeVenue.getBoundingClientRect().y;
     var diff = venueTop - listTop;
-    var offset = completeVenue.offsetTop;
-    console.log("list height: " + list.clientHeight);
-    console.log("scroll top: " + list.scrollTop);
-    console.log("listTop: " + listTop);
-    console.log("venueTop: " + venueTop);
-    console.log("difference: " + diff);
-    console.log("offset: " + offset);
     list.scrollTo(0, diff + list.scrollTop);
 
     // show/hide hidden panel
