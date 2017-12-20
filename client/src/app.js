@@ -153,7 +153,9 @@ var createVenueData = function(venue) {
     var list = document.getElementById("venue-list");
     var listTop = list.getBoundingClientRect().y;
     var venueTop = completeVenue.getBoundingClientRect().y;
+    // calculate the difference between the list top and the venue list item top
     var diff = venueTop - listTop;
+    // align the top of the venue list item to the top of the list
     list.scrollTo(0, diff + list.scrollTop);
 
 
