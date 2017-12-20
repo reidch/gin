@@ -31,7 +31,7 @@ main {
 
 /* map search bar */
 #search-input {
-  height: 10px;
+  height: 24px;
   margin: 10px;
   width: 50%;
 }
@@ -47,7 +47,7 @@ main {
 /* section for right hand of screen */
 #venue-container {
   border-bottom: none;
-  height: 81vh;
+  height: 79vh;
   width: 50%;
 }
 
@@ -62,9 +62,10 @@ main {
   width: 100%;
 }
 #list-header p {
-  padding: 5px 20px;
+  padding: 0 20px;
   background-color: #FDFDFD;
   border-radius: 5px;
+  margin: 0;
 }
 
 #welcome-logo {
