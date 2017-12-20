@@ -27,6 +27,7 @@ var sortList = function(data, place){
   var selectedPlace = document.getElementById("" + `${place.toLowerCase()}` + "-bars");
   var selectedPlaceText = selectedPlace.innerText;
   selectedPlace.addEventListener("click", function(){
+    scrollToListTop();
     document.getElementById("listImage").style.display = "visible";
     createFullImage(`/images/${place}.jpg`, `Photograph of ${place}`);
     var sortedBars = [];
@@ -44,6 +45,7 @@ var sortList = function(data, place){
 var sortByRating = function(data){
   var sortSelection = document.getElementById("favs");
   sortSelection.addEventListener("click", function(){
+    scrollToListTop();
     var len = data.length;
     for(var i = len - 1; i >= 0; i--){
       for(var j=1; j<=i; j++){
@@ -61,6 +63,7 @@ var sortByRating = function(data){
 var sortDistilleries = function(){
   var selectedDistillery = document.getElementById("distilleries");
   selectedDistillery.addEventListener("click", function(){
+    scrollToListTop();
     var url = "/distilleries";
     createFullImage("/images/distilleriesimage.jpg", "Scottish landscape");
     makeRequest(url, distilleriesRequestComplete);
@@ -296,6 +299,11 @@ var dropDownMenu = function(){
     document.getElementById("myDropdown").classList.toggle("show");
   });
 };
+
+var scrollToListTop = function(){
+  var list = document.getElementById("venue-list");
+  list.scrollTo(0, 0);
+}
 
 var timingDisplay = function(){
   var map = document.getElementById("map-container");
