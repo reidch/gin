@@ -336,7 +336,7 @@ twitter_last_tweet: [],
 social_media_links: {facebook: "", instagram: "https://www.instagram.com/juniperedin/", twitter: "https://twitter.com/juniperedin?lang=en"},
 reviews: [],
 theme: "Modern chic, with views",
-opening_times: {open: "12:00", closed: "11:30"},
+opening_times: {open: "12:00", closed: "23:30"},
 phone_number: "0131 652 7370"
 },
 {
