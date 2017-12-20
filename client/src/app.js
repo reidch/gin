@@ -149,14 +149,21 @@ var createVenueData = function(venue) {
 
   // list item click event listener
   completeVenue.addEventListener("click", function(){
-    // show/hide hidden panel
-    // run through each item in the list, identify if the child node has a blank class assigned to it then toggle the hidden details panel for it (close panel)
-    // or if the panel in the for loop is equal to the clicked panel's hidden panel then toggle
+    // aligns list item top to container top on click
+    var list = document.getElementById("venue-list");
+    var listTop = list.getBoundingClientRect().y;
+    var venueTop = completeVenue.getBoundingClientRect().y;
+    var diff = venueTop - listTop;
+    list.scrollTo(0, diff + list.scrollTop);
+
     document.getElementById("welcome-logo").style.display = "none";
     document.getElementById("welcome-subheading").style.display = "none";
     document.getElementById("welcome-text").style.display = "none";
     document.getElementById("listImage").style.display = "initial";
-    var list = document.getElementById("venue-list");
+
+    // show/hide hidden panel
+    // run through each item in the list, identify if the child node has a blank class assigned to it then toggle the hidden details panel for it (close panel)
+    // or if the panel in the for loop is equal to the clicked panel's hidden panel then toggle
     for (var item of list.childNodes){
       for (var panel of item.childNodes){
         if ((panel.className === "") || (panel === completeVenue.children[1])){
@@ -165,11 +172,6 @@ var createVenueData = function(venue) {
       }
     }
     createFullImage(venue.image, venue.name);
-    //reveals more of screen
-    var rect = this.getBoundingClientRect();
-    var hidden = hiddenVenue.getBoundingClientRect();
-    var offset = rect.top - hidden.height;
-    list.scrollTo(0, offset);
     // connect list item to associated map marker
     // recenter map and open infoWindow when list item is clicked
     if (mainMap.directionInfoWindow.length > 0){
@@ -188,7 +190,6 @@ var createVenueData = function(venue) {
       }
     });
   });
-
 };
 
 var createVenueDetails = function(name, address, rating) {
@@ -321,7 +322,6 @@ var app = function() {
       timingDisplay()}, 2000);
       console.log(this);
     });
-
   };
 
 
