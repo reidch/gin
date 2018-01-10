@@ -51,7 +51,7 @@ The system itself is a full-stack Gin Bar and Distillery web application created
 JavaScript was very effective for this project as it was very useful for working with APIs and noSQL MongoDB and allowed us to generate HTML on-the-fly, giving the site an app-like feel. This was particularly essential for the list-view in order to filter the list and 'expand/collapse' list-items (venues) as well as generate social media links for the venues for those links that exist within the database.
 
 ## Built With:  
-* Vanilla JavaScipt (http://vanilla-js.com/)  
+* Vanilla JavaScript (http://vanilla-js.com/)  
 * HTML5 (https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)  
 * CSS3 (https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)  
 * JSON (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)  
